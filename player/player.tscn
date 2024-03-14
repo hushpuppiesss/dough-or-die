@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dhok8gydv7v81"]
 
-[ext_resource type="Script" path="res://dough-or-die/player/player.gd" id="1_q8jov"]
-[ext_resource type="Texture2D" uid="uid://f54gcwxbtxvw" path="res://dough-or-die/assets/graphics/player/chef1.png" id="1_twktm"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_q8jov"]
+[ext_resource type="Texture2D" uid="uid://f54gcwxbtxvw" path="res://assets/graphics/player/chef1.png" id="1_twktm"]
 
 [sub_resource type="Animation" id="Animation_kkvwc"]
 length = 0.6
