@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b61ayhbc6crxq"
-path="res://.godot/imported/Room_Builder_32x32.png-c124ef1ea759c20a30189ae9d691e227.ctex"
+path="res://.godot/imported/Room_Builder_32x32.png-46e1d0157f22eb7cc486680b03213dda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dough-or-die/assets/graphics/tiles/Room_Builder_32x32.png"
-dest_files=["res://.godot/imported/Room_Builder_32x32.png-c124ef1ea759c20a30189ae9d691e227.ctex"]
+source_file="res://assets/graphics/tiles/Room_Builder_32x32.png"
+dest_files=["res://.godot/imported/Room_Builder_32x32.png-46e1d0157f22eb7cc486680b03213dda.ctex"]
 
 [params]
 

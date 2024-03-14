@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtuonvimoja68"
-path="res://.godot/imported/chef_rachel.png-39149d732514d050adc9005478f52ef2.ctex"
+path="res://.godot/imported/chef_rachel.png-743c8c9a09138fe8cab3b5b77af2fffc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dough-or-die/assets/graphics/player/chef_rachel.png"
-dest_files=["res://.godot/imported/chef_rachel.png-39149d732514d050adc9005478f52ef2.ctex"]
+source_file="res://assets/graphics/player/chef_rachel.png"
+dest_files=["res://.godot/imported/chef_rachel.png-743c8c9a09138fe8cab3b5b77af2fffc.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwplkbodqarlp"
-path="res://.godot/imported/animated_kitchen_kneader_32x32.png-c124b123c2d47780805b36fcdac73db5.ctex"
+path="res://.godot/imported/animated_kitchen_kneader_32x32.png-4620f6541ad08506f73ec38e24eeb9cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dough-or-die/assets/graphics/tiles/animated/animated_kitchen_kneader_32x32.png"
-dest_files=["res://.godot/imported/animated_kitchen_kneader_32x32.png-c124b123c2d47780805b36fcdac73db5.ctex"]
+source_file="res://assets/graphics/tiles/animated/animated_kitchen_kneader_32x32.png"
+dest_files=["res://.godot/imported/animated_kitchen_kneader_32x32.png-4620f6541ad08506f73ec38e24eeb9cb.ctex"]
 
 [params]
 

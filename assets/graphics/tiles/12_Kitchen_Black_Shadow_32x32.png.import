@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8s2myrxbsfwg"
-path="res://.godot/imported/12_Kitchen_Black_Shadow_32x32.png-64d7260878dc3a695dfe10e7f0395ecd.ctex"
+path="res://.godot/imported/12_Kitchen_Black_Shadow_32x32.png-7904998d50041c8a6a41021f242b9498.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dough-or-die/assets/graphics/tiles/12_Kitchen_Black_Shadow_32x32.png"
-dest_files=["res://.godot/imported/12_Kitchen_Black_Shadow_32x32.png-64d7260878dc3a695dfe10e7f0395ecd.ctex"]
+source_file="res://assets/graphics/tiles/12_Kitchen_Black_Shadow_32x32.png"
+dest_files=["res://.godot/imported/12_Kitchen_Black_Shadow_32x32.png-7904998d50041c8a6a41021f242b9498.ctex"]
 
 [params]
 

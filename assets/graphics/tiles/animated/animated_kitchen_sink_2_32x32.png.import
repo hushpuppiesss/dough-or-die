@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://poetmlg2uucc"
-path="res://.godot/imported/animated_kitchen_sink_2_32x32.png-51b43dc070498bdcce30ce4243096d4d.ctex"
+path="res://.godot/imported/animated_kitchen_sink_2_32x32.png-7e9e6b076506f467587c0c7580dbcef1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dough-or-die/assets/graphics/tiles/animated/animated_kitchen_sink_2_32x32.png"
-dest_files=["res://.godot/imported/animated_kitchen_sink_2_32x32.png-51b43dc070498bdcce30ce4243096d4d.ctex"]
+source_file="res://assets/graphics/tiles/animated/animated_kitchen_sink_2_32x32.png"
+dest_files=["res://.godot/imported/animated_kitchen_sink_2_32x32.png-7e9e6b076506f467587c0c7580dbcef1.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://f54gcwxbtxvw"
-path="res://.godot/imported/chef1.png-2e6437d2b8865c3f4d21968adafc9322.ctex"
+path="res://.godot/imported/chef1.png-95377c5df2d7ff0f189f42520f4069ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dough-or-die/assets/graphics/player/chef1.png"
-dest_files=["res://.godot/imported/chef1.png-2e6437d2b8865c3f4d21968adafc9322.ctex"]
+source_file="res://assets/graphics/player/chef1.png"
+dest_files=["res://.godot/imported/chef1.png-95377c5df2d7ff0f189f42520f4069ae.ctex"]
 
 [params]
 

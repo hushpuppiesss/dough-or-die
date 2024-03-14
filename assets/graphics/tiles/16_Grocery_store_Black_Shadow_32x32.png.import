@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dca6ialwtq0xc"
-path="res://.godot/imported/16_Grocery_store_Black_Shadow_32x32.png-071a0f522d7c059dc3e856ca86e5ed3d.ctex"
+path="res://.godot/imported/16_Grocery_store_Black_Shadow_32x32.png-99296e4ae69f94407046c45017be9814.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dough-or-die/assets/graphics/tiles/16_Grocery_store_Black_Shadow_32x32.png"
-dest_files=["res://.godot/imported/16_Grocery_store_Black_Shadow_32x32.png-071a0f522d7c059dc3e856ca86e5ed3d.ctex"]
+source_file="res://assets/graphics/tiles/16_Grocery_store_Black_Shadow_32x32.png"
+dest_files=["res://.godot/imported/16_Grocery_store_Black_Shadow_32x32.png-99296e4ae69f94407046c45017be9814.ctex"]
 
 [params]
 

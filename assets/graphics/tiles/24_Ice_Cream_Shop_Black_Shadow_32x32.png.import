@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0phyipkm2dll"
-path="res://.godot/imported/24_Ice_Cream_Shop_Black_Shadow_32x32.png-69d9a1bb75bb712db2c8842d32c4a3ba.ctex"
+path="res://.godot/imported/24_Ice_Cream_Shop_Black_Shadow_32x32.png-82c79f165d1db0711589e5d39675fcd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dough-or-die/assets/graphics/tiles/24_Ice_Cream_Shop_Black_Shadow_32x32.png"
-dest_files=["res://.godot/imported/24_Ice_Cream_Shop_Black_Shadow_32x32.png-69d9a1bb75bb712db2c8842d32c4a3ba.ctex"]
+source_file="res://assets/graphics/tiles/24_Ice_Cream_Shop_Black_Shadow_32x32.png"
+dest_files=["res://.godot/imported/24_Ice_Cream_Shop_Black_Shadow_32x32.png-82c79f165d1db0711589e5d39675fcd5.ctex"]
 
 [params]
 

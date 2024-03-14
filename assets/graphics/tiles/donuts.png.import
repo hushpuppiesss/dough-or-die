@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bm1st5wbe40ca"
-path="res://.godot/imported/donuts.png-8728f28e41d4c0054ea97bb653a462b3.ctex"
+path="res://.godot/imported/donuts.png-bf4f703f1d4bfe9f5c2b9eab4c49a882.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dough-or-die/assets/graphics/tiles/donuts.png"
-dest_files=["res://.godot/imported/donuts.png-8728f28e41d4c0054ea97bb653a462b3.ctex"]
+source_file="res://assets/graphics/tiles/donuts.png"
+dest_files=["res://.godot/imported/donuts.png-bf4f703f1d4bfe9f5c2b9eab4c49a882.ctex"]
 
 [params]
 
