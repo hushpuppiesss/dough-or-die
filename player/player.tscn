@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhok8gydv7v81"]
+[gd_scene load_steps=14 format=3 uid="uid://dhok8gydv7v81"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_q8jov"]
 [ext_resource type="Texture2D" uid="uid://f54gcwxbtxvw" path="res://assets/graphics/player/chef1.png" id="1_twktm"]
@@ -165,11 +165,16 @@ _data = {
 "walkUp": SubResource("Animation_h43k4")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_2spcu"]
+radius = 10.0499
+
 [node name="player" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_q8jov")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, -20)
 texture = ExtResource("1_twktm")
 hframes = 56
 vframes = 20
@@ -179,3 +184,6 @@ frame = 74
 libraries = {
 "": SubResource("AnimationLibrary_5syva")
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2spcu")
