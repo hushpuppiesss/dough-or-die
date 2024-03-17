@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dcwfeu6do32mg"]
+[gd_scene load_steps=31 format=3 uid="uid://dcwfeu6do32mg"]
 
 [ext_resource type="Texture2D" uid="uid://c1fyri3a8ik7h" path="res://assets/graphics/enemy/Basic Charakter Spritesheet.png" id="1_fvxmo"]
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_kb82l"]
@@ -244,23 +244,34 @@ radius = 254.096
 [sub_resource type="CircleShape2D" id="CircleShape2D_q6q32"]
 radius = 7.07107
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pquqa"]
+radius = 13.0
+
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_kb82l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dpobo")
-animation = &"idleRight"
+animation = &"idleDown"
 
 [node name="detectionArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
+visible = false
 shape = SubResource("CircleShape2D_wsy6i")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="collision" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 7)
 shape = SubResource("CircleShape2D_q6q32")
+
+[node name="enemyHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_pquqa")
 
 [connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detectionArea" to="." method="_on_detection_area_body_exited"]
