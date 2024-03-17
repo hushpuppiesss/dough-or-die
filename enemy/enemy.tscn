@@ -116,7 +116,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idleDown",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -133,7 +133,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idleLeft",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -150,7 +150,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idleRight",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -167,7 +167,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idleUp",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -184,7 +184,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walkDown",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -201,7 +201,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walkLeft",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -218,7 +218,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walkRight",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -235,7 +235,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walkUp",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wsy6i"]
@@ -252,7 +252,8 @@ script = ExtResource("1_kb82l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dpobo")
-animation = &"idleDown"
+animation = &"walkUp"
+frame_progress = 0.980115
 
 [node name="detectionArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -275,3 +276,5 @@ shape = SubResource("CircleShape2D_pquqa")
 
 [connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="enemyHitbox" to="." method="_on_enemy_hitbox_body_entered"]
+[connection signal="body_exited" from="enemyHitbox" to="." method="_on_enemy_hitbox_body_exited"]

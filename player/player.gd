@@ -6,7 +6,7 @@ var player_alive = true
 @export var speed: int = 150
 
 # animations
-@onready var animations = $AnimationPlayer
+@onready var animations = $AnimatedSprite2D
 @onready var previousDirection: String = "Down"
 
 # enemy in range to attack
