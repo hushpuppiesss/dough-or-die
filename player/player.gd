@@ -22,6 +22,7 @@ func _physics_process(delta):
 	handleInput()
 	move_and_slide()
 	updateAnimation()
+	attack()
 	
 	enemy_attack()
 	if health <= 0:
@@ -71,7 +72,7 @@ func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown == true:
 		health -= 20
 		enemy_attack_cooldown = false
-		$attackCooldown.start()
+		$damageCooldown.start()
 		print(health)
 
 func _on_attack_cooldown_timeout():
@@ -87,3 +88,10 @@ func attack():
 		
 		# animation
 		animations.play("attack" + direction)
+		$attackTimer.start()
+
+# --- timer for player attack
+func _on_attack_timer_timeout():
+	$attackTimer.stop()
+	global.player_current_attack = false
+	attack_ip = false

@@ -9,6 +9,7 @@ var player_chase = false
 var player = null
 
 var player_inattack_range = false
+var can_take_damage = true
 
 # animations
 @onready var animations = $AnimatedSprite2D
@@ -20,6 +21,7 @@ func enemy():
 	
 func _physics_process(delta):
 	dealDamage()
+	updateHealth()
 	
 	if player_chase:
 		# moves towards the player
@@ -61,7 +63,27 @@ func _on_enemy_hitbox_body_exited(body):
 		
 func dealDamage():
 	if player_inattack_range and global.player_current_attack:
-		health -= 20
-		print("slime health = ", health)
-		if health <= 0:
-			self.queue_free()
+		if can_take_damage == true:
+			health -= 20
+			# starts timer for cooldown
+			$damageCooldown.start()
+			# cannot take damage during this cooldown
+			can_take_damage = false
+			
+			print("slime health = ", health)
+			if health <= 0:
+				self.queue_free()
+
+
+func _on_damage_cooldown_timeout():
+	can_take_damage = true
+
+func updateHealth():
+	var healthbar = $healthbar
+	
+	healthbar.value = health
+	
+	if health >= 100:
+		healthbar.visible = false
+	else:
+		healthbar.visible = true
