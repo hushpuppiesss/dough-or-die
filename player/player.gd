@@ -49,7 +49,8 @@ func updateAnimation():
 	
 	# idle animations
 	if velocity.length() == 0:
-		animations.play("idle" + previousDirection)
+		if attack_ip == false:
+			animations.play("idle" + previousDirection)
 	# walk animations
 	else:
 		animations.play("walk" + direction)
@@ -65,6 +66,7 @@ func _on_player_hitbox_body_exited(body):
 	if body.has_method("enemy"):
 		enemy_inattack_range = false
 
+# --- if enemy is in range to attack
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown == true:
 		health -= 20
@@ -74,3 +76,14 @@ func enemy_attack():
 
 func _on_attack_cooldown_timeout():
 	enemy_attack_cooldown = true
+	
+# --- attack
+func attack():
+	var direction = previousDirection
+	
+	if Input.is_action_just_pressed("attack"):
+		global.player_current_attack = true
+		attack_ip = true
+		
+		# animation
+		animations.play("attack" + direction)
