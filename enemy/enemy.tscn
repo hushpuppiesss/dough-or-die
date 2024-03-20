@@ -1,7 +1,8 @@
-[gd_scene load_steps=31 format=3 uid="uid://dcwfeu6do32mg"]
+[gd_scene load_steps=32 format=3 uid="uid://dcwfeu6do32mg"]
 
 [ext_resource type="Texture2D" uid="uid://c1fyri3a8ik7h" path="res://assets/graphics/enemy/Basic Charakter Spritesheet.png" id="1_fvxmo"]
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_kb82l"]
+[ext_resource type="PackedScene" uid="uid://b6p54t7744hf3" path="res://healthbar/healthBar.tscn" id="3_lhljf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ahkut"]
 atlas = ExtResource("1_fvxmo")
@@ -269,6 +270,7 @@ position = Vector2(0, 7)
 shape = SubResource("CircleShape2D_q6q32")
 
 [node name="enemyHitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox"]
 position = Vector2(0, 1)
@@ -277,15 +279,11 @@ shape = SubResource("CircleShape2D_pquqa")
 [node name="damageCooldown" type="Timer" parent="."]
 wait_time = 0.5
 
-[node name="healthbar" type="ProgressBar" parent="."]
-modulate = Color(0.47451, 1, 0.172549, 1)
-offset_left = -10.0
-offset_top = 17.0
-offset_right = 90.0
-offset_bottom = 32.0
-scale = Vector2(0.2, 0.2)
-value = 100.0
-show_percentage = false
+[node name="healthBar" parent="." instance=ExtResource("3_lhljf")]
+offset_left = -13.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = -21.0
 
 [connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detectionArea" to="." method="_on_detection_area_body_exited"]

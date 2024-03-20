@@ -1,9 +1,11 @@
 extends CharacterBody2D
+class_name player
 
 # player stats
-var health = 100
+@export var health = 150
+@export var playerAttack = 15
+@export var speed = 150
 var player_alive = true
-@export var speed: int = 150
 
 # animations
 @onready var animations = $AnimatedSprite2D

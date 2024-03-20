@@ -1,23 +1,23 @@
 [gd_scene load_steps=28 format=3 uid="uid://mh3s83by7o7"]
 
-[ext_resource type="PackedScene" uid="uid://dhok8gydv7v81" path="res://player/player.tscn" id="1_idsxr"]
-[ext_resource type="Texture2D" uid="uid://b61ayhbc6crxq" path="res://assets/graphics/tiles/Room_Builder_32x32.png" id="2_1ovo7"]
-[ext_resource type="Texture2D" uid="uid://cbkkg4fljeafk" path="res://assets/graphics/tiles/1_Generic_32x32.png" id="2_yquq7"]
-[ext_resource type="Texture2D" uid="uid://t30rytuktmf5" path="res://assets/graphics/tiles/10_Birthday_party_Black_Shadow_32x32.png" id="3_rfe3e"]
-[ext_resource type="Texture2D" uid="uid://bkrpu2cs0ss2f" path="res://assets/graphics/tiles/animated/animated_kitchen_kneader_2_32x32.png" id="3_vq8um"]
-[ext_resource type="Texture2D" uid="uid://c8s2myrxbsfwg" path="res://assets/graphics/tiles/12_Kitchen_Black_Shadow_32x32.png" id="4_8820k"]
-[ext_resource type="Texture2D" uid="uid://dca6ialwtq0xc" path="res://assets/graphics/tiles/16_Grocery_store_Black_Shadow_32x32.png" id="5_7wslr"]
-[ext_resource type="Texture2D" uid="uid://c0phyipkm2dll" path="res://assets/graphics/tiles/24_Ice_Cream_Shop_Black_Shadow_32x32.png" id="6_mxwia"]
-[ext_resource type="Texture2D" uid="uid://xhlndcimheb4" path="res://assets/graphics/tiles/kitchenCounter.png" id="7_kldpk"]
-[ext_resource type="Script" path="res://camera/followCamera.gd" id="8_1o8o5"]
-[ext_resource type="Texture2D" uid="uid://bm1st5wbe40ca" path="res://assets/graphics/tiles/donuts.png" id="8_5ml7m"]
-[ext_resource type="Texture2D" uid="uid://dwplkbodqarlp" path="res://assets/graphics/tiles/animated/animated_kitchen_kneader_32x32.png" id="9_v6uva"]
-[ext_resource type="Texture2D" uid="uid://com3asfsl57dd" path="res://assets/graphics/tiles/animated/animated_fridge_grey_32x32.png" id="10_7xite"]
-[ext_resource type="PackedScene" uid="uid://dcwfeu6do32mg" path="res://enemy/enemy.tscn" id="14_np11p"]
-[ext_resource type="PackedScene" uid="uid://b365hpekog4fb" path="res://music/background music.tscn" id="15_5nxsj"]
+[ext_resource type="Texture2D" uid="uid://b61ayhbc6crxq" path="res://assets/graphics/tiles/Room_Builder_32x32.png" id="1_hhapp"]
+[ext_resource type="Texture2D" uid="uid://cbkkg4fljeafk" path="res://assets/graphics/tiles/1_Generic_32x32.png" id="2_urprw"]
+[ext_resource type="Texture2D" uid="uid://bkrpu2cs0ss2f" path="res://assets/graphics/tiles/animated/animated_kitchen_kneader_2_32x32.png" id="3_2oefd"]
+[ext_resource type="Texture2D" uid="uid://t30rytuktmf5" path="res://assets/graphics/tiles/10_Birthday_party_Black_Shadow_32x32.png" id="4_x25mm"]
+[ext_resource type="Texture2D" uid="uid://c8s2myrxbsfwg" path="res://assets/graphics/tiles/12_Kitchen_Black_Shadow_32x32.png" id="5_ahhuw"]
+[ext_resource type="Texture2D" uid="uid://dca6ialwtq0xc" path="res://assets/graphics/tiles/16_Grocery_store_Black_Shadow_32x32.png" id="6_fvseq"]
+[ext_resource type="Texture2D" uid="uid://c0phyipkm2dll" path="res://assets/graphics/tiles/24_Ice_Cream_Shop_Black_Shadow_32x32.png" id="7_vc3iw"]
+[ext_resource type="Texture2D" uid="uid://xhlndcimheb4" path="res://assets/graphics/tiles/kitchenCounter.png" id="8_odnvq"]
+[ext_resource type="Texture2D" uid="uid://bm1st5wbe40ca" path="res://assets/graphics/tiles/donuts.png" id="9_5rtxh"]
+[ext_resource type="Texture2D" uid="uid://dwplkbodqarlp" path="res://assets/graphics/tiles/animated/animated_kitchen_kneader_32x32.png" id="10_acs2l"]
+[ext_resource type="Texture2D" uid="uid://com3asfsl57dd" path="res://assets/graphics/tiles/animated/animated_fridge_grey_32x32.png" id="11_jv7gj"]
+[ext_resource type="PackedScene" uid="uid://dhok8gydv7v81" path="res://player/player.tscn" id="12_xkw7g"]
+[ext_resource type="Script" path="res://camera/followCamera.gd" id="13_lv5cm"]
+[ext_resource type="PackedScene" uid="uid://dcwfeu6do32mg" path="res://enemy/enemy.tscn" id="14_61hg0"]
+[ext_resource type="PackedScene" uid="uid://b365hpekog4fb" path="res://music/background music.tscn" id="15_epbxy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x8oou"]
-texture = ExtResource("2_1ovo7")
+texture = ExtResource("1_hhapp")
 texture_region_size = Vector2i(32, 32)
 5:0/0 = 0
 5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -11746,7 +11746,7 @@ texture_region_size = Vector2i(32, 32)
 26:42/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dhb78"]
-texture = ExtResource("2_yquq7")
+texture = ExtResource("2_urprw")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -15028,7 +15028,7 @@ texture_region_size = Vector2i(32, 32)
 10:75/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i07lk"]
-texture = ExtResource("3_vq8um")
+texture = ExtResource("3_2oefd")
 texture_region_size = Vector2i(32, 32)
 0:0/size_in_atlas = Vector2i(1, 2)
 0:0/animation_frame_0/duration = 0.1
@@ -15041,7 +15041,7 @@ texture_region_size = Vector2i(32, 32)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t5vrc"]
-texture = ExtResource("3_rfe3e")
+texture = ExtResource("4_x25mm")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -15255,7 +15255,7 @@ texture_region_size = Vector2i(32, 32)
 7:6/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hlapw"]
-texture = ExtResource("4_8820k")
+texture = ExtResource("5_ahhuw")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -17407,7 +17407,7 @@ texture_region_size = Vector2i(32, 32)
 12:26/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xl4qf"]
-texture = ExtResource("5_7wslr")
+texture = ExtResource("6_fvseq")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -20828,7 +20828,7 @@ texture_region_size = Vector2i(32, 32)
 10:77/0/physics_layer_0/polygon_0/points = PackedVector2Array(6.85714, -16, -2.28571, -16, -2.28571, -11.4286, 6.85714, -11.4286)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ptk7r"]
-texture = ExtResource("6_mxwia")
+texture = ExtResource("7_vc3iw")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -21408,7 +21408,7 @@ texture_region_size = Vector2i(32, 32)
 14:16/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d75sx"]
-texture = ExtResource("7_kldpk")
+texture = ExtResource("8_odnvq")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -21515,7 +21515,7 @@ texture_region_size = Vector2i(32, 32)
 3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 0, -10.6667, 0, -10.6667, 16, 16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p25xp"]
-texture = ExtResource("8_5ml7m")
+texture = ExtResource("9_5rtxh")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -21528,7 +21528,7 @@ texture_region_size = Vector2i(32, 32)
 2:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tb6vo"]
-texture = ExtResource("9_v6uva")
+texture = ExtResource("10_acs2l")
 texture_region_size = Vector2i(32, 32)
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/animation_frame_0/duration = 0.1
@@ -21541,7 +21541,7 @@ texture_region_size = Vector2i(32, 32)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rtdx2"]
-texture = ExtResource("10_7xite")
+texture = ExtResource("11_jv7gj")
 texture_region_size = Vector2i(32, 32)
 0:0/size_in_atlas = Vector2i(2, 3)
 0:0/animation_frame_0/duration = 0.1
@@ -21597,7 +21597,7 @@ layer_5/name = "GROUND 2"
 layer_5/y_sort_enabled = true
 layer_5/tile_data = PackedInt32Array(-131072, 983041, 63, -65536, 983041, 64, 0, 983041, 65, -65535, 327684, 60, -65534, 262148, 60, -65533, 393220, 61, -65532, 524292, 62, -131066, 655363, 268435479, -65530, 655363, 268435480, 6, 655363, 268435481, -131065, 655363, 23, -65529, 655363, 24, 7, 655363, 25, -131064, 393220, 63, -65527, 458756, 60, -65526, 524292, 63, -65524, 983044, 37, -65520, 983044, 37, 196625, 327684, 73, 262161, 327684, 74, 327697, 327684, 75, 851985, 262148, 65, 917521, 262148, 66, 262162, 851971, 44, 655378, 131079, 0, 786450, 196611, 41, -65517, 917508, 37, 262163, 917507, 44, 589843, 7, 0, 720915, 131075, 42, 786451, 131075, 43, 262164, 983043, 44, 720916, 196611, 42, 786452, 196611, 43, 720917, 262147, 38, 786453, 262147, 39, -65514, 8, 0, 720918, 327683, 38, 786454, 327683, 39, -65512, 8, 0, 262168, 11, 0, 589848, 7, 0, 262169, 11, 0, 655385, 131079, 0, 786457, 851972, 33, -131046, 655363, 268435479, -65510, 655363, 268435480, 26, 655363, 268435481, 786458, 917508, 33, -131045, 655363, 23, -65509, 655363, 24, 27, 655363, 25, 262171, 655363, 36, 720923, 262147, 38, 786459, 262147, 39, 262172, 720899, 36, 720924, 327683, 38, 786460, 327683, 39, -65507, 131075, 21, 786461, 131075, 41, 262174, 655363, 36, 720926, 131075, 42, 786462, 131075, 43, -65505, 524291, 7, 262175, 720899, 36, 589855, 7, 0, 720927, 196611, 42, 786463, 196611, 43, -65504, 589827, 7, 262176, 786435, 36, 655392, 131079, 0, 786464, 786435, 34, -65503, 786435, 7, 786465, 196611, 39, 852002, 589828, 76, 917538, 589828, 77, 5, 786433, 59, 65541, 786433, 60, 8, 851969, 60, -65525, 786433, 59, 11, 786433, 60, 262170, 983043, 25, 327712, 196611, 41, 393233, 196611, 41, -65515, 196611, 41, -65502, 196611, 41, 589849, 655363, 47, 589857, 655363, 47, 655384, 524291, 46, 655380, 524291, 46, 589842, 655363, 48, 655391, 786435, 47, 655393, 131075, 46, 589850, 458755, 46, 655379, 458755, 46, -65506, 65539, 15, 393226, 131075, 21, 327690, 983043, 13, 458762, 655363, 11, 458769, 131075, 21, -65516, 65539, 20)
 
-[node name="player" parent="." instance=ExtResource("1_idsxr")]
+[node name="player" parent="." instance=ExtResource("12_xkw7g")]
 position = Vector2(902, 184)
 
 [node name="followCamera" type="Camera2D" parent="player" node_paths=PackedStringArray("tilemap")]
@@ -21606,11 +21606,11 @@ limit_left = 0
 limit_top = 0
 limit_right = 1148
 limit_bottom = 650
-script = ExtResource("8_1o8o5")
+script = ExtResource("13_lv5cm")
 tilemap = NodePath("../../TileMap")
 
-[node name="enemy" parent="." instance=ExtResource("14_np11p")]
+[node name="enemy" parent="." instance=ExtResource("14_61hg0")]
 position = Vector2(159, 204)
 
-[node name="bgMusic" parent="." instance=ExtResource("15_5nxsj")]
+[node name="bgMusic" parent="." instance=ExtResource("15_epbxy")]
 autoplay = false

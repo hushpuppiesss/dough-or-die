@@ -1,8 +1,12 @@
 extends CharacterBody2D
 
+@onready var healthbar = $healthBar
+
 # enemy stats
-var speed = 100 # note that because we're dividing by speed, the lower the speed the faster it is in actuality
-var health = 100
+@export var speed: int # note that because we're dividing by speed, 
+						# the lower the speed the faster it is in actuality
+@export var health: int
+@export var enemyAttack = 20
 
 # enemy behavior
 var player_chase = false
@@ -10,6 +14,7 @@ var player = null
 
 var player_inattack_range = false
 var can_take_damage = true
+var knockback = false
 
 # animations
 @onready var animations = $AnimatedSprite2D
@@ -19,9 +24,13 @@ var can_take_damage = true
 func enemy():
 	pass
 	
+func _ready():
+	speed = 100
+	health = 100
+	healthbar.init_health(health)
+	
 func _physics_process(delta):
 	dealDamage()
-	updateHealth()
 	
 	if player_chase:
 		# moves towards the player
@@ -70,20 +79,17 @@ func dealDamage():
 			# cannot take damage during this cooldown
 			can_take_damage = false
 			
-			print("slime health = ", health)
-			if health <= 0:
-				self.queue_free()
+			
 
 
 func _on_damage_cooldown_timeout():
 	can_take_damage = true
+	
+func _set_health(value):
+	value = health
+	
+	if health <= 0:
+			self.queue_free()
+	healthbar.health = health
+	
 
-func updateHealth():
-	var healthbar = $healthbar
-	
-	healthbar.value = health
-	
-	if health >= 100:
-		healthbar.visible = false
-	else:
-		healthbar.visible = true
