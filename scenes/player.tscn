@@ -895,8 +895,9 @@ radius = 10.0499
 [sub_resource type="CircleShape2D" id="CircleShape2D_7xalx"]
 radius = 14.0357
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 3
+platform_floor_layers = 4278190080
 script = ExtResource("1_4jbyi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

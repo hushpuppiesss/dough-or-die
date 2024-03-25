@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b6p54t7744hf3" path="res://scenes/healthBar.tscn" id="3_q2v7f"]
 [ext_resource type="Script" path="res://scripts/states/State Machine.gd" id="4_h2ss7"]
 [ext_resource type="Script" path="res://scripts/states/enemy states/enemyIdle.gd" id="5_nvqfh"]
+[ext_resource type="Script" path="res://scripts/states/enemy states/enemyChase.gd" id="6_mpeq6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ahkut"]
 atlas = ExtResource("2_jkoui")
@@ -241,9 +242,6 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wsy6i"]
-radius = 254.096
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_q6q32"]
 radius = 7.07107
 
@@ -255,19 +253,9 @@ script = ExtResource("1_ea4te")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dpobo")
-animation = &"walkUp"
-frame_progress = 0.980115
-
-[node name="detectionArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
-visible = false
-shape = SubResource("CircleShape2D_wsy6i")
+animation = &"walkDown"
 
 [node name="collision" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 7)
 shape = SubResource("CircleShape2D_q6q32")
 
@@ -275,6 +263,7 @@ shape = SubResource("CircleShape2D_q6q32")
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox"]
+visible = false
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_pquqa")
 
@@ -289,14 +278,16 @@ offset_bottom = -21.0
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_h2ss7")
-initial_state = NodePath("EnemyIdle")
+initial_state = NodePath("Chase")
 
-[node name="EnemyIdle" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy")]
+[node name="Idle" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("5_nvqfh")
 enemy = NodePath("../..")
 
-[connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]
-[connection signal="body_exited" from="detectionArea" to="." method="_on_detection_area_body_exited"]
+[node name="Chase" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("6_mpeq6")
+enemy = NodePath("../..")
+
 [connection signal="body_entered" from="enemyHitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="enemyHitbox" to="." method="_on_enemy_hitbox_body_exited"]
 [connection signal="timeout" from="damageCooldown" to="." method="_on_damage_cooldown_timeout"]
