@@ -21938,4 +21938,13 @@ position = Vector2(866, 167)
 [node name="enemy" parent="." instance=ExtResource("14_61hg0")]
 position = Vector2(213, 184)
 
+[node name="enemy2" parent="." instance=ExtResource("14_61hg0")]
+position = Vector2(184, 213)
+
+[node name="enemy3" parent="." instance=ExtResource("14_61hg0")]
+position = Vector2(155, 183)
+
+[node name="enemy4" parent="." instance=ExtResource("14_61hg0")]
+position = Vector2(261, 192)
+
 [node name="bgMusic" parent="." instance=ExtResource("15_epbxy")]
