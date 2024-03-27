@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c1fyri3a8ik7h" path="res://assets/graphics/enemy/Basic Charakter Spritesheet.png" id="2_jkoui"]
 [ext_resource type="PackedScene" uid="uid://b6p54t7744hf3" path="res://scenes/healthBar.tscn" id="3_q2v7f"]
 [ext_resource type="Script" path="res://scripts/states/State Machine.gd" id="4_h2ss7"]
-[ext_resource type="Script" path="res://scripts/states/enemy states/enemyIdle.gd" id="5_nvqfh"]
+[ext_resource type="Script" path="res://scripts/states/enemy states/enemyWander.gd" id="5_gf2de"]
 [ext_resource type="Script" path="res://scripts/states/enemy states/enemyChase.gd" id="6_mpeq6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ahkut"]
@@ -262,7 +262,7 @@ shape = SubResource("CircleShape2D_q6q32")
 [node name="enemyHitbox" type="Area2D" parent="."]
 visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox"]
+[node name="hitbox shape" type="CollisionShape2D" parent="enemyHitbox"]
 visible = false
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_pquqa")
@@ -280,8 +280,8 @@ offset_bottom = -21.0
 script = ExtResource("4_h2ss7")
 initial_state = NodePath("Chase")
 
-[node name="Idle" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy")]
-script = ExtResource("5_nvqfh")
+[node name="Wander" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("5_gf2de")
 enemy = NodePath("../..")
 
 [node name="Chase" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy")]

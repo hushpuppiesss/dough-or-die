@@ -1,8 +1,8 @@
 extends State
-class_name EnemyChase
+class_name enemyChase
 
 @export var enemy : CharacterBody2D
-@export var move_speed := 100.0
+@export var move_speed := 125.0
 var player : CharacterBody2D
 
 func Enter():
@@ -17,5 +17,5 @@ func Physics_Update(delta: float):
 		enemy.velocity = Vector2()
 	
 	# if player moves too far away, go to idle state
-	if direction.length() > 100:
-		Transitioned.emit(self, "idle")
+	if direction.length() > 150:
+		Transitioned.emit(self, "Wander")

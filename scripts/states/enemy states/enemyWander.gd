@@ -1,5 +1,5 @@
 extends State
-class_name enemyIdle
+class_name enemyWander
 
 # referencing the enemy
 @export var enemy: CharacterBody2D
@@ -32,5 +32,5 @@ func Physics_Update(delta: float):
 	
 	var direction = player.global_position - enemy.global_position
 	
-	if direction.length() < 75:
+	if direction.length() < 150:
 		Transitioned.emit(self, "Chase")

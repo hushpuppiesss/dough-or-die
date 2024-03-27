@@ -21938,22 +21938,5 @@ position = Vector2(432, 175)
 [node name="enemy" parent="." instance=ExtResource("14_61hg0")]
 position = Vector2(225, 185)
 
-[node name="enemy2" parent="." instance=ExtResource("14_61hg0")]
-position = Vector2(290, 180)
-
-[node name="enemy3" parent="." instance=ExtResource("14_61hg0")]
-position = Vector2(261, 211)
-
-[node name="enemy4" parent="." instance=ExtResource("14_61hg0")]
-position = Vector2(324, 212)
-
-[node name="enemy5" parent="." instance=ExtResource("14_61hg0")]
-position = Vector2(335, 170)
-
-[node name="enemy6" parent="." instance=ExtResource("14_61hg0")]
-position = Vector2(374, 208)
-
-[node name="enemy7" parent="." instance=ExtResource("14_61hg0")]
-position = Vector2(197, 226)
-
 [node name="bgMusic" parent="." instance=ExtResource("15_epbxy")]
+autoplay = false
