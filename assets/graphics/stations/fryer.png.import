@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://com3asfsl57dd"
-path="res://.godot/imported/animated_fridge_grey_32x32.png-1c4b72a5e215ae187857ca3ebb01abbe.ctex"
+uid="uid://b83g2slblxoik"
+path="res://.godot/imported/fryer.png-be0df0582338bcf8e1746723e022b3ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/tiles/animated/animated_fridge_grey_32x32.png"
-dest_files=["res://.godot/imported/animated_fridge_grey_32x32.png-1c4b72a5e215ae187857ca3ebb01abbe.ctex"]
+source_file="res://assets/graphics/stations/fryer.png"
+dest_files=["res://.godot/imported/fryer.png-be0df0582338bcf8e1746723e022b3ce.ctex"]
 
 [params]
 

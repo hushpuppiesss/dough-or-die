@@ -19,7 +19,6 @@ config/icon="res://dough-or-die/icon.svg"
 
 global="*res://scripts/global.gd"
 backgroundMusic="*res://scenes/background music.tscn"
-InteractionManager="*res://interaction/InteractionManager.tscn"
 
 [display]
 

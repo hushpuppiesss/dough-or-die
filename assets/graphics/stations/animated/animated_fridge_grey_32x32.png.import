@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwplkbodqarlp"
-path="res://.godot/imported/animated_kitchen_kneader_32x32.png-4620f6541ad08506f73ec38e24eeb9cb.ctex"
+uid="uid://com3asfsl57dd"
+path="res://.godot/imported/animated_fridge_grey_32x32.png-73c433dd1fb62641b2da3693eb42f007.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/tiles/animated/animated_kitchen_kneader_32x32.png"
-dest_files=["res://.godot/imported/animated_kitchen_kneader_32x32.png-4620f6541ad08506f73ec38e24eeb9cb.ctex"]
+source_file="res://assets/graphics/stations/animated/animated_fridge_grey_32x32.png"
+dest_files=["res://.godot/imported/animated_fridge_grey_32x32.png-73c433dd1fb62641b2da3693eb42f007.ctex"]
 
 [params]
 
