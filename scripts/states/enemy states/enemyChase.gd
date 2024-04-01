@@ -10,12 +10,16 @@ func Enter():
 	
 func Physics_Update(delta: float):
 	var direction = player.global_position - enemy.global_position
+	print(direction.length())
 	
 	if direction.length() > 50:
 		enemy.velocity = direction.normalized() * move_speed
-	else:
-		enemy.velocity = Vector2()
 	
 	# if player moves too far away, go to idle state
 	if direction.length() > 150:
 		Transitioned.emit(self, "Wander")
+	
+	if direction.length() < 50:
+		Transitioned.emit(self, "Attack")
+		print("Rah")
+	

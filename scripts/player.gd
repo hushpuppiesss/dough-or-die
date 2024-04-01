@@ -12,9 +12,9 @@ var player_alive = true
 @onready var previousDirection: String = "Down"
 
 # enemy in range to attack
-var enemy_inattack_range = false
-# cooldown to attack
-var enemy_attack_cooldown = true
+#var enemy_inattack_range = false
+## cooldown to attack
+#var enemy_attack_cooldown = true
 
 # combat system
 var attack_ip = false # attack in progress
@@ -24,17 +24,6 @@ func _physics_process(delta):
 	handleInput()
 	move_and_slide()
 	updateAnimation()
-	attack()
-	
-	enemy_attack()
-	if health <= 0:
-		player_alive = false # add end screen here
-		health = 0
-		print("game over")
-	
-# --- player function
-func player():
-	pass
 	
 # --- input handler
 func handleInput():
@@ -59,41 +48,45 @@ func updateAnimation():
 		animations.play("walk" + direction)
 		previousDirection = direction
 
-# --- body enters hitbox
-func _on_player_hitbox_body_entered(body):
-	if body.has_method("enemy"):
-		enemy_inattack_range = true
-
-# --- body leaves hitbox
-func _on_player_hitbox_body_exited(body):
-	if body.has_method("enemy"):
-		enemy_inattack_range = false
-
-# --- if enemy is in range to attack
-func enemy_attack():
-	if enemy_inattack_range and enemy_attack_cooldown == true:
-		health -= 20
-		enemy_attack_cooldown = false
-		$damageCooldown.start()
-		print(health)
-
-func _on_attack_cooldown_timeout():
-	enemy_attack_cooldown = true
-	
-# --- attack
-func attack():
-	var direction = previousDirection
-	
-	if Input.is_action_just_pressed("attack"):
-		global.player_current_attack = true
-		attack_ip = true
+func die():
+	if health <= 0:
+		print("you died")
 		
-		# animation
-		animations.play("attack" + direction)
-		$attackTimer.start()
-
-# --- timer for player attack
-func _on_attack_timer_timeout():
-	$attackTimer.stop()
-	global.player_current_attack = false
-	attack_ip = false
+## --- body enters hitbox
+#func _on_player_hitbox_body_entered(body):
+	#if body.has_method("enemy"):
+		#enemy_inattack_range = true
+#
+## --- body leaves hitbox
+#func _on_player_hitbox_body_exited(body):
+	#if body.has_method("enemy"):
+		#enemy_inattack_range = false
+#
+## --- if enemy is in range to attack
+#func enemy_attack():
+	#if enemy_inattack_range and enemy_attack_cooldown == true:
+		#health -= 20
+		#enemy_attack_cooldown = false
+		#$damageCooldown.start()
+		#print(health)
+#
+#func _on_attack_cooldown_timeout():
+	#enemy_attack_cooldown = true
+	#
+## --- attack
+#func attack():
+	#var direction = previousDirection
+	#
+	#if Input.is_action_just_pressed("attack"):
+		#global.player_current_attack = true
+		#attack_ip = true
+		#
+		## animation
+		#animations.play("attack" + direction)
+		#$attackTimer.start()
+#
+## --- timer for player attack
+#func _on_attack_timer_timeout():
+	#$attackTimer.stop()
+	#global.player_current_attack = false
+	#attack_ip = false
