@@ -18,11 +18,14 @@ func unregister_area(area: InteractionArea):
 	if index != -1:
 		active_areas.remove_at(index)
 		
+		
 # showing text
 func _process(delta):
-	if active_areas.size() > 9 && can_interact:
+	
+	if active_areas.size() > 0 && can_interact:
 		# sort active areas so that the area that the player is closest to is the one that shows up
 		active_areas.sort_custom(_sort_by_distance_to_player)
+		
 		# showing label
 		label.text = base_text + active_areas[0].action_name
 		
