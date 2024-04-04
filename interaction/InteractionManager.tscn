@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b41ii1wpnk8mp"]
+[gd_scene load_steps=3 format=3 uid="uid://5hob54n8ypj3"]
 
 [ext_resource type="Script" path="res://interaction/InteractionManager.gd" id="1_t0xby"]
 [ext_resource type="FontFile" uid="uid://p2pafja7rn0b" path="res://assets/ui/pixelmix.ttf" id="2_8om3y"]

@@ -13,10 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://bm1st5wbe40ca" path="res://assets/graphics/tiles/donuts.png" id="9_5rtxh"]
 [ext_resource type="Texture2D" uid="uid://dwplkbodqarlp" path="res://assets/graphics/stations/animated/animated_kitchen_kneader_32x32.png" id="10_acs2l"]
 [ext_resource type="Texture2D" uid="uid://com3asfsl57dd" path="res://assets/graphics/stations/animated/animated_fridge_grey_32x32.png" id="11_jv7gj"]
-[ext_resource type="PackedScene" uid="uid://dhok8gydv7v81" path="res://scenes/player.tscn" id="12_xkw7g"]
-[ext_resource type="PackedScene" uid="uid://dcwfeu6do32mg" path="res://scenes/enemy.tscn" id="14_61hg0"]
+[ext_resource type="PackedScene" uid="uid://dhok8gydv7v81" path="res://player/player.tscn" id="12_xkw7g"]
+[ext_resource type="PackedScene" uid="uid://dcwfeu6do32mg" path="res://enemy/enemy.tscn" id="14_61hg0"]
 [ext_resource type="PackedScene" uid="uid://b365hpekog4fb" path="res://scenes/background music.tscn" id="15_epbxy"]
-[ext_resource type="PackedScene" uid="uid://0gcxn1sptt2l" path="res://scenes/stations/fridge.tscn" id="17_hw1ow"]
+[ext_resource type="PackedScene" uid="uid://0gcxn1sptt2l" path="res://stations/fridge.tscn" id="17_hw1ow"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x8oou"]
 texture = ExtResource("1_hhapp")
@@ -22929,4 +22929,4 @@ autoplay = false
 
 [node name="Fridge" parent="." instance=ExtResource("17_hw1ow")]
 z_index = 1
-position = Vector2(672, -168)
+position = Vector2(672, -152)

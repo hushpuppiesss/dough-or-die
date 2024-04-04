@@ -1,12 +1,12 @@
 [gd_scene load_steps=35 format=3 uid="uid://dcwfeu6do32mg"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_ea4te"]
+[ext_resource type="Script" path="res://enemy/enemy.gd" id="1_ea4te"]
 [ext_resource type="Texture2D" uid="uid://c1fyri3a8ik7h" path="res://assets/graphics/enemy/Basic Charakter Spritesheet.png" id="2_jkoui"]
-[ext_resource type="PackedScene" uid="uid://b6p54t7744hf3" path="res://scenes/healthBar.tscn" id="3_q2v7f"]
-[ext_resource type="Script" path="res://scripts/states/State Machine.gd" id="4_h2ss7"]
-[ext_resource type="Script" path="res://scripts/states/enemy states/enemyWander.gd" id="5_gf2de"]
-[ext_resource type="Script" path="res://scripts/states/enemy states/enemyChase.gd" id="6_mpeq6"]
-[ext_resource type="Script" path="res://scripts/states/enemy states/enemyAttack.gd" id="7_smu7u"]
+[ext_resource type="PackedScene" uid="uid://b6p54t7744hf3" path="res://healthbar/healthBar.tscn" id="3_q2v7f"]
+[ext_resource type="Script" path="res://states/State Machine.gd" id="4_vh40f"]
+[ext_resource type="Script" path="res://states/enemy states/enemyWander.gd" id="5_b80d6"]
+[ext_resource type="Script" path="res://states/enemy states/enemyChase.gd" id="6_h32ts"]
+[ext_resource type="Script" path="res://states/enemy states/enemyAttack.gd" id="7_47yky"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ahkut"]
 atlas = ExtResource("2_jkoui")
@@ -276,19 +276,19 @@ offset_right = 13.0
 offset_bottom = -21.0
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
-script = ExtResource("4_h2ss7")
+script = ExtResource("4_vh40f")
 initial_state = NodePath("Wander")
 
 [node name="Wander" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy")]
-script = ExtResource("5_gf2de")
+script = ExtResource("5_b80d6")
 enemy = NodePath("../..")
 
 [node name="Chase" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy")]
-script = ExtResource("6_mpeq6")
+script = ExtResource("6_h32ts")
 enemy = NodePath("../..")
 
 [node name="Attack" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy")]
-script = ExtResource("7_smu7u")
+script = ExtResource("7_47yky")
 enemy = NodePath("../..")
 
 [connection signal="body_entered" from="enemyHitbox" to="State Machine/Attack" method="_on_enemy_hitbox_body_entered"]
