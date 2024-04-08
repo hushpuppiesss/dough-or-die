@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c45wpgcc6nr3q"
-path="res://.godot/imported/20_Japanese_interiors_32x32.png-3b3c081f6139512bf347e3e3fc7fb946.ctex"
+uid="uid://c5wltk84ibyiu"
+path="res://.godot/imported/choccy_crate.png-6ea2f5ddddfd5cae3d683cb007204d06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/tiles/20_Japanese_interiors_32x32.png"
-dest_files=["res://.godot/imported/20_Japanese_interiors_32x32.png-3b3c081f6139512bf347e3e3fc7fb946.ctex"]
+source_file="res://assets/graphics/interactables/crates/choccy_crate.png"
+dest_files=["res://.godot/imported/choccy_crate.png-6ea2f5ddddfd5cae3d683cb007204d06.ctex"]
 
 [params]
 

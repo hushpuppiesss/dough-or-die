@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c45wpgcc6nr3q"
-path="res://.godot/imported/20_Japanese_interiors_32x32.png-3b3c081f6139512bf347e3e3fc7fb946.ctex"
+uid="uid://dds28oxaim3cp"
+path="res://.godot/imported/flour_crate.png-2a34b520300f9850475a90f37493c1e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/tiles/20_Japanese_interiors_32x32.png"
-dest_files=["res://.godot/imported/20_Japanese_interiors_32x32.png-3b3c081f6139512bf347e3e3fc7fb946.ctex"]
+source_file="res://assets/graphics/interactables/crates/flour_crate.png"
+dest_files=["res://.godot/imported/flour_crate.png-2a34b520300f9850475a90f37493c1e3.ctex"]
 
 [params]
 

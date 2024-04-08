@@ -901,7 +901,7 @@ platform_floor_layers = 4278190080
 script = ExtResource("1_4jbyi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -19)
+position = Vector2(0, -19)
 sprite_frames = SubResource("SpriteFrames_dri1a")
 animation = &"idleDown"
 
@@ -910,6 +910,7 @@ visible = false
 shape = SubResource("CircleShape2D_2spcu")
 
 [node name="playerHitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerHitbox"]
 position = Vector2(0, -4)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c45wpgcc6nr3q"
-path="res://.godot/imported/20_Japanese_interiors_32x32.png-3b3c081f6139512bf347e3e3fc7fb946.ctex"
+uid="uid://c0phyipkm2dll"
+path="res://.godot/imported/icecream.png-c6f4c71057dc4131e47a69e8017f3676.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/tiles/20_Japanese_interiors_32x32.png"
-dest_files=["res://.godot/imported/20_Japanese_interiors_32x32.png-3b3c081f6139512bf347e3e3fc7fb946.ctex"]
+source_file="res://assets/graphics/tiles/icecream.png"
+dest_files=["res://.godot/imported/icecream.png-c6f4c71057dc4131e47a69e8017f3676.ctex"]
 
 [params]
 

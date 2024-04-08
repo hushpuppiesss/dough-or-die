@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c45wpgcc6nr3q"
-path="res://.godot/imported/20_Japanese_interiors_32x32.png-3b3c081f6139512bf347e3e3fc7fb946.ctex"
+uid="uid://cbkkg4fljeafk"
+path="res://.godot/imported/generic.png-b46964b8b7d396b58183f84c96986ae7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/tiles/20_Japanese_interiors_32x32.png"
-dest_files=["res://.godot/imported/20_Japanese_interiors_32x32.png-3b3c081f6139512bf347e3e3fc7fb946.ctex"]
+source_file="res://assets/graphics/tiles/generic.png"
+dest_files=["res://.godot/imported/generic.png-b46964b8b7d396b58183f84c96986ae7.ctex"]
 
 [params]
 
