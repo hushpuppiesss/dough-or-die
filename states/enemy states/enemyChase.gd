@@ -19,7 +19,5 @@ func Physics_Update(delta: float):
 	if direction.length() > 150:
 		Transitioned.emit(self, "Wander")
 	
-	if direction.length() < 50:
-		Transitioned.emit(self, "Attack")
-		print("Rah")
+
 	

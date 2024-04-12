@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dcwfeu6do32mg"]
+[gd_scene load_steps=36 format=3 uid="uid://dcwfeu6do32mg"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_ea4te"]
 [ext_resource type="Texture2D" uid="uid://c1fyri3a8ik7h" path="res://assets/graphics/enemy/Basic Charakter Spritesheet.png" id="2_jkoui"]
@@ -246,6 +246,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_q6q32"]
 radius = 7.07107
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_thcb8"]
+radius = 31.0644
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_pquqa"]
 radius = 31.0
 
@@ -257,23 +260,25 @@ sprite_frames = SubResource("SpriteFrames_dpobo")
 animation = &"walkDown"
 
 [node name="collision" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 7)
 shape = SubResource("CircleShape2D_q6q32")
 
+[node name="enemyHurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHurtbox"]
+visible = false
+shape = SubResource("CircleShape2D_thcb8")
+
 [node name="enemyHitbox" type="Area2D" parent="."]
 
-[node name="hitbox shape" type="CollisionShape2D" parent="enemyHitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox"]
+visible = false
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_pquqa")
 
 [node name="attackCooldown" type="Timer" parent="."]
 wait_time = 0.25
-
-[node name="healthBar" parent="." instance=ExtResource("3_q2v7f")]
-offset_left = -13.0
-offset_top = -25.0
-offset_right = 13.0
-offset_bottom = -21.0
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_vh40f")
@@ -291,6 +296,11 @@ enemy = NodePath("../..")
 script = ExtResource("7_47yky")
 enemy = NodePath("../..")
 
+[node name="healthBar" parent="." instance=ExtResource("3_q2v7f")]
+offset_left = -11.0
+offset_top = -24.0
+offset_right = 11.0
+offset_bottom = -20.0
+
 [connection signal="body_entered" from="enemyHitbox" to="State Machine/Attack" method="_on_enemy_hitbox_body_entered"]
-[connection signal="body_exited" from="enemyHitbox" to="State Machine/Attack" method="_on_enemy_hitbox_body_exited"]
 [connection signal="timeout" from="attackCooldown" to="State Machine/Attack" method="_on_attack_cooldown_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=3 uid="uid://dhok8gydv7v81"]
+[gd_scene load_steps=117 format=3 uid="uid://dhok8gydv7v81"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_4jbyi"]
 [ext_resource type="Texture2D" uid="uid://f54gcwxbtxvw" path="res://assets/graphics/player/chef1.png" id="2_5kpjn"]
@@ -892,9 +892,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_2spcu"]
 radius = 10.0499
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7xalx"]
-radius = 14.0357
-
 [node name="player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 platform_floor_layers = 4278190080
@@ -906,25 +903,9 @@ sprite_frames = SubResource("SpriteFrames_dri1a")
 animation = &"idleDown"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CircleShape2D_2spcu")
-
-[node name="playerHitbox" type="Area2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="playerHitbox"]
-position = Vector2(0, -4)
-shape = SubResource("CircleShape2D_7xalx")
-
-[node name="damageCooldown" type="Timer" parent="."]
-
-[node name="attackTimer" type="Timer" parent="."]
-wait_time = 0.5
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 script = ExtResource("3_abtnu")
-
-[connection signal="timeout" from="damageCooldown" to="." method="_on_attack_cooldown_timeout"]
-[connection signal="timeout" from="attackTimer" to="." method="_on_attack_timer_timeout"]
