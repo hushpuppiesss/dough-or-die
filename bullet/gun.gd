@@ -1,4 +1,4 @@
-extends Node2D
+extends Sprite2D
 class_name Gun
 
 @export var bullet: PackedScene
@@ -6,6 +6,7 @@ class_name Gun
 @export_range(0, 360) var arc: float = 0
 @export_range(0, 20) var fireRate: float = 2.0
 
+@onready var player = get_parent()
 @export var barrel_origin: Node2D
 
 var can_shoot = true
@@ -15,10 +16,20 @@ func _ready():
 	set_as_top_level(true)
 	
 func _physics_process(delta):
-	position.x = lerp(position.x, get_parent().position.x + 24, 0.5)
-	position.y = lerp(position.y, get_parent().position.y - 10, 0.5)
+	# rotating effect
 	var mouse_pos = get_global_mouse_position()
+	# determines mouse relative to player position
+	if mouse_pos.x < player.position.x:
+		flip_v = true
+		position.x = lerp(position.x, player.position.x - 30, 0.5)
+		position.y = lerp(position.y, player.position.y - 10, 0.5)
+	if mouse_pos.x > player.position.x:
+		flip_v = false
+		position.x = lerp(position.x, player.position.x + 30, 0.5)
+		position.y = lerp(position.y, player.position.y - 10, 0.5)
+	# looks at mouse position
 	look_at(mouse_pos)
+	
 	
 func shoot():
 	if can_shoot:

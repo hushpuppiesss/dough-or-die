@@ -25146,7 +25146,7 @@ layer_9/tile_data = PackedInt32Array(1245184, 393229, 268435478, 1310720, 393229
 position = Vector2(610, 196)
 
 [node name="enemy" parent="." instance=ExtResource("14_61hg0")]
-position = Vector2(228, 436)
+position = Vector2(360, 334)
 
 [node name="bgMusic" parent="." instance=ExtResource("15_epbxy")]
 stream = null

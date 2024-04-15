@@ -24,7 +24,7 @@ shape = SubResource("RectangleShape2D_gllcl")
 [node name="InteractionArea" type="Area2D" parent="."]
 collision_mask = 2
 script = ExtResource("3_dkv7s")
-action_name = "get egg"
+action_name = "get banana"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("RectangleShape2D_h2hpd")
