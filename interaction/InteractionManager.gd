@@ -3,7 +3,7 @@ extends Node2D
 @onready var player = get_tree().get_first_node_in_group("Player")
 @onready var label = $Label
 
-const base_text = "[E] to "
+const base_text = "[E] "
 
 var active_areas = []
 var can_interact = true
@@ -24,6 +24,7 @@ func _process(delta):
 		label.global_position.y -= 48
 		label.global_position.x -= label.size.x / 2
 		label.show()
+		
 	else:
 		label.hide()
 

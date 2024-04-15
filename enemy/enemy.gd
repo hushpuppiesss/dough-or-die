@@ -2,6 +2,11 @@ extends CharacterBody2D
 class_name StrawberryEnemy
 
 @onready var anim = $AnimatedSprite2D
+@onready var healthbar = $healthBar
+
+
+func _ready():
+	pass
 
 func _physics_process(delta):
 	move_and_slide()
@@ -12,4 +17,3 @@ func _physics_process(delta):
 			anim.play("walkRight")
 		else:
 			anim.play("walkLeft")
-

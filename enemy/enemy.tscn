@@ -297,10 +297,11 @@ script = ExtResource("7_47yky")
 enemy = NodePath("../..")
 
 [node name="healthBar" parent="." instance=ExtResource("3_q2v7f")]
-offset_left = -11.0
-offset_top = -24.0
-offset_right = 11.0
+offset_left = -12.0
+offset_top = -26.0
+offset_right = 12.0
 offset_bottom = -20.0
 
+[connection signal="body_entered" from="enemyHurtbox" to="." method="_on_enemy_hurtbox_body_entered"]
 [connection signal="body_entered" from="enemyHitbox" to="State Machine/Attack" method="_on_enemy_hitbox_body_entered"]
 [connection signal="timeout" from="attackCooldown" to="State Machine/Attack" method="_on_attack_cooldown_timeout"]

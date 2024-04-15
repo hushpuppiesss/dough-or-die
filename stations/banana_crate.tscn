@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://j4dti1km88xl"]
+
+[ext_resource type="Script" path="res://stations/bananaCrate.gd" id="1_cm1c4"]
+[ext_resource type="Texture2D" uid="uid://rorfv7ejf120" path="res://assets/graphics/interactables/crates/banana_crate.png" id="2_8je8j"]
+[ext_resource type="Script" path="res://interaction/interaction area/interaction_area.gd" id="3_dkv7s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gllcl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2hpd"]
+size = Vector2(56, 52)
+
+[node name="bananaCrate" type="StaticBody2D"]
+script = ExtResource("1_cm1c4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = ExtResource("2_8je8j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_gllcl")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("3_dkv7s")
+action_name = "get egg"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_h2hpd")
+
+[connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="_on_body_exited"]

@@ -1,8 +1,11 @@
-[gd_scene load_steps=117 format=3 uid="uid://dhok8gydv7v81"]
+[gd_scene load_steps=120 format=3 uid="uid://dhok8gydv7v81"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_4jbyi"]
 [ext_resource type="Texture2D" uid="uid://f54gcwxbtxvw" path="res://assets/graphics/player/chef1.png" id="2_5kpjn"]
 [ext_resource type="Script" path="res://scripts/dynamic camera.gd" id="3_abtnu"]
+[ext_resource type="Texture2D" uid="uid://c2ekdcjp0hsfw" path="res://assets/graphics/bullet/peashooter.png" id="4_68c12"]
+[ext_resource type="Script" path="res://bullet/gun.gd" id="4_d1bh7"]
+[ext_resource type="PackedScene" uid="uid://bygywqf4y5q1b" path="res://bullet/bullet.tscn" id="6_oqal7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bnxbu"]
 atlas = ExtResource("2_5kpjn")
@@ -909,3 +912,13 @@ shape = SubResource("CircleShape2D_2spcu")
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 script = ExtResource("3_abtnu")
+
+[node name="gun" type="Sprite2D" parent="." node_paths=PackedStringArray("barrel_origin")]
+position = Vector2(32, -7)
+texture = ExtResource("4_68c12")
+script = ExtResource("4_d1bh7")
+bullet = ExtResource("6_oqal7")
+bulletCount = 3
+arc = 26.99
+fireRate = 10.0
+barrel_origin = NodePath(".")
