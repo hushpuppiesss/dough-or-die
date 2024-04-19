@@ -17,7 +17,7 @@ config/icon="res://dough-or-die/icon.svg"
 
 [autoload]
 
-global="*res://scripts/global.gd"
+SceneSwitcher="*res://scripts/scene_switcher.gd"
 backgroundMusic="*res://scenes/background music.tscn"
 InteractionManager="*res://interaction/InteractionManager.tscn"
 
