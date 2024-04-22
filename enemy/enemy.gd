@@ -17,3 +17,6 @@ func _physics_process(delta):
 			anim.play("walkRight")
 		else:
 			anim.play("walkLeft")
+
+func hit():
+	self.queue_free()

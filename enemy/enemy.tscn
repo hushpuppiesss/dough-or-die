@@ -244,7 +244,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q6q32"]
-radius = 7.07107
+radius = 22.0227
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_thcb8"]
 radius = 31.0644
@@ -252,7 +252,7 @@ radius = 31.0644
 [sub_resource type="CircleShape2D" id="CircleShape2D_pquqa"]
 radius = 31.0
 
-[node name="enemy" type="CharacterBody2D"]
+[node name="enemy" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_ea4te")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -261,8 +261,7 @@ sprite_frames = SubResource("SpriteFrames_dpobo")
 animation = &"walkDown"
 
 [node name="collision" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 7)
+position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_q6q32")
 
 [node name="enemyHurtbox" type="Area2D" parent="."]

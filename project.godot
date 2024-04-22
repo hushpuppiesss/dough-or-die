@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="dough or die"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://menu/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://dough-or-die/icon.svg"
 
@@ -20,13 +20,15 @@ config/icon="res://dough-or-die/icon.svg"
 SceneSwitcher="*res://scripts/scene_switcher.gd"
 backgroundMusic="*res://scenes/background music.tscn"
 InteractionManager="*res://interaction/InteractionManager.tscn"
+Cooking="*res://cooking.gd"
+Transition="*res://menu/transition.tscn"
 
 [display]
 
 window/size/viewport_width=640
 window/size/viewport_height=360
-window/size/window_width_override=1280
-window/size/window_height_override=648
+window/size/window_width_override=1920
+window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
 mouse_cursor/custom_image="res://assets/ui/cursor1.png"

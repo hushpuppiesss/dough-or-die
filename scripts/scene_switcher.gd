@@ -23,6 +23,11 @@ func goto_scene(path):
 	# Using Object.call_deferred(), the second function will only run once all code from the current scene has completed. Thus, the current scene will not be removed while it is still being used (i.e. its code is still running).
 
 func _deferred_goto_scene(path):
+	
+	# wait
+	Transition.animation.play("fadeout")
+	await get_tree().create_timer(2.0).timeout
+
 	# It is now safe to remove the current scene.
 	current_scene.free()
 
@@ -31,9 +36,12 @@ func _deferred_goto_scene(path):
 
 	# Instance the new scene.
 	current_scene = s.instantiate()
-
+	
 	# Add it to the active scene, as child of root.
 	get_tree().root.add_child(current_scene)
+	
+	await get_tree().create_timer(2.0).timeout
+	Transition.animation.play("fadein")
 
 	# Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
 	get_tree().current_scene = current_scene

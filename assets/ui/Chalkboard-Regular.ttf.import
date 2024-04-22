@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c78co31w2qym5"
-path="res://.godot/imported/PencilpeteFont-2eE3.ttf-c5a96e94ee88ef58703e35e0a6df7b89.fontdata"
+uid="uid://cuqko2cx8d1h3"
+path="res://.godot/imported/Chalkboard-Regular.ttf-14a9fdf4d9d623e461f8f815ba04da1e.fontdata"
 
 [deps]
 
-source_file="res://assets/ui/PencilpeteFont-2eE3.ttf"
-dest_files=["res://.godot/imported/PencilpeteFont-2eE3.ttf-c5a96e94ee88ef58703e35e0a6df7b89.fontdata"]
+source_file="res://assets/ui/Chalkboard-Regular.ttf"
+dest_files=["res://.godot/imported/Chalkboard-Regular.ttf-14a9fdf4d9d623e461f8f815ba04da1e.fontdata"]
 
 [params]
 

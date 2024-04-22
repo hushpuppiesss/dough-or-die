@@ -8,6 +8,7 @@ class_name Gun
 
 @onready var player = get_parent()
 @export var barrel_origin: Node2D
+@onready var bubble = $"../AudioStreamPlayer"
 
 var can_shoot = true
 
@@ -19,14 +20,14 @@ func _physics_process(delta):
 	# rotating effect
 	var mouse_pos = get_global_mouse_position()
 	# determines mouse relative to player position
-	if mouse_pos.x < player.position.x:
+	if mouse_pos.x < player.global_position.x:
 		flip_v = true
-		position.x = lerp(position.x, player.position.x - 30, 0.5)
-		position.y = lerp(position.y, player.position.y - 10, 0.5)
-	if mouse_pos.x > player.position.x:
+		position.x = lerp(position.x, player.global_position.x - 30, 0.5)
+		position.y = lerp(position.y, player.global_position.y - 10, 0.5)
+	if mouse_pos.x > player.global_position.x:
 		flip_v = false
-		position.x = lerp(position.x, player.position.x + 30, 0.5)
-		position.y = lerp(position.y, player.position.y - 10, 0.5)
+		position.x = lerp(position.x, player.global_position.x + 30, 0.5)
+		position.y = lerp(position.y, player.global_position.y - 10, 0.5)
 	# looks at mouse position
 	look_at(mouse_pos)
 	
@@ -49,6 +50,7 @@ func shoot():
 					arcRad / 2
 				)
 			get_tree().root.call_deferred("add_child", newBullet)
+			bubble.play()
 		await get_tree().create_timer(1 / fireRate).timeout
 		can_shoot = true
 

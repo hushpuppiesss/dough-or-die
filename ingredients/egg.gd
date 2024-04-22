@@ -9,11 +9,7 @@ func _ready():
 
 func _pick_up():
 	
-	print("flour")
-	#sprite.frame = 1 if sprite.frame == 0 else 0
-	
-	#for n in range(6):
-		#sprite.frame = n
+	Cooking.carrying = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

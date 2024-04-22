@@ -11,5 +11,19 @@ func _process(delta):
 	velocity = direction * speed
 	var collision = move_and_collide(velocity)
 	
-	if collision:
-		queue_free()
+	#if collision:
+		#queue_free()
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("Enemy"):
+		body.hit()
+		self.hit()
+		print("rah")
+	else:
+		poof()
+	
+func hit():
+	self.queue_free()
+
+func poof():
+	self.queue_free()
