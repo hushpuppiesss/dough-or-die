@@ -20,3 +20,10 @@ func _physics_process(delta):
 
 func hit():
 	self.queue_free()
+
+
+func _on_hitbox_body_entered(body):
+	if body.name == "player":
+		body.hurt()
+
+
