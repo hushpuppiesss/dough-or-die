@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://mh3s83by7o7"]
+[gd_scene load_steps=45 format=3 uid="uid://mh3s83by7o7"]
 
 [ext_resource type="Texture2D" uid="uid://b61ayhbc6crxq" path="res://assets/graphics/tiles/room builder.png" id="1_hhapp"]
 [ext_resource type="Texture2D" uid="uid://cbkkg4fljeafk" path="res://assets/graphics/tiles/generic.png" id="2_urprw"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://cfp3ojqyxdab7" path="res://stations/choccy_crate.tscn" id="22_hw0md"]
 [ext_resource type="PackedScene" uid="uid://bsgdw3djj27ow" path="res://stations/matcha_crate.tscn" id="24_y7183"]
 [ext_resource type="PackedScene" uid="uid://cv7t20fobfbc6" path="res://stations/strawberry_crate.tscn" id="25_6jrdd"]
+[ext_resource type="PackedScene" uid="uid://eo6l0chcbfu0" path="res://enemy/spawner.tscn" id="26_8qdgx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x8oou"]
 texture = ExtResource("1_hhapp")
@@ -25287,3 +25288,6 @@ position = Vector2(284, 101)
 
 [node name="strawberryCrate" parent="." instance=ExtResource("25_6jrdd")]
 position = Vector2(156, 102)
+
+[node name="Spawn" parent="." instance=ExtResource("26_8qdgx")]
+position = Vector2(382, 213)

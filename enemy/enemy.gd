@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name StrawberryEnemy
+class_name Enemy
 
 @onready var anim = $AnimatedSprite2D
 @onready var healthbar = $healthBar

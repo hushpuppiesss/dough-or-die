@@ -55,3 +55,6 @@ func updateAnimation():
 		previousDirection = direction
 		
 		
+# -- getting hurt
+func hurt():
+	health -= 10

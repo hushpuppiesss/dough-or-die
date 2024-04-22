@@ -4,7 +4,7 @@ class_name enemyAttack
 @export var enemy : CharacterBody2D
 @export var move_speed := 125.0
 @export var attack := 20
-var player : CharacterBody2D
+@export var player : CharacterBody2D
 
 var attackCooldown := false
 
@@ -23,9 +23,15 @@ func Enter():
 func Update(_delta: float):
 	pass
 	
+	
 func Physics_Update(_delta: float):
 	pass
+	
 
 func _on_attack_cooldown_timeout():
 	attackCooldown = true
 	
+
+func _on_enemy_hitbox_body_entered(body):
+	if body == player:
+		attacks()
