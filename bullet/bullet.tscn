@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bygywqf4y5q1b"]
+[gd_scene load_steps=6 format=3 uid="uid://bygywqf4y5q1b"]
 
 [ext_resource type="Script" path="res://bullet/bullet.gd" id="1_6w5e4"]
 [ext_resource type="Texture2D" uid="uid://dwkkgf28yt55r" path="res://assets/graphics/bullet/bullet.png" id="2_w2bsk"]
+[ext_resource type="AudioStream" uid="uid://dartlmroxyjmh" path="res://assets/audio/sfx/pop.mp3" id="3_o53x7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_76s35"]
 radius = 4.0
@@ -10,7 +11,8 @@ radius = 4.0
 radius = 9.0
 
 [node name="bullet" type="CharacterBody2D"]
-collision_layer = 0
+collision_layer = 8
+collision_mask = 5
 script = ExtResource("1_6w5e4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -21,8 +23,13 @@ visible = false
 shape = SubResource("CircleShape2D_76s35")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_rcxxv")
+
+[node name="pop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_o53x7")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

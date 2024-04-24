@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bo10b5iv7cm2f"]
 
-[ext_resource type="Shader" path="res://transition.gdshader" id="1_vupu5"]
+[ext_resource type="Shader" path="res://menu/transition.gdshader" id="1_vupu5"]
 [ext_resource type="Texture2D" uid="uid://bjx3ygmhitcqf" path="res://assets/ui/donut.png" id="2_13dsq"]
 [ext_resource type="Script" path="res://menu/transition.gd" id="3_a847g"]
 
@@ -24,21 +24,6 @@ tracks/0/keys = {
 "values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_fpxvm"]
-resource_name = "fadeout"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:material:shader_parameter/scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
 [sub_resource type="Animation" id="Animation_fdpv5"]
 resource_name = "fadein"
 tracks/0/type = "value"
@@ -52,6 +37,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_fpxvm"]
+resource_name = "fadeout"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bw8lu"]

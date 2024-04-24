@@ -1,7 +1,9 @@
-[gd_scene load_steps=31 format=3 uid="uid://dcwfeu6do32mg"]
+[gd_scene load_steps=33 format=3 uid="uid://dcwfeu6do32mg"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_ea4te"]
+[ext_resource type="Texture2D" uid="uid://iv7kktgugxqy" path="res://assets/graphics/shadow.png" id="2_2auvd"]
 [ext_resource type="Texture2D" uid="uid://c1fyri3a8ik7h" path="res://assets/graphics/enemy/Basic Charakter Spritesheet.png" id="2_jkoui"]
+[ext_resource type="AudioStream" uid="uid://mqwhlxynxic2" path="res://assets/audio/sfx/squeak1.mp3" id="4_dg23e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ahkut"]
 atlas = ExtResource("2_jkoui")
@@ -116,7 +118,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idleDown",
-"speed": 6.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -242,21 +244,26 @@ animations = [{
 radius = 19.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pquqa"]
-radius = 23.0
+radius = 48.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s32bp"]
-radius = 111.113
+radius = 164.0
 
 [node name="enemy" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 4
+collision_mask = 15
 script = ExtResource("1_ea4te")
 
+[node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+texture = ExtResource("2_2auvd")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_dpobo")
-animation = &"walkDown"
+animation = &"idleLeft"
 
 [node name="collision" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_q6q32")
 
@@ -268,6 +275,7 @@ position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_pquqa")
 
 [node name="detectionarea" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 2
 
@@ -277,4 +285,9 @@ shape = SubResource("CircleShape2D_s32bp")
 [node name="attackCooldown" type="Timer" parent="."]
 wait_time = 0.25
 
+[node name="squeak_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dg23e")
+
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="detectionarea" to="." method="_on_detectionarea_body_entered"]
+[connection signal="body_exited" from="detectionarea" to="." method="_on_detectionarea_body_exited"]

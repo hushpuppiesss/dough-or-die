@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://eo6l0chcbfu0"]
 
-[ext_resource type="Script" path="res://Spawner.gd" id="1_cit6u"]
+[ext_resource type="Script" path="res://enemy/Spawner.gd" id="1_cit6u"]
 [ext_resource type="Texture2D" uid="uid://d0ttb52qi1xig" path="res://enemy/hole.png" id="2_2x82b"]
 [ext_resource type="PackedScene" uid="uid://dcwfeu6do32mg" path="res://enemy/enemy.tscn" id="2_7s8wy"]
 

@@ -25213,7 +25213,7 @@ sources/13 = SubResource("TileSetAtlasSource_3wmu2")
 sources/14 = SubResource("TileSetAtlasSource_tgm6k")
 sources/15 = SubResource("TileSetAtlasSource_o5d3m")
 
-[node name="Main" type="Node2D"]
+[node name="World" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(-181, 14)
 
@@ -25263,7 +25263,7 @@ layer_9/tile_data = PackedInt32Array()
 position = Vector2(501, 162)
 
 [node name="enemy" parent="." instance=ExtResource("14_61hg0")]
-position = Vector2(282, 422)
+position = Vector2(721, 156)
 
 [node name="bgMusic" parent="." instance=ExtResource("15_epbxy")]
 stream = null
@@ -25290,4 +25290,4 @@ position = Vector2(284, 101)
 position = Vector2(156, 102)
 
 [node name="Spawn" parent="." instance=ExtResource("26_8qdgx")]
-position = Vector2(382, 213)
+position = Vector2(221, 458)

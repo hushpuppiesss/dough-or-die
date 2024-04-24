@@ -8,7 +8,7 @@ class_name Gun
 
 @onready var player = get_parent()
 @export var barrel_origin: Node2D
-@onready var bubble = $"../AudioStreamPlayer"
+@onready var bubble = $"../bubble"
 
 var can_shoot = true
 
@@ -49,7 +49,9 @@ func shoot():
 					increment * i -
 					arcRad / 2
 				)
+			# adds bullet as a child
 			get_tree().root.call_deferred("add_child", newBullet)
+			# plays bubble sound
 			bubble.play()
 		await get_tree().create_timer(1 / fireRate).timeout
 		can_shoot = true

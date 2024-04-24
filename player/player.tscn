@@ -1,6 +1,7 @@
-[gd_scene load_steps=142 format=3 uid="uid://dhok8gydv7v81"]
+[gd_scene load_steps=143 format=3 uid="uid://dhok8gydv7v81"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_4jbyi"]
+[ext_resource type="Texture2D" uid="uid://iv7kktgugxqy" path="res://assets/graphics/shadow.png" id="2_2r5sj"]
 [ext_resource type="Texture2D" uid="uid://f54gcwxbtxvw" path="res://assets/graphics/player/chef1.png" id="2_5kpjn"]
 [ext_resource type="Script" path="res://scripts/dynamic camera.gd" id="3_abtnu"]
 [ext_resource type="Texture2D" uid="uid://c2ekdcjp0hsfw" path="res://assets/graphics/bullet/peashooter.png" id="4_68c12"]
@@ -1060,8 +1061,13 @@ radius = 10.0499
 
 [node name="player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
+collision_mask = 21
 platform_floor_layers = 4278190080
 script = ExtResource("1_4jbyi")
+
+[node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+texture = ExtResource("2_2r5sj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -19)
@@ -1069,8 +1075,7 @@ sprite_frames = SubResource("SpriteFrames_dri1a")
 animation = &"carryIdleDown"
 frame_progress = 0.497845
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
+[node name="collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_2spcu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -1087,5 +1092,5 @@ arc = 26.99
 fireRate = 10.0
 barrel_origin = NodePath(".")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="bubble" type="AudioStreamPlayer" parent="." groups=["Player"]]
 stream = ExtResource("7_v7moy")
