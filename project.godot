@@ -11,17 +11,17 @@ config_version=5
 [application]
 
 config/name="dough or die"
-run/main_scene="res://menu/menu.tscn"
+run/main_scene="res://menus/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://dough-or-die/icon.svg"
 
 [autoload]
 
-SceneSwitcher="*res://scripts/scene_switcher.gd"
-backgroundMusic="*res://scenes/background music.tscn"
+SceneSwitcher="*res://singletons/scene_switcher.gd"
+backgroundMusic="*res://singletons/background music.tscn"
 InteractionManager="*res://interaction/InteractionManager.tscn"
-Cooking="*res://stations/cooking.gd"
-Transition="*res://menu/transition.tscn"
+Cooking="*res://singletons/cooking.gd"
+Transition="*res://singletons/transition.tscn"
 
 [display]
 

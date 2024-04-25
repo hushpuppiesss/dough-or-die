@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://player/player.gd" id="1_4jbyi"]
 [ext_resource type="Texture2D" uid="uid://iv7kktgugxqy" path="res://assets/graphics/shadow.png" id="2_2r5sj"]
 [ext_resource type="Texture2D" uid="uid://f54gcwxbtxvw" path="res://assets/graphics/player/chef1.png" id="2_5kpjn"]
-[ext_resource type="Script" path="res://scripts/dynamic camera.gd" id="3_abtnu"]
+[ext_resource type="Script" path="res://player/dynamic camera.gd" id="3_abtnu"]
 [ext_resource type="Texture2D" uid="uid://c2ekdcjp0hsfw" path="res://assets/graphics/bullet/peashooter.png" id="4_68c12"]
 [ext_resource type="Script" path="res://bullet/gun.gd" id="4_d1bh7"]
 [ext_resource type="PackedScene" uid="uid://bygywqf4y5q1b" path="res://bullet/bullet.tscn" id="6_oqal7"]

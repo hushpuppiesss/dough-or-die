@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://bo10b5iv7cm2f"]
 
-[ext_resource type="Shader" path="res://menu/transition.gdshader" id="1_vupu5"]
-[ext_resource type="Texture2D" uid="uid://bjx3ygmhitcqf" path="res://assets/ui/donut.png" id="2_13dsq"]
-[ext_resource type="Script" path="res://menu/transition.gd" id="3_a847g"]
+[ext_resource type="Shader" path="res://singletons/transition.gdshader" id="1_jma3q"]
+[ext_resource type="Texture2D" uid="uid://bjx3ygmhitcqf" path="res://assets/ui/donut.png" id="2_cg4h2"]
+[ext_resource type="Script" path="res://singletons/transition.gd" id="3_44bgj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t0caf"]
-shader = ExtResource("1_vupu5")
+shader = ExtResource("1_jma3q")
 shader_parameter/scale = 0.0
-shader_parameter/mask = ExtResource("2_13dsq")
+shader_parameter/mask = ExtResource("2_cg4h2")
 
 [sub_resource type="Animation" id="Animation_frghl"]
 length = 0.001
@@ -74,7 +74,7 @@ offset_bottom = 102.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
-script = ExtResource("3_a847g")
+script = ExtResource("3_44bgj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

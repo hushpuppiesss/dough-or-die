@@ -4,7 +4,7 @@ class_name player
 # player stats
 @export var health = 100
 @export var speed = 150
-var player_alive = true
+var alive = true
 
 # animations
 @onready var animations = $AnimatedSprite2D
@@ -20,10 +20,21 @@ var attack_ip = false # attack in progress
 
 # --- GAME LOOP that updates the state of the game
 func _physics_process(delta):
+	
+	# get the input
 	handleInput()
+	
+	# move
 	move_and_slide()
+	
+	# updating the animations
 	updateAnimation()
+	
+	# if player gets hurt
 	hurt()
+	
+	if health <= 0:
+		alive = false
 	
 # --- input handler
 func handleInput():

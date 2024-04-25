@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://com3asfsl57dd" path="res://assets/graphics/interactables/animated/animated_fridge_grey_32x32.png" id="11_jv7gj"]
 [ext_resource type="PackedScene" uid="uid://dhok8gydv7v81" path="res://player/player.tscn" id="12_xkw7g"]
 [ext_resource type="PackedScene" uid="uid://dcwfeu6do32mg" path="res://enemy/enemy.tscn" id="14_61hg0"]
-[ext_resource type="PackedScene" uid="uid://b365hpekog4fb" path="res://scenes/background music.tscn" id="15_epbxy"]
+[ext_resource type="PackedScene" uid="uid://b365hpekog4fb" path="res://singletons/background music.tscn" id="15_epbxy"]
 [ext_resource type="PackedScene" uid="uid://0gcxn1sptt2l" path="res://stations/egg_crate.tscn" id="19_7njwy"]
 [ext_resource type="PackedScene" uid="uid://bdmdwk0on7jhu" path="res://stations/milk_crate.tscn" id="20_mjyiy"]
 [ext_resource type="PackedScene" uid="uid://j4dti1km88xl" path="res://stations/banana_crate.tscn" id="21_poi52"]
