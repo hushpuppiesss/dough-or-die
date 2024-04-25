@@ -10,7 +10,7 @@ func _ready():
 # PRESSED
 func _on_start_pressed():
 	sfx_paper1.play()
-	SceneSwitcher.goto_scene("res://scenes/main.tscn")
+	SceneSwitcher.goto_scene("res://world/main.tscn")
 
 func _on_quit_pressed():
 	get_tree().quit()
