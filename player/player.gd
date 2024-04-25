@@ -2,8 +2,7 @@ extends CharacterBody2D
 class_name player
 
 # player stats
-@export var health = 150
-@export var playerAttack = 15
+@export var health = 100
 @export var speed = 150
 var player_alive = true
 
@@ -12,9 +11,9 @@ var player_alive = true
 @onready var previousDirection: String = "Down"
 
 # enemy in range to attack
-#var enemy_inattack_range = false
-## cooldown to attack
-#var enemy_attack_cooldown = true
+var hurt_range = false
+# cooldown to get hurt
+var hurt_cooldown = true
 
 # combat system
 var attack_ip = false # attack in progress
@@ -24,6 +23,7 @@ func _physics_process(delta):
 	handleInput()
 	move_and_slide()
 	updateAnimation()
+	hurt()
 	
 # --- input handler
 func handleInput():
@@ -54,7 +54,27 @@ func updateAnimation():
 			
 		previousDirection = direction
 		
+
 		
 # -- getting hurt
 func hurt():
-	health -= 10
+	if hurt_range and hurt_cooldown:
+		print("get rekt")
+		health -= 10
+		hurt_cooldown = false
+		$"hurt cooldown".start()
+		print(health)
+
+# enemy close enough to hurt you
+func _on_hurtbox_body_entered(body):
+	if body.is_in_group("Enemy"):
+		hurt_range = true
+
+# enemy is not close enough to hurt you
+func _on_hurtbox_body_exited(body):
+	if body.is_in_group("Enemy"):
+		hurt_range = false
+		
+# cooldown for enemy hurting the player
+func _on_hurt_cooldown_timeout():
+	hurt_cooldown = true

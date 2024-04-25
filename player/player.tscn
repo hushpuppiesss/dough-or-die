@@ -1,4 +1,4 @@
-[gd_scene load_steps=143 format=3 uid="uid://dhok8gydv7v81"]
+[gd_scene load_steps=144 format=3 uid="uid://dhok8gydv7v81"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_4jbyi"]
 [ext_resource type="Texture2D" uid="uid://iv7kktgugxqy" path="res://assets/graphics/shadow.png" id="2_2r5sj"]
@@ -1059,6 +1059,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_2spcu"]
 radius = 10.0499
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kyjov"]
+radius = 41.0
+
 [node name="player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 collision_mask = 21
@@ -1072,10 +1075,10 @@ texture = ExtResource("2_2r5sj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -19)
 sprite_frames = SubResource("SpriteFrames_dri1a")
-animation = &"carryIdleDown"
-frame_progress = 0.497845
+animation = &"idleDown"
 
 [node name="collision" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_2spcu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -1094,3 +1097,17 @@ barrel_origin = NodePath(".")
 
 [node name="bubble" type="AudioStreamPlayer" parent="." groups=["Player"]]
 stream = ExtResource("7_v7moy")
+
+[node name="hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(0, -14)
+shape = SubResource("CircleShape2D_kyjov")
+
+[node name="hurt cooldown" type="Timer" parent="."]
+
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="body_exited" from="hurtbox" to="." method="_on_hurtbox_body_exited"]
+[connection signal="timeout" from="hurt cooldown" to="." method="_on_hurt_cooldown_timeout"]

@@ -31,8 +31,6 @@ func _physics_process(delta):
 		anim.play("idleDown")
 	
 	
-		
-
 # when enemy gets hit by a bullet
 func hit():
 	# death sound

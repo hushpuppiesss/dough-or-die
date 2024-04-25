@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dcwfeu6do32mg"]
+[gd_scene load_steps=32 format=3 uid="uid://dcwfeu6do32mg"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_ea4te"]
 [ext_resource type="Texture2D" uid="uid://iv7kktgugxqy" path="res://assets/graphics/shadow.png" id="2_2auvd"]
@@ -241,17 +241,14 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q6q32"]
-radius = 19.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_pquqa"]
-radius = 48.0
+radius = 11.1803
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s32bp"]
-radius = 164.0
+radius = 301.201
 
 [node name="enemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 4
-collision_mask = 15
+collision_mask = 11
 script = ExtResource("1_ea4te")
 
 [node name="shadow" type="Sprite2D" parent="."]
@@ -264,30 +261,20 @@ sprite_frames = SubResource("SpriteFrames_dpobo")
 animation = &"idleLeft"
 
 [node name="collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
-shape = SubResource("CircleShape2D_q6q32")
-
-[node name="hitbox" type="Area2D" parent="."]
 visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(0, 1)
-shape = SubResource("CircleShape2D_pquqa")
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_q6q32")
 
 [node name="detectionarea" type="Area2D" parent="."]
 visible = false
-collision_layer = 2
+collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionarea"]
 shape = SubResource("CircleShape2D_s32bp")
 
-[node name="attackCooldown" type="Timer" parent="."]
-wait_time = 0.25
-
 [node name="squeak_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dg23e")
 
-[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="detectionarea" to="." method="_on_detectionarea_body_entered"]
 [connection signal="body_exited" from="detectionarea" to="." method="_on_detectionarea_body_exited"]
