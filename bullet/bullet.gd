@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 3
+var speed = 5
 var direction = Vector2.RIGHT
 @onready var pop_sound = $pop
 

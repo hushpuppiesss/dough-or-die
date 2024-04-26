@@ -1077,14 +1077,7 @@ position = Vector2(0, -19)
 sprite_frames = SubResource("SpriteFrames_dri1a")
 animation = &"idleDown"
 
-[node name="collision" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource("CircleShape2D_2spcu")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position_smoothing_enabled = true
-position_smoothing_speed = 2.0
-script = ExtResource("3_abtnu")
+[node name="item" type="Sprite2D" parent="."]
 
 [node name="gun" type="Sprite2D" parent="." node_paths=PackedStringArray("barrel_origin")]
 position = Vector2(32, -7)
@@ -1095,8 +1088,9 @@ arc = 26.99
 fireRate = 10.0
 barrel_origin = NodePath(".")
 
-[node name="bubble" type="AudioStreamPlayer" parent="." groups=["Player"]]
-stream = ExtResource("7_v7moy")
+[node name="collision" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_2spcu")
 
 [node name="hurtbox" type="Area2D" parent="."]
 collision_layer = 2
@@ -1106,7 +1100,15 @@ collision_mask = 4
 position = Vector2(0, -14)
 shape = SubResource("CircleShape2D_kyjov")
 
+[node name="camera" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+script = ExtResource("3_abtnu")
+
 [node name="hurt cooldown" type="Timer" parent="."]
+
+[node name="bubble" type="AudioStreamPlayer" parent="." groups=["Player"]]
+stream = ExtResource("7_v7moy")
 
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
 [connection signal="body_exited" from="hurtbox" to="." method="_on_hurtbox_body_exited"]

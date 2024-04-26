@@ -17,6 +17,7 @@ config/icon="res://dough-or-die/icon.svg"
 
 [autoload]
 
+SignalBus="*res://singletons/signal bus.tscn"
 SceneSwitcher="*res://singletons/scene_switcher.gd"
 backgroundMusic="*res://singletons/background music.tscn"
 InteractionManager="*res://interaction/InteractionManager.tscn"
@@ -27,8 +28,8 @@ Transition="*res://singletons/transition.tscn"
 
 window/size/viewport_width=640
 window/size/viewport_height=360
-window/size/window_width_override=1920
-window/size/window_height_override=1080
+window/size/window_width_override=1600
+window/size/window_height_override=900
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
 mouse_cursor/custom_image="res://assets/ui/cursor1.png"
