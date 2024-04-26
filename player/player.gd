@@ -52,10 +52,14 @@ func updateAnimation():
 	
 	# idle animations
 	if velocity.length() == 0:
-		if attack_ip == false:
-			animations.play("idle" + previousDirection)
 		if Cooking.carrying == true:
 			animations.play("carryIdle" + previousDirection)
+		# if hurt
+		elif hurt_range and hurt_cooldown:
+			animations.play("hurt" + previousDirection)
+		else:
+			animations.play("idle" + previousDirection)
+
 	# walk animations
 	else:
 		animations.play("walk" + direction)
@@ -64,6 +68,7 @@ func updateAnimation():
 			animations.play("carryWalk" + direction)
 			
 		previousDirection = direction
+	("hurt" + direction)
 		
 
 		
