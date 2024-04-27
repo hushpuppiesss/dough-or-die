@@ -17,12 +17,12 @@ config/icon="res://dough-or-die/icon.svg"
 
 [autoload]
 
-SignalBus="*res://singletons/signal bus.tscn"
 SceneSwitcher="*res://singletons/scene_switcher.gd"
 backgroundMusic="*res://singletons/background music.tscn"
 InteractionManager="*res://interaction/InteractionManager.tscn"
 Cooking="*res://singletons/cooking.gd"
 Transition="*res://singletons/transition.tscn"
+SignalBus="*res://singletons/SignalBus.gd"
 
 [display]
 
@@ -101,6 +101,7 @@ debug={
 2d_physics/layer_3="Enemy"
 2d_physics/layer_4="Bullet"
 2d_physics/layer_5="Collectable"
+2d_physics/layer_6="Animals"
 
 [rendering]
 

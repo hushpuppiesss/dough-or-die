@@ -10,6 +10,7 @@ class_name Enemy
 
 # behavioral variables
 var move_direction : Vector2
+var knockback = Vector2.ZERO
 var wander_time : float
 var state_wander = true
 var state_player_chase = false
@@ -23,6 +24,8 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
+	# for knockback
+	knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
 	# if wandering time
 	if state_wander:
 		velocity = move_direction * wander_speed
@@ -58,8 +61,9 @@ func _process(delta):
 func hit():
 	# death sound
 	squeak_sound.play()
-	await get_tree().create_timer(0.35).timeout # waits for death sound to finish playing
-	
+	# enemy gets knocked back
+	knockback = Vector2.RIGHT * 120
+	await get_tree().create_timer(0.35).timeout # waits for death sound to finish playing	
 	# dies
 	self.queue_free()
 

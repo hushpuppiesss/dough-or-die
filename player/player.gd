@@ -18,6 +18,10 @@ var hurt_cooldown = true
 # combat system
 var attack_ip = false # attack in progress
 
+func _ready():
+	# assigning itself to interactionmanager variable
+	InteractionManager.player = self
+	
 # --- GAME LOOP that updates the state of the game
 func _physics_process(delta):
 	
@@ -62,14 +66,13 @@ func updateAnimation():
 
 	# walk animations
 	else:
-		animations.play("walk" + direction)
-		
 		if Cooking.carrying == true:
 			animations.play("carryWalk" + direction)
-			
+		else:
+			animations.play("walk" + direction)
+		
 		previousDirection = direction
 	("hurt" + direction)
-		
 
 		
 # -- getting hurt

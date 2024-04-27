@@ -1,12 +1,18 @@
 extends Node2D
 
-@export var player : CharacterBody2D
+var player
 @onready var label = $Label
 
 const base_text = "[E] "
 
 var active_areas = []
 var can_interact = true
+
+func _ready():
+	SignalBus.connect("HELLO WORLD", say_hello)
+	
+func say_hello():
+	print("Hello World!")
 
 func register_area(area: InteractionArea):
 	active_areas.push_back(area)
@@ -29,8 +35,6 @@ func _process(delta):
 		label.hide()
 
 func _sort_by_distance_to_player(area1, area2):
-	print(area1)
-	print(player)
 	var area1_to_player = player.global_position.distance_to(area1.global_position)
 	var area2_to_player = player.global_position.distance_to(area2.global_position)
 	return area1_to_player < area2_to_player

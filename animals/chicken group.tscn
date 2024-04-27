@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://be75onpxbfr2u"]
+
+[ext_resource type="PackedScene" uid="uid://y62qc023ort8" path="res://animals/chicken.tscn" id="1_8pvy5"]
+
+[node name="ChickenGroup" type="Node2D"]
+
+[node name="chicken" parent="." instance=ExtResource("1_8pvy5")]
+position = Vector2(7, -12)
+
+[node name="chicken2" parent="." instance=ExtResource("1_8pvy5")]
+position = Vector2(30, 29)
+
+[node name="chicken3" parent="." instance=ExtResource("1_8pvy5")]
+position = Vector2(47, 1)
+
+[node name="chicken4" parent="." instance=ExtResource("1_8pvy5")]
+position = Vector2(-16, 29)
+
+[node name="chicken5" parent="." instance=ExtResource("1_8pvy5")]
+position = Vector2(-33, 1)
