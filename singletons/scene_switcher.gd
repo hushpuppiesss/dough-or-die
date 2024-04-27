@@ -26,7 +26,7 @@ func _deferred_goto_scene(path):
 	
 	# wait
 	Transition.animation.play("fadeout")
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.5).timeout
 
 	# It is now safe to remove the current scene.
 	current_scene.free()
@@ -40,7 +40,7 @@ func _deferred_goto_scene(path):
 	# Add it to the active scene, as child of root.
 	get_tree().root.add_child(current_scene)
 	
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.5).timeout
 	Transition.animation.play("fadein")
 
 	# Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.

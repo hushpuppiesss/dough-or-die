@@ -1,8 +1,8 @@
 extends CharacterBody2D
-class_name chicken
+class_name cow
 
 @onready var anim = $AnimatedSprite2D
-@onready var sfx_cluck = $cluck
+@onready var sfx_moo = $moo
 
 # statistics
 @export var wander_speed := 15
@@ -12,7 +12,6 @@ var move_direction : Vector2
 var wander_time : float
 var state_wander = true
 var state_dawdle = false
-
 
 
 func _ready():
@@ -50,5 +49,6 @@ func _process(delta):
 func randomize_wander():
 	move_direction = Vector2(randf_range(-1,1), 0).normalized()
 	wander_time = randf_range(1,2)
+
 	
 	

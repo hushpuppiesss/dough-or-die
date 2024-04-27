@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwsobgttswefl"]
+
+[ext_resource type="Script" path="res://enemy/spawners/Spawner.gd" id="1_lv0ww"]
+[ext_resource type="PackedScene" uid="uid://c6utdryv2b0ll" path="res://enemy/enemy3.tscn" id="2_dvcef"]
+[ext_resource type="Texture2D" uid="uid://d0ttb52qi1xig" path="res://enemy/hole.png" id="3_xgd7n"]
+
+[node name="Spawn" type="Marker2D"]
+y_sort_enabled = true
+position = Vector2(91, 55)
+script = ExtResource("1_lv0ww")
+Enemy = ExtResource("2_dvcef")
+small_timer_randomization = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_xgd7n")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

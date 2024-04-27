@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://mh3s83by7o7"]
+[gd_scene load_steps=45 format=3 uid="uid://mh3s83by7o7"]
 
 [ext_resource type="Texture2D" uid="uid://b61ayhbc6crxq" path="res://assets/graphics/tiles/room builder.png" id="1_hhapp"]
 [ext_resource type="Texture2D" uid="uid://cbkkg4fljeafk" path="res://assets/graphics/tiles/generic.png" id="2_urprw"]
@@ -17,11 +17,14 @@
 [ext_resource type="Texture2D" uid="uid://dwplkbodqarlp" path="res://assets/graphics/interactables/stations/animated_kitchen_kneader_32x32.png" id="10_acs2l"]
 [ext_resource type="Texture2D" uid="uid://com3asfsl57dd" path="res://assets/graphics/interactables/animated/animated_fridge_grey_32x32.png" id="11_jv7gj"]
 [ext_resource type="PackedScene" uid="uid://dhok8gydv7v81" path="res://player/player.tscn" id="12_xkw7g"]
-[ext_resource type="PackedScene" uid="uid://dcwfeu6do32mg" path="res://enemy/enemy.tscn" id="14_61hg0"]
 [ext_resource type="PackedScene" uid="uid://0gcxn1sptt2l" path="res://stations/egg_crate.tscn" id="21_n2nha"]
-[ext_resource type="PackedScene" uid="uid://be75onpxbfr2u" path="res://animals/chicken group.tscn" id="22_sp0ua"]
+[ext_resource type="PackedScene" uid="uid://dbunw05a21m8h" path="res://animals/chicken.tscn" id="22_ctlxf"]
 [ext_resource type="PackedScene" uid="uid://bdmdwk0on7jhu" path="res://stations/milk_crate.tscn" id="22_vqow3"]
-[ext_resource type="PackedScene" uid="uid://eo6l0chcbfu0" path="res://enemy/spawner.tscn" id="26_8qdgx"]
+[ext_resource type="PackedScene" uid="uid://dgedqkm4mbm3n" path="res://enemy/spawners/spawner2.tscn" id="23_furus"]
+[ext_resource type="PackedScene" uid="uid://y62qc023ort8" path="res://animals/cow.tscn" id="23_vakai"]
+[ext_resource type="PackedScene" uid="uid://dwsobgttswefl" path="res://enemy/spawners/spawner3.tscn" id="24_dcmu2"]
+[ext_resource type="PackedScene" uid="uid://tak8gnrbkj53" path="res://enemy/spawners/spawner4.tscn" id="25_ye0v3"]
+[ext_resource type="PackedScene" uid="uid://eo6l0chcbfu0" path="res://enemy/spawners/spawner1.tscn" id="26_8qdgx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x8oou"]
 texture = ExtResource("1_hhapp")
@@ -25164,20 +25167,84 @@ layer_4/tile_data = PackedInt32Array()
 [node name="player" parent="." instance=ExtResource("12_xkw7g")]
 position = Vector2(848, 635)
 
-[node name="enemy" parent="." instance=ExtResource("14_61hg0")]
-position = Vector2(721, 156)
-
-[node name="Spawn" parent="." instance=ExtResource("26_8qdgx")]
-position = Vector2(187, 652)
-
 [node name="eggCrate" parent="." instance=ExtResource("21_n2nha")]
-visible = false
 z_index = -1
 position = Vector2(329, -117)
 
 [node name="milk_crate" parent="." instance=ExtResource("22_vqow3")]
-visible = false
 position = Vector2(1036, -94)
 
-[node name="ChickenGroup" parent="." instance=ExtResource("22_sp0ua")]
-position = Vector2(80, -184)
+[node name="chickens" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="chicken" parent="chickens" instance=ExtResource("22_ctlxf")]
+position = Vector2(192, -94)
+
+[node name="chicken2" parent="chickens" instance=ExtResource("22_ctlxf")]
+position = Vector2(361, -68)
+
+[node name="chicken3" parent="chickens" instance=ExtResource("22_ctlxf")]
+position = Vector2(202, -154)
+
+[node name="chicken4" parent="chickens" instance=ExtResource("22_ctlxf")]
+position = Vector2(89, -110)
+
+[node name="chicken6" parent="chickens" instance=ExtResource("22_ctlxf")]
+position = Vector2(276, -71)
+
+[node name="chicken5" parent="chickens" instance=ExtResource("22_ctlxf")]
+position = Vector2(147, -130)
+
+[node name="chicken7" parent="chickens" instance=ExtResource("22_ctlxf")]
+position = Vector2(391, -113)
+
+[node name="cows" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="cow" parent="cows" instance=ExtResource("23_vakai")]
+position = Vector2(728, -81)
+
+[node name="cow2" parent="cows" instance=ExtResource("23_vakai")]
+position = Vector2(869, -79)
+
+[node name="cow3" parent="cows" instance=ExtResource("23_vakai")]
+position = Vector2(887, -143)
+
+[node name="cow4" parent="cows" instance=ExtResource("23_vakai")]
+position = Vector2(676, -128)
+
+[node name="cow5" parent="cows" instance=ExtResource("23_vakai")]
+position = Vector2(1135, -111)
+
+[node name="cow6" parent="cows" instance=ExtResource("23_vakai")]
+position = Vector2(947, -44)
+
+[node name="cow7" parent="cows" instance=ExtResource("23_vakai")]
+position = Vector2(793, -35)
+
+[node name="spawners" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Spawn" parent="spawners" instance=ExtResource("26_8qdgx")]
+position = Vector2(113, 736)
+
+[node name="Spawn2" parent="spawners" instance=ExtResource("23_furus")]
+position = Vector2(626, 51)
+
+[node name="Spawn3" parent="spawners" instance=ExtResource("24_dcmu2")]
+position = Vector2(150, -167)
+
+[node name="Spawn4" parent="spawners" instance=ExtResource("25_ye0v3")]
+position = Vector2(-44, 145)
+
+[node name="Spawn5" parent="spawners" instance=ExtResource("23_furus")]
+position = Vector2(1209, -24)
+
+[node name="Spawn6" parent="spawners" instance=ExtResource("25_ye0v3")]
+position = Vector2(750, 326)
+
+[node name="Spawn7" parent="spawners" instance=ExtResource("26_8qdgx")]
+position = Vector2(1209, 153)
+
+[node name="Spawn8" parent="spawners" instance=ExtResource("24_dcmu2")]
+position = Vector2(397, 61)

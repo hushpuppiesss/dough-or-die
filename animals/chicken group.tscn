@@ -1,20 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://be75onpxbfr2u"]
+[gd_scene load_steps=2 format=3 uid="uid://ch8awlfc0mnvf"]
 
-[ext_resource type="PackedScene" uid="uid://y62qc023ort8" path="res://animals/chicken.tscn" id="1_8pvy5"]
+[ext_resource type="PackedScene" uid="uid://dbunw05a21m8h" path="res://animals/chicken.tscn" id="1_8pvy5"]
 
-[node name="ChickenGroup" type="Node2D"]
+[node name="chicken group" type="Node2D"]
 
 [node name="chicken" parent="." instance=ExtResource("1_8pvy5")]
-position = Vector2(7, -12)
+position = Vector2(48, 17)
+
+[node name="chicken7" parent="." instance=ExtResource("1_8pvy5")]
+position = Vector2(-2, 2)
 
 [node name="chicken2" parent="." instance=ExtResource("1_8pvy5")]
-position = Vector2(30, 29)
+position = Vector2(-34, 27)
+
+[node name="chicken6" parent="." instance=ExtResource("1_8pvy5")]
+position = Vector2(-14, -46)
 
 [node name="chicken3" parent="." instance=ExtResource("1_8pvy5")]
-position = Vector2(47, 1)
+position = Vector2(-55, -16)
 
 [node name="chicken4" parent="." instance=ExtResource("1_8pvy5")]
-position = Vector2(-16, 29)
+position = Vector2(31, -28)
 
 [node name="chicken5" parent="." instance=ExtResource("1_8pvy5")]
-position = Vector2(-33, 1)
+position = Vector2(66, -9)

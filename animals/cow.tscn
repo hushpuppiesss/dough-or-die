@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://y62qc023ort8"]
+
+[ext_resource type="Script" path="res://animals/cow.gd" id="1_o3ilt"]
+[ext_resource type="Texture2D" uid="uid://640vgsee3j5y" path="res://assets/graphics/animals/Free Cow Sprites.png" id="2_njh7n"]
+[ext_resource type="AudioStream" uid="uid://ciub3nnmcxes0" path="res://assets/audio/sfx/moo.mp3" id="3_np0es"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmirx"]
+atlas = ExtResource("2_njh7n")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbsmw"]
+atlas = ExtResource("2_njh7n")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3hsq"]
+atlas = ExtResource("2_njh7n")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abcrq"]
+atlas = ExtResource("2_njh7n")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omypq"]
+atlas = ExtResource("2_njh7n")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3kta1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmirx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbsmw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3hsq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abcrq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omypq")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e83nl"]
+size = Vector2(14.5, 8)
+
+[node name="cow" type="CharacterBody2D"]
+y_sort_enabled = true
+scale = Vector2(2, 2)
+collision_layer = 32
+collision_mask = 3
+script = ExtResource("1_o3ilt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.5, -7)
+sprite_frames = SubResource("SpriteFrames_3kta1")
+animation = &"idle"
+frame_progress = 0.780092
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -2)
+shape = SubResource("RectangleShape2D_e83nl")
+
+[node name="moo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_np0es")
+volume_db = -5.0
+autoplay = true
+max_distance = 300.0

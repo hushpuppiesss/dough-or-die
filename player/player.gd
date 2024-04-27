@@ -2,13 +2,20 @@ extends CharacterBody2D
 class_name player
 
 # player stats
-@export var health = 100
+@onready var health = 100
 @export var speed = 150
-var alive = true
+@onready var alive = true
 
 # animations
 @onready var animations = $AnimatedSprite2D
 @onready var previousDirection: String = "Down"
+@onready var hitflash = $hitflash
+
+# sfx
+@onready var sfx_hurt = $hurt
+
+#health
+@onready var health_bar = $"health bar"
 
 # enemy in range to attack
 var hurt_range = false
@@ -21,6 +28,7 @@ var attack_ip = false # attack in progress
 func _ready():
 	# assigning itself to interactionmanager variable
 	InteractionManager.player = self
+
 	
 # --- GAME LOOP that updates the state of the game
 func _physics_process(delta):
@@ -28,17 +36,18 @@ func _physics_process(delta):
 	# get the input
 	handleInput()
 	
-	# move
-	move_and_slide()
-	
 	# updating the animations
 	updateAnimation()
 	
 	# if player gets hurt
 	hurt()
 	
-	if health <= 0:
-		alive = false
+	# updating player health
+	update_health()
+	
+	# move
+	move_and_slide()
+	
 	
 # --- input handler
 func handleInput():
@@ -54,16 +63,16 @@ func updateAnimation():
 	elif velocity.x > 0: direction = "Right"
 	elif velocity.y < 0: direction = "Up"
 	
+
+	# if hurt
+	if  hurt_range and hurt_cooldown:
+		animations.play("hurt" + previousDirection)
 	# idle animations
-	if velocity.length() == 0:
+	elif velocity.length() == 0:
 		if Cooking.carrying == true:
 			animations.play("carryIdle" + previousDirection)
-		# if hurt
-		elif hurt_range and hurt_cooldown:
-			animations.play("hurt" + previousDirection)
 		else:
 			animations.play("idle" + previousDirection)
-
 	# walk animations
 	else:
 		if Cooking.carrying == true:
@@ -72,17 +81,35 @@ func updateAnimation():
 			animations.play("walk" + direction)
 		
 		previousDirection = direction
-	("hurt" + direction)
+	
 
 		
 # -- getting hurt
 func hurt():
-	if hurt_range and hurt_cooldown:
-		print("get rekt")
+	if alive and hurt_range and hurt_cooldown:
+		hitflash.play("hit_flash")
+		sfx_hurt.play()
+		knockback()
 		health -= 10
 		hurt_cooldown = false
 		$"hurt cooldown".start()
 		print(health)
+
+# -- updating the health
+func update_health():
+	var healthbar = $"health bar"
+	healthbar.value = health
+	
+	# do not show healthbar if health is full
+	if health >= 100:
+		healthbar.visible = false
+	else:
+		healthbar.visible = true
+
+	
+# -- dying
+func die():
+	print("dead")
 
 # enemy close enough to hurt you
 func _on_hurtbox_body_entered(body):
@@ -97,3 +124,19 @@ func _on_hurtbox_body_exited(body):
 # cooldown for enemy hurting the player
 func _on_hurt_cooldown_timeout():
 	hurt_cooldown = true
+
+# regeneration
+func _on_regen_timer_timeout():
+	if health < 100:
+		health += 10
+		if health > 100:
+			health = 100
+	# player does not regen if player is dead lol
+	if health <= 0:
+		health = 0
+
+# -- knockback
+func knockback():
+	var knockbackDirection = -velocity.normalized() * 1000
+	velocity = knockbackDirection
+	move_and_slide()
