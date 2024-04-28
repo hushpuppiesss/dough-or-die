@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ca6owrxnco6ey"
+path="res://.godot/imported/nobonoko - Strawberry Cake.mp3-c38309fde17bd2ab025dd6ef25c9e132.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/nobonoko - Strawberry Cake.mp3"
+dest_files=["res://.godot/imported/nobonoko - Strawberry Cake.mp3-c38309fde17bd2ab025dd6ef25c9e132.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

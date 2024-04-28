@@ -1,6 +1,7 @@
-[gd_scene load_steps=45 format=3 uid="uid://mh3s83by7o7"]
+[gd_scene load_steps=47 format=3 uid="uid://mh3s83by7o7"]
 
 [ext_resource type="Texture2D" uid="uid://b61ayhbc6crxq" path="res://assets/graphics/tiles/room builder.png" id="1_hhapp"]
+[ext_resource type="AudioStream" uid="uid://ca6owrxnco6ey" path="res://assets/audio/nobonoko - Strawberry Cake.mp3" id="1_s36n0"]
 [ext_resource type="Texture2D" uid="uid://cbkkg4fljeafk" path="res://assets/graphics/tiles/generic.png" id="2_urprw"]
 [ext_resource type="Texture2D" uid="uid://bkrpu2cs0ss2f" path="res://assets/graphics/interactables/animated/animated_kitchen_kneader_2_32x32.png" id="3_2oefd"]
 [ext_resource type="Texture2D" uid="uid://4k0nexb82spk" path="res://assets/graphics/tiles/outdoors/Grass.png" id="3_dg5lj"]
@@ -17,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dwplkbodqarlp" path="res://assets/graphics/interactables/stations/animated_kitchen_kneader_32x32.png" id="10_acs2l"]
 [ext_resource type="Texture2D" uid="uid://com3asfsl57dd" path="res://assets/graphics/interactables/animated/animated_fridge_grey_32x32.png" id="11_jv7gj"]
 [ext_resource type="PackedScene" uid="uid://dhok8gydv7v81" path="res://player/player.tscn" id="12_xkw7g"]
+[ext_resource type="PackedScene" uid="uid://chg1ifq1uh4in" path="res://waitress/waitress.tscn" id="18_xsido"]
 [ext_resource type="PackedScene" uid="uid://0gcxn1sptt2l" path="res://stations/egg_crate.tscn" id="21_n2nha"]
 [ext_resource type="PackedScene" uid="uid://dbunw05a21m8h" path="res://animals/chicken.tscn" id="22_ctlxf"]
 [ext_resource type="PackedScene" uid="uid://bdmdwk0on7jhu" path="res://stations/milk_crate.tscn" id="22_vqow3"]
@@ -25142,6 +25144,11 @@ sources/16 = SubResource("TileSetAtlasSource_kqelo")
 y_sort_enabled = true
 position = Vector2(-529, -455)
 
+[node name="bg music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_s36n0")
+volume_db = -3.0
+autoplay = true
+
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
 position = Vector2(12, 96)
@@ -25163,6 +25170,9 @@ layer_3/tile_data = PackedInt32Array(1900569, 458767, 25, 1966105, 458767, 26, 1
 layer_4/name = "FURNITURE"
 layer_4/enabled = false
 layer_4/tile_data = PackedInt32Array()
+
+[node name="waitress" parent="." instance=ExtResource("18_xsido")]
+position = Vector2(884, 1040)
 
 [node name="player" parent="." instance=ExtResource("12_xkw7g")]
 position = Vector2(848, 635)

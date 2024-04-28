@@ -18,11 +18,10 @@ config/icon="res://dough-or-die/icon.svg"
 [autoload]
 
 SceneSwitcher="*res://singletons/scene_switcher.gd"
-backgroundMusic="*res://singletons/background music.tscn"
-InteractionManager="*res://interaction/InteractionManager.tscn"
-Cooking="*res://singletons/cooking.gd"
 Transition="*res://singletons/transition.tscn"
 SignalBus="*res://singletons/SignalBus.gd"
+InteractionManager="*res://interaction/InteractionManager.tscn"
+CookingManager="*res://singletons/cooking.gd"
 
 [display]
 

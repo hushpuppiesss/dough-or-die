@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://b365hpekog4fb"]
+[gd_scene load_steps=5 format=3 uid="uid://b365hpekog4fb"]
 
-[ext_resource type="AudioStream" uid="uid://crl4n0leegxnl" path="res://assets/audio/Ooblets!.mp3" id="1_16jbj"]
+[ext_resource type="Script" path="res://singletons/background music.gd" id="1_71t3a"]
+[ext_resource type="AudioStream" uid="uid://blm27mss88i2h" path="res://assets/audio/Catalogue Orders - Miitopia OST.mp3" id="2_jr2w6"]
+[ext_resource type="AudioStream" uid="uid://dyxc5wywp5dnn" path="res://assets/audio/Seashells.mp3" id="3_lnne2"]
+[ext_resource type="AudioStream" uid="uid://ca6owrxnco6ey" path="res://assets/audio/nobonoko - Strawberry Cake.mp3" id="4_4kbg3"]
 
-[node name="bgMusic" type="AudioStreamPlayer"]
-stream = ExtResource("1_16jbj")
+[node name="bgMusic" type="Node"]
+script = ExtResource("1_71t3a")
+
+[node name="catalogue order" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jr2w6")
+
+[node name="seashells" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lnne2")
+
+[node name="strawberry cake" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4kbg3")

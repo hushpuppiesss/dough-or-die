@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://chg1ifq1uh4in"]
+
+[ext_resource type="Texture2D" uid="uid://iv7kktgugxqy" path="res://assets/graphics/shadow.png" id="1_no0b3"]
+[ext_resource type="Texture2D" uid="uid://xmcoog1sl0rx" path="res://assets/graphics/player/chef2.png" id="2_40jma"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivmnl"]
+atlas = ExtResource("2_40jma")
+region = Rect2(192, 256, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2iqxn"]
+atlas = ExtResource("2_40jma")
+region = Rect2(224, 256, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lxtc"]
+atlas = ExtResource("2_40jma")
+region = Rect2(256, 256, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3660x"]
+atlas = ExtResource("2_40jma")
+region = Rect2(288, 256, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nadbk"]
+atlas = ExtResource("2_40jma")
+region = Rect2(320, 256, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x23qa"]
+atlas = ExtResource("2_40jma")
+region = Rect2(352, 256, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hf3q5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivmnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2iqxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lxtc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3660x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nadbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x23qa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kuqfp"]
+
+[node name="waitress" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 4)
+texture = ExtResource("1_no0b3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -14)
+sprite_frames = SubResource("SpriteFrames_hf3q5")
+frame_progress = 0.687975
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CapsuleShape2D_kuqfp")

@@ -69,13 +69,13 @@ func updateAnimation():
 		animations.play("hurt" + previousDirection)
 	# idle animations
 	elif velocity.length() == 0:
-		if Cooking.carrying == true:
+		if CookingManager.carrying == true:
 			animations.play("carryIdle" + previousDirection)
 		else:
 			animations.play("idle" + previousDirection)
 	# walk animations
 	else:
-		if Cooking.carrying == true:
+		if CookingManager.carrying == true:
 			animations.play("carryWalk" + direction)
 		else:
 			animations.play("walk" + direction)
