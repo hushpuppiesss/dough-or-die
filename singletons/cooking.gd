@@ -1,3 +1,4 @@
 extends Node
 
-var carrying : bool
+@onready var can_pick_up = true
+@onready var carrying : bool

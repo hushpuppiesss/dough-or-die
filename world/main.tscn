@@ -1,7 +1,8 @@
-[gd_scene load_steps=47 format=3 uid="uid://mh3s83by7o7"]
+[gd_scene load_steps=55 format=3 uid="uid://mh3s83by7o7"]
 
 [ext_resource type="Texture2D" uid="uid://b61ayhbc6crxq" path="res://assets/graphics/tiles/room builder.png" id="1_hhapp"]
 [ext_resource type="AudioStream" uid="uid://ca6owrxnco6ey" path="res://assets/audio/nobonoko - Strawberry Cake.mp3" id="1_s36n0"]
+[ext_resource type="Script" path="res://world/main.gd" id="1_v6bfc"]
 [ext_resource type="Texture2D" uid="uid://cbkkg4fljeafk" path="res://assets/graphics/tiles/generic.png" id="2_urprw"]
 [ext_resource type="Texture2D" uid="uid://bkrpu2cs0ss2f" path="res://assets/graphics/interactables/animated/animated_kitchen_kneader_2_32x32.png" id="3_2oefd"]
 [ext_resource type="Texture2D" uid="uid://4k0nexb82spk" path="res://assets/graphics/tiles/outdoors/Grass.png" id="3_dg5lj"]
@@ -20,11 +21,14 @@
 [ext_resource type="PackedScene" uid="uid://dhok8gydv7v81" path="res://player/player.tscn" id="12_xkw7g"]
 [ext_resource type="PackedScene" uid="uid://chg1ifq1uh4in" path="res://waitress/waitress.tscn" id="18_xsido"]
 [ext_resource type="PackedScene" uid="uid://0gcxn1sptt2l" path="res://stations/egg_crate.tscn" id="21_n2nha"]
+[ext_resource type="Script" path="res://ingredients/egg.gd" id="22_6iyvr"]
 [ext_resource type="PackedScene" uid="uid://dbunw05a21m8h" path="res://animals/chicken.tscn" id="22_ctlxf"]
 [ext_resource type="PackedScene" uid="uid://bdmdwk0on7jhu" path="res://stations/milk_crate.tscn" id="22_vqow3"]
 [ext_resource type="PackedScene" uid="uid://dgedqkm4mbm3n" path="res://enemy/spawners/spawner2.tscn" id="23_furus"]
+[ext_resource type="Texture2D" uid="uid://b34es1eqw5cuw" path="res://assets/graphics/food/egg.png" id="23_ru3vs"]
 [ext_resource type="PackedScene" uid="uid://y62qc023ort8" path="res://animals/cow.tscn" id="23_vakai"]
 [ext_resource type="PackedScene" uid="uid://dwsobgttswefl" path="res://enemy/spawners/spawner3.tscn" id="24_dcmu2"]
+[ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="24_jdw6d"]
 [ext_resource type="PackedScene" uid="uid://tak8gnrbkj53" path="res://enemy/spawners/spawner4.tscn" id="25_ye0v3"]
 [ext_resource type="PackedScene" uid="uid://eo6l0chcbfu0" path="res://enemy/spawners/spawner1.tscn" id="26_8qdgx"]
 
@@ -25140,9 +25144,44 @@ sources/14 = SubResource("TileSetAtlasSource_tgm6k")
 sources/15 = SubResource("TileSetAtlasSource_o5d3m")
 sources/16 = SubResource("TileSetAtlasSource_kqelo")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_j84xh"]
+radius = 7.07107
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6l5go"]
+radius = 39.0
+
+[sub_resource type="PackedScene" id="PackedScene_73t2x"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("egg", "z_index", "y_sort_enabled", "position", "collision_layer", "collision_mask", "script", "CharacterBody2D", "Sprite2D", "texture", "CollisionShape2D", "visible", "shape", "InteractionArea", "action_name"),
+"node_count": 5,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 7, 0, -1, 6, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0, 0, 0, 8, 8, -1, 1, 9, 6, 0, 0, 0, 10, 10, -1, 2, 11, 7, 12, 8, 0, 0, 0, 2147483647, 13, 9, 1, 14, 10, 0, 3, 0, 10, 10, -1, 1, 12, 11, 0),
+"variants": [1, true, Vector2(3, 25), 16, 3, ExtResource("22_6iyvr"), ExtResource("23_ru3vs"), false, SubResource("CircleShape2D_j84xh"), ExtResource("24_jdw6d"), "", SubResource("CircleShape2D_6l5go")],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_xarka"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("egg", "z_index", "y_sort_enabled", "position", "collision_layer", "collision_mask", "script", "CharacterBody2D", "Sprite2D", "texture", "CollisionShape2D", "visible", "shape", "InteractionArea", "action_name"),
+"node_count": 5,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 7, 0, -1, 6, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0, 0, 0, 8, 8, -1, 1, 9, 6, 0, 0, 0, 10, 10, -1, 2, 11, 7, 12, 8, 0, 0, 0, 2147483647, 13, 9, 1, 14, 10, 0, 3, 0, 10, 10, -1, 1, 12, 11, 0),
+"variants": [1, true, Vector2(3, 25), 16, 3, ExtResource("22_6iyvr"), ExtResource("23_ru3vs"), false, SubResource("CircleShape2D_j84xh"), ExtResource("24_jdw6d"), "", SubResource("CircleShape2D_6l5go")],
+"version": 3
+}
+
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(-529, -455)
+script = ExtResource("1_v6bfc")
 
 [node name="bg music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_s36n0")
@@ -25172,7 +25211,7 @@ layer_4/enabled = false
 layer_4/tile_data = PackedInt32Array()
 
 [node name="waitress" parent="." instance=ExtResource("18_xsido")]
-position = Vector2(884, 1040)
+position = Vector2(822, 1040)
 
 [node name="player" parent="." instance=ExtResource("12_xkw7g")]
 position = Vector2(848, 635)
@@ -25180,6 +25219,7 @@ position = Vector2(848, 635)
 [node name="eggCrate" parent="." instance=ExtResource("21_n2nha")]
 z_index = -1
 position = Vector2(329, -117)
+egg = SubResource("PackedScene_73t2x")
 
 [node name="milk_crate" parent="." instance=ExtResource("22_vqow3")]
 position = Vector2(1036, -94)
@@ -25258,3 +25298,7 @@ position = Vector2(1209, 153)
 
 [node name="Spawn8" parent="spawners" instance=ExtResource("24_dcmu2")]
 position = Vector2(397, 61)
+
+[node name="eggCrate2" parent="." instance=ExtResource("21_n2nha")]
+position = Vector2(771, 626)
+egg = SubResource("PackedScene_xarka")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bsgdw3djj27ow"]
 
-[ext_resource type="Script" path="res://stations/matchaCrate.gd" id="1_m5rtu"]
+[ext_resource type="Script" path="res://stations/scripts/matchaCrate.gd" id="1_m5rtu"]
 [ext_resource type="Texture2D" uid="uid://b5hqxqs0iarm" path="res://assets/graphics/interactables/crates/matcha_crate.png" id="2_q13w6"]
 [ext_resource type="Script" path="res://interaction/interaction area/interaction_area.gd" id="3_loqox"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cfp3ojqyxdab7"]
 
-[ext_resource type="Script" path="res://stations/choccyCrate.gd" id="1_gxelg"]
+[ext_resource type="Script" path="res://stations/scripts/choccyCrate.gd" id="1_gxelg"]
 [ext_resource type="Texture2D" uid="uid://c5wltk84ibyiu" path="res://assets/graphics/interactables/crates/choccy_crate.png" id="2_mv5xn"]
 [ext_resource type="Script" path="res://interaction/interaction area/interaction_area.gd" id="3_rljvg"]
 

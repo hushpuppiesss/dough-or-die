@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://rp01ebwcirk1"]
 
 [ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="1_8s07w"]
-[ext_resource type="Script" path="res://stations/flour_crate.gd" id="1_jkups"]
+[ext_resource type="Script" path="res://stations/scripts/flour_crate.gd" id="1_jkups"]
 [ext_resource type="Texture2D" uid="uid://dds28oxaim3cp" path="res://assets/graphics/interactables/crates/flour_crate.png" id="2_uxjlr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ycpj"]

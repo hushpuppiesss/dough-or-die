@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://chg1ifq1uh4in"]
+[gd_scene load_steps=14 format=3 uid="uid://chg1ifq1uh4in"]
 
 [ext_resource type="Texture2D" uid="uid://iv7kktgugxqy" path="res://assets/graphics/shadow.png" id="1_no0b3"]
+[ext_resource type="Script" path="res://waitress/waitress.gd" id="1_x26fs"]
 [ext_resource type="Texture2D" uid="uid://xmcoog1sl0rx" path="res://assets/graphics/player/chef2.png" id="2_40jma"]
+[ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="4_d438l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ivmnl"]
 atlas = ExtResource("2_40jma")
@@ -55,7 +57,11 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kuqfp"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pvftd"]
+radius = 49.0102
+
 [node name="waitress" type="CharacterBody2D"]
+script = ExtResource("1_x26fs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, 4)
@@ -69,3 +75,10 @@ frame_progress = 0.687975
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("CapsuleShape2D_kuqfp")
+
+[node name="InteractionArea" parent="." instance=ExtResource("4_d438l")]
+action_name = "give"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(1, -10)
+shape = SubResource("CircleShape2D_pvftd")

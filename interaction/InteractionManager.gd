@@ -1,18 +1,13 @@
 extends Node2D
 
 var player
+var world
 @onready var label = $Label
 
-const base_text = "[E] "
+const base_text = ""
 
 var active_areas = []
 var can_interact = true
-
-func _ready():
-	SignalBus.connect("HELLO WORLD", say_hello)
-	
-func say_hello():
-	print("Hello World!")
 
 func register_area(area: InteractionArea):
 	active_areas.push_back(area)

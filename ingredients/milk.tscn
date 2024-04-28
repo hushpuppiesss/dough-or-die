@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2yaxwigpko1w"]
+
+[ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="1_rhrle"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="InteractionArea" parent="." instance=ExtResource("1_rhrle")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
