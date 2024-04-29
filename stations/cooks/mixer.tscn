@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://c3efa4g7urj0h"]
+[gd_scene load_steps=21 format=3 uid="uid://c3efa4g7urj0h"]
 
 [ext_resource type="Script" path="res://stations/cooks/mixer.gd" id="1_8140e"]
 [ext_resource type="Texture2D" uid="uid://dwplkbodqarlp" path="res://assets/graphics/interactables/stations/animated_kitchen_kneader_32x32.png" id="2_dqfie"]
+[ext_resource type="PackedScene" uid="uid://c23164i2746u1" path="res://ingredients/dough/dough raw.tscn" id="2_udg7t"]
 [ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="3_icafh"]
 [ext_resource type="Texture2D" uid="uid://bjhwl8d1bjrdy" path="res://assets/ui/bubble_flour.png" id="4_evybq"]
 [ext_resource type="Texture2D" uid="uid://ok3oipd8v65c" path="res://assets/ui/bubble_milk.png" id="5_8nrrw"]
@@ -11,6 +12,21 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojtk0"]
 size = Vector2(58, 64)
+
+[sub_resource type="Animation" id="Animation_nck12"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-32, -23)]
+}
 
 [sub_resource type="Animation" id="Animation_wiwy2"]
 resource_name = "float"
@@ -29,7 +45,13 @@ tracks/0/keys = {
 "values": [Vector2(-32, -23), Vector2(-32, -25), Vector2(-32, -23), Vector2(-32, -21)]
 }
 
-[sub_resource type="Animation" id="Animation_nck12"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_33hey"]
+_data = {
+"RESET": SubResource("Animation_nck12"),
+"float": SubResource("Animation_wiwy2")
+}
+
+[sub_resource type="Animation" id="Animation_a1y6x"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -41,13 +63,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-32, -23)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_33hey"]
-_data = {
-"RESET": SubResource("Animation_nck12"),
-"float": SubResource("Animation_wiwy2")
+"values": [Vector2(1, -25)]
 }
 
 [sub_resource type="Animation" id="Animation_ac8iy"]
@@ -68,7 +84,13 @@ tracks/0/keys = {
 "values": [Vector2(1, -23), Vector2(1, -25), Vector2(1, -23), Vector2(1, -21)]
 }
 
-[sub_resource type="Animation" id="Animation_a1y6x"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v3vpt"]
+_data = {
+"RESET": SubResource("Animation_a1y6x"),
+"float": SubResource("Animation_ac8iy")
+}
+
+[sub_resource type="Animation" id="Animation_4y15y"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -80,13 +102,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, -25)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_v3vpt"]
-_data = {
-"RESET": SubResource("Animation_a1y6x"),
-"float": SubResource("Animation_ac8iy")
+"values": [Vector2(34, -25)]
 }
 
 [sub_resource type="Animation" id="Animation_f7p5h"]
@@ -105,21 +121,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(34, -23), Vector2(34, -25), Vector2(34, -23), Vector2(34, -21)]
-}
-
-[sub_resource type="Animation" id="Animation_4y15y"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(34, -25)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jbf1u"]
@@ -152,6 +153,7 @@ corner_radius_bottom_left = 5
 
 [node name="mixer" type="StaticBody2D"]
 script = ExtResource("1_8140e")
+raw_dough = ExtResource("2_udg7t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_dqfie")
@@ -198,12 +200,17 @@ libraries = {
 }
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
 
 [node name="progress bar" type="ProgressBar" parent="."]
-offset_left = -43.0
-offset_top = -63.0
-offset_right = 43.0
-offset_bottom = -45.0
+offset_left = -27.0
+offset_top = -24.0
+offset_right = 26.0
+offset_bottom = -10.0
 theme_override_styles/background = SubResource("StyleBoxFlat_ph4av")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ikfr7")
+max_value = 3.0
 show_percentage = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

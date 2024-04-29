@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs6vbwbrrl5ek"
-path="res://.godot/imported/raw berliner.png-67776fcfbf385c872ed7a19bf9dc45d0.ctex"
+uid="uid://c7rolwt2fueg8"
+path="res://.godot/imported/chocolate_donut.png-aff28083e4ae723bcfe0526bbda8a0db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/carries/raw berliner.png"
-dest_files=["res://.godot/imported/raw berliner.png-67776fcfbf385c872ed7a19bf9dc45d0.ctex"]
+source_file="res://assets/graphics/carries/chocolate_donut.png"
+dest_files=["res://.godot/imported/chocolate_donut.png-aff28083e4ae723bcfe0526bbda8a0db.ctex"]
 
 [params]
 

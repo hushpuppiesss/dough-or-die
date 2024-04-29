@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://b3hmu4o00s0bh"]
+[gd_scene load_steps=13 format=3 uid="uid://gfdgg3r85mj6"]
 
-[ext_resource type="Texture2D" uid="uid://b83g2slblxoik" path="res://assets/graphics/interactables/stations/fryer.png" id="1_i5vmp"]
-[ext_resource type="Script" path="res://stations/cooks/fryer.gd" id="1_p8mtp"]
-[ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="2_01lwn"]
-[ext_resource type="PackedScene" uid="uid://n14d0ka00etv" path="res://ingredients/dough/dough cooked.tscn" id="2_8l0ch"]
-[ext_resource type="Texture2D" uid="uid://dqjap5osnvhxp" path="res://assets/graphics/carries/raw donut.png" id="5_cvo5j"]
+[ext_resource type="Script" path="res://stations/cooks/toppings.gd" id="1_p2dv4"]
+[ext_resource type="Texture2D" uid="uid://d3d6704rjtq5" path="res://assets/graphics/interactables/stations/toppings.png" id="2_gy0g7"]
+[ext_resource type="PackedScene" uid="uid://bn1ps0ojbtht0" path="res://ingredients/dough/boston kreme.tscn" id="2_v8nn5"]
+[ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="3_je2f1"]
+[ext_resource type="Texture2D" uid="uid://dqjap5osnvhxp" path="res://assets/graphics/carries/raw donut.png" id="4_eofxu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_istmi"]
 
@@ -74,20 +74,20 @@ border_color = Color(0.235294, 0.34902, 0.337255, 1)
 corner_radius_top_left = 5
 corner_radius_bottom_left = 5
 
-[node name="fryer" type="StaticBody2D"]
-script = ExtResource("1_p8mtp")
-dough_cooked = ExtResource("2_8l0ch")
+[node name="toppings" type="StaticBody2D"]
+script = ExtResource("1_p2dv4")
+doughnut = ExtResource("2_v8nn5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 26)
-texture = ExtResource("1_i5vmp")
+position = Vector2(2, 9)
+texture = ExtResource("2_gy0g7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(0, 11)
 shape = SubResource("CircleShape2D_istmi")
 
-[node name="InteractionArea" parent="." instance=ExtResource("2_01lwn")]
+[node name="InteractionArea" parent="." instance=ExtResource("3_je2f1")]
 action_name = "mix"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
@@ -97,7 +97,7 @@ shape = SubResource("RectangleShape2D_ojtk0")
 
 [node name="raw dough icon" type="Sprite2D" parent="."]
 position = Vector2(1, -25)
-texture = ExtResource("5_cvo5j")
+texture = ExtResource("4_eofxu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="raw dough icon"]
 libraries = {
