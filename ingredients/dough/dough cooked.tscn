@@ -1,11 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://n14d0ka00etv"]
+[gd_scene load_steps=5 format=3 uid="uid://n14d0ka00etv"]
 
 [ext_resource type="Script" path="res://ingredients/ingredient.gd" id="1_evk7l"]
 [ext_resource type="Texture2D" uid="uid://wkk328ouy0e5" path="res://assets/graphics/carries/cooked_donut.png" id="2_3juqv"]
 [ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="3_cv6vp"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_j84xh"]
-radius = 7.07107
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6l5go"]
 radius = 39.0
@@ -17,10 +14,6 @@ script = ExtResource("1_evk7l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_3juqv")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource("CircleShape2D_j84xh")
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_cv6vp")]
 action_name = ""

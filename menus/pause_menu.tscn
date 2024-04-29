@@ -188,6 +188,10 @@ layout_mode = 2
 size_flags_vertical = 4
 text = "Resume"
 
+[node name="restart" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
 [node name="quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
@@ -199,4 +203,5 @@ libraries = {
 }
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

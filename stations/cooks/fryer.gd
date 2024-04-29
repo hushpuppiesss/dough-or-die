@@ -63,5 +63,5 @@ func _on_timer_timeout():
 	
 	var newInstance = dough_cooked.instantiate()
 	add_child(newInstance)
-	newInstance.position.x += 64
-	newInstance.position.y += 12
+	newInstance.position.x += 48
+	newInstance.position.y += 8

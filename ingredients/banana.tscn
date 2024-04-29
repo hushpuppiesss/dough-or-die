@@ -1,11 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b013nj1wujtpp"]
+[gd_scene load_steps=5 format=3 uid="uid://b013nj1wujtpp"]
 
 [ext_resource type="Script" path="res://ingredients/ingredient.gd" id="1_raljv"]
 [ext_resource type="Texture2D" uid="uid://baeulos2e2d3i" path="res://assets/graphics/food/banana.png" id="2_onam0"]
 [ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="3_peu0y"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_j84xh"]
-radius = 7.07107
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6l5go"]
 radius = 39.0
@@ -17,10 +14,6 @@ script = ExtResource("1_raljv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_onam0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource("CircleShape2D_j84xh")
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_peu0y")]
 action_name = ""

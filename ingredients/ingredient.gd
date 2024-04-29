@@ -3,7 +3,6 @@ extends CharacterBody2D
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var sprite = $Sprite2D
 @onready var player = InteractionManager.player
-@onready var collision_shape_2d = $CollisionShape2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
