@@ -9,12 +9,11 @@ class_name Enemy
 # statistics
 @export var move_speed := 125.0
 @export var wander_speed := 25
-@onready var health := 30
+@onready var health := 20
 @onready var alive = true
 
 # behavioral variables
 var move_direction : Vector2
-var knockback = Vector2.ZERO
 var wander_time : float
 var state_wander = true
 var state_player_chase = false
@@ -25,8 +24,6 @@ func _ready():
 	randomize_wander()
 
 func _physics_process(delta):
-	# for knockback
-	knockback = knockback.move_toward(Vector2.ZERO, 100 * delta)
 	# if wandering time
 	if alive:
 		if state_wander:
@@ -72,7 +69,7 @@ func hit():
 		# death sound
 		squeak_sound.play()
 		# enemy gets knocked back
-		knockback = Vector2.RIGHT * 60
+		knockback()
 		# lessening teh health
 		health -= 10
 	if health <= 0:
@@ -99,3 +96,9 @@ func _on_detectionarea_body_exited(body):
 func randomize_wander():
 	move_direction = Vector2(randf_range(-1,1), randf_range(-1,1)).normalized()
 	wander_time = randf_range(1,3)
+
+# -- knockback
+func knockback():
+	var knockbackDirection = -(move_direction).normalized() * 100
+	velocity = knockbackDirection
+	move_and_slide()

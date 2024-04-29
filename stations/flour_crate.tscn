@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://rp01ebwcirk1"]
+[gd_scene load_steps=7 format=3 uid="uid://rp01ebwcirk1"]
 
 [ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="1_8s07w"]
 [ext_resource type="Script" path="res://stations/scripts/flour_crate.gd" id="1_jkups"]
+[ext_resource type="PackedScene" uid="uid://dm5m7eriyddvy" path="res://ingredients/flour.tscn" id="2_ku1iq"]
 [ext_resource type="Texture2D" uid="uid://dds28oxaim3cp" path="res://assets/graphics/interactables/crates/flour_crate.png" id="2_uxjlr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ycpj"]
@@ -11,6 +12,7 @@ size = Vector2(56, 66)
 
 [node name="flour_crate" type="StaticBody2D"]
 script = ExtResource("1_jkups")
+flour = ExtResource("2_ku1iq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_uxjlr")
@@ -20,6 +22,7 @@ visible = false
 shape = SubResource("RectangleShape2D_6ycpj")
 
 [node name="InteractionArea" parent="." instance=ExtResource("1_8s07w")]
+visible = false
 action_name = "get flour"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]

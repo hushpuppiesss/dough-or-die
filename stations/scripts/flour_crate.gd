@@ -2,6 +2,7 @@ extends StaticBody2D
 
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var sprite = $Sprite2D
+@export var flour : PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,11 +10,8 @@ func _ready():
 
 func _get_flour():
 	
-	print("flour")
-	#sprite.frame = 1 if sprite.frame == 0 else 0
-	
-	#for n in range(6):
-		#sprite.frame = n
+	var newInstance = flour.instantiate()
+	add_child(newInstance)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

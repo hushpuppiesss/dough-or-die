@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfp3ojqyxdab7"]
+[gd_scene load_steps=7 format=3 uid="uid://cfp3ojqyxdab7"]
 
 [ext_resource type="Script" path="res://stations/scripts/choccyCrate.gd" id="1_gxelg"]
 [ext_resource type="Texture2D" uid="uid://c5wltk84ibyiu" path="res://assets/graphics/interactables/crates/choccy_crate.png" id="2_mv5xn"]
+[ext_resource type="PackedScene" uid="uid://dyd5ti5os5ify" path="res://ingredients/chocolate.tscn" id="2_tdigr"]
 [ext_resource type="Script" path="res://interaction/interaction area/interaction_area.gd" id="3_rljvg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gllcl"]
@@ -11,6 +12,7 @@ size = Vector2(56, 52)
 
 [node name="choccyCrate" type="StaticBody2D"]
 script = ExtResource("1_gxelg")
+chocolate = ExtResource("2_tdigr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4)
@@ -22,6 +24,7 @@ position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_gllcl")
 
 [node name="InteractionArea" type="Area2D" parent="."]
+visible = false
 collision_mask = 2
 script = ExtResource("3_rljvg")
 action_name = "get chocolate"

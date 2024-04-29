@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdmdwk0on7jhu"]
+[gd_scene load_steps=7 format=3 uid="uid://bdmdwk0on7jhu"]
 
 [ext_resource type="Texture2D" uid="uid://unxdv5h220qc" path="res://assets/graphics/interactables/crates/milk_crate.png" id="1_1h3cv"]
 [ext_resource type="Script" path="res://stations/scripts/milk_crate.gd" id="1_mx047"]
 [ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="2_qimlv"]
+[ext_resource type="PackedScene" uid="uid://dxtbwxwlx2tpr" path="res://ingredients/milk.tscn" id="2_ry00y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t4wds"]
 
@@ -11,6 +12,7 @@ size = Vector2(60, 58)
 
 [node name="milk_crate" type="StaticBody2D"]
 script = ExtResource("1_mx047")
+milk = ExtResource("2_ry00y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -2)

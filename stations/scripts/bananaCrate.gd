@@ -2,6 +2,7 @@ extends StaticBody2D
 
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var sprite = $Sprite2D
+@export var banana : PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

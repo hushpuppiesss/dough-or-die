@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cv7t20fobfbc6"]
+[gd_scene load_steps=7 format=3 uid="uid://cv7t20fobfbc6"]
 
 [ext_resource type="Script" path="res://stations/scripts/strawberryCrate.gd" id="1_ovyed"]
 [ext_resource type="Texture2D" uid="uid://cqglhhmtjl6gf" path="res://assets/graphics/interactables/crates/strawberry_crate.png" id="2_4cujh"]
+[ext_resource type="PackedScene" uid="uid://4afvrt6jte06" path="res://ingredients/strawberry.tscn" id="2_5o3qs"]
 [ext_resource type="Script" path="res://interaction/interaction area/interaction_area.gd" id="3_trcg7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gllcl"]
@@ -11,6 +12,7 @@ size = Vector2(56, 52)
 
 [node name="strawberryCrate" type="StaticBody2D"]
 script = ExtResource("1_ovyed")
+strawberry = ExtResource("2_5o3qs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4)
@@ -22,6 +24,7 @@ position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_gllcl")
 
 [node name="InteractionArea" type="Area2D" parent="."]
+visible = false
 collision_mask = 2
 script = ExtResource("3_trcg7")
 action_name = "get strawberry"

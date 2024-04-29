@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsgdw3djj27ow"]
+[gd_scene load_steps=7 format=3 uid="uid://bsgdw3djj27ow"]
 
 [ext_resource type="Script" path="res://stations/scripts/matchaCrate.gd" id="1_m5rtu"]
 [ext_resource type="Texture2D" uid="uid://b5hqxqs0iarm" path="res://assets/graphics/interactables/crates/matcha_crate.png" id="2_q13w6"]
+[ext_resource type="PackedScene" uid="uid://s2lntaqteb13" path="res://ingredients/matcha.tscn" id="2_tsvd4"]
 [ext_resource type="Script" path="res://interaction/interaction area/interaction_area.gd" id="3_loqox"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gllcl"]
@@ -11,6 +12,7 @@ size = Vector2(56, 52)
 
 [node name="matchaCrate" type="StaticBody2D"]
 script = ExtResource("1_m5rtu")
+matcha = ExtResource("2_tsvd4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4)
@@ -22,6 +24,7 @@ position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_gllcl")
 
 [node name="InteractionArea" type="Area2D" parent="."]
+visible = false
 collision_mask = 2
 script = ExtResource("3_loqox")
 action_name = "get matcha"
