@@ -1,22 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfp3ojqyxdab7"]
+[gd_scene load_steps=7 format=3 uid="uid://j4dti1km88xl"]
 
-[ext_resource type="Script" path="res://stations/scripts/choccyCrate.gd" id="1_gxelg"]
-[ext_resource type="Texture2D" uid="uid://c5wltk84ibyiu" path="res://assets/graphics/interactables/crates/choccy_crate.png" id="2_mv5xn"]
-[ext_resource type="PackedScene" uid="uid://dyd5ti5os5ify" path="res://ingredients/chocolate.tscn" id="2_tdigr"]
-[ext_resource type="Script" path="res://interaction/interaction area/interaction_area.gd" id="3_rljvg"]
+[ext_resource type="Script" path="res://stations/crates/scripts/bananaCrate.gd" id="1_cm1c4"]
+[ext_resource type="Texture2D" uid="uid://rorfv7ejf120" path="res://assets/graphics/interactables/crates/banana_crate.png" id="2_8je8j"]
+[ext_resource type="PackedScene" uid="uid://b013nj1wujtpp" path="res://ingredients/banana.tscn" id="2_15a1s"]
+[ext_resource type="Script" path="res://interaction/interaction area/interaction_area.gd" id="3_dkv7s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gllcl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2hpd"]
 size = Vector2(56, 52)
 
-[node name="choccyCrate" type="StaticBody2D"]
-script = ExtResource("1_gxelg")
-chocolate = ExtResource("2_tdigr")
+[node name="bananaCrate" type="StaticBody2D"]
+script = ExtResource("1_cm1c4")
+banana = ExtResource("2_15a1s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4)
-texture = ExtResource("2_mv5xn")
+texture = ExtResource("2_8je8j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -26,8 +26,8 @@ shape = SubResource("RectangleShape2D_gllcl")
 [node name="InteractionArea" type="Area2D" parent="."]
 visible = false
 collision_mask = 2
-script = ExtResource("3_rljvg")
-action_name = "get chocolate"
+script = ExtResource("3_dkv7s")
+action_name = "get banana"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("RectangleShape2D_h2hpd")

@@ -2,20 +2,18 @@ extends StaticBody2D
 
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var sprite = $Sprite2D
-@export var banana : PackedScene
+
+@export var egg : PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	interaction_area.interact = Callable(self, "_get_banana")
+	interaction_area.interact = Callable(self, "_get_egg")
 
-func _get_banana():
+func _get_egg():
 	
-	var newInstance = banana.instantiate()
+	var newInstance = egg.instantiate()
 	add_child(newInstance)
-	#sprite.frame = 1 if sprite.frame == 0 else 0
-	
-	#for n in range(6):
-		#sprite.frame = n
+	newInstance.position.y += 16
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -1,0 +1,209 @@
+[gd_scene load_steps=20 format=3 uid="uid://c3efa4g7urj0h"]
+
+[ext_resource type="Script" path="res://stations/cooks/mixer.gd" id="1_8140e"]
+[ext_resource type="Texture2D" uid="uid://dwplkbodqarlp" path="res://assets/graphics/interactables/stations/animated_kitchen_kneader_32x32.png" id="2_dqfie"]
+[ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="3_icafh"]
+[ext_resource type="Texture2D" uid="uid://bjhwl8d1bjrdy" path="res://assets/ui/bubble_flour.png" id="4_evybq"]
+[ext_resource type="Texture2D" uid="uid://ok3oipd8v65c" path="res://assets/ui/bubble_milk.png" id="5_8nrrw"]
+[ext_resource type="Texture2D" uid="uid://ehn7dtp3m2jn" path="res://assets/ui/bubble_egg.png" id="6_6bmbs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_istmi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojtk0"]
+size = Vector2(58, 64)
+
+[sub_resource type="Animation" id="Animation_wiwy2"]
+resource_name = "float"
+length = 1.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-32, -23), Vector2(-32, -25), Vector2(-32, -23), Vector2(-32, -21)]
+}
+
+[sub_resource type="Animation" id="Animation_nck12"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-32, -23)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_33hey"]
+_data = {
+"RESET": SubResource("Animation_nck12"),
+"float": SubResource("Animation_wiwy2")
+}
+
+[sub_resource type="Animation" id="Animation_ac8iy"]
+resource_name = "float"
+length = 1.1
+loop_mode = 1
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, -23), Vector2(1, -25), Vector2(1, -23), Vector2(1, -21)]
+}
+
+[sub_resource type="Animation" id="Animation_a1y6x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, -25)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v3vpt"]
+_data = {
+"RESET": SubResource("Animation_a1y6x"),
+"float": SubResource("Animation_ac8iy")
+}
+
+[sub_resource type="Animation" id="Animation_f7p5h"]
+resource_name = "float"
+length = 1.1
+loop_mode = 1
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(34, -23), Vector2(34, -25), Vector2(34, -23), Vector2(34, -21)]
+}
+
+[sub_resource type="Animation" id="Animation_4y15y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, -25)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jbf1u"]
+_data = {
+"RESET": SubResource("Animation_4y15y"),
+"float": SubResource("Animation_f7p5h")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ph4av"]
+bg_color = Color(0.478431, 0.266667, 0.290196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.278431, 0.176471, 0.235294, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ikfr7"]
+bg_color = Color(0.713726, 0.835294, 0.235294, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.235294, 0.34902, 0.337255, 1)
+corner_radius_top_left = 5
+corner_radius_bottom_left = 5
+
+[node name="mixer" type="StaticBody2D"]
+script = ExtResource("1_8140e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_dqfie")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 11)
+shape = SubResource("CircleShape2D_istmi")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_icafh")]
+action_name = "mix"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+visible = false
+position = Vector2(0, 15)
+shape = SubResource("RectangleShape2D_ojtk0")
+
+[node name="wheat icon" type="Sprite2D" parent="."]
+position = Vector2(-32, -23)
+texture = ExtResource("4_evybq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="wheat icon"]
+libraries = {
+"": SubResource("AnimationLibrary_33hey")
+}
+
+[node name="milk icon" type="Sprite2D" parent="."]
+position = Vector2(1, -25)
+texture = ExtResource("5_8nrrw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="milk icon"]
+libraries = {
+"": SubResource("AnimationLibrary_v3vpt")
+}
+
+[node name="egg icon" type="Sprite2D" parent="."]
+position = Vector2(34, -25)
+texture = ExtResource("6_6bmbs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="egg icon"]
+libraries = {
+"": SubResource("AnimationLibrary_jbf1u")
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="progress bar" type="ProgressBar" parent="."]
+offset_left = -43.0
+offset_top = -63.0
+offset_right = 43.0
+offset_bottom = -45.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ph4av")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ikfr7")
+show_percentage = false

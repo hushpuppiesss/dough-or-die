@@ -11,18 +11,18 @@ func _ready():
 
 func _pick_up():
 	if CookingManager.can_pick_up:
-		CookingManager.carrying = true
-		CookingManager.can_pick_up = false
+		CookingManager.item_in_hand = self
+		CookingManager._picked_up()
 		reparent(player)
 		
 # if dropped
 func _input(event):
 	if event.is_action_pressed("drop"):
-		reparent(InteractionManager.world)
-		self.position = position
-		CookingManager.can_pick_up = true
-		CookingManager.carrying = false
-		collision_shape_2d.set_deferred("disabled", true)
+		if CookingManager.carrying == true:
+			reparent(InteractionManager.world)
+			self.position = position
+			CookingManager._put_down()
+			CookingManager.item_in_hand = null
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):

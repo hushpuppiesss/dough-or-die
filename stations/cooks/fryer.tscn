@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://djp4540evl4s7"]
+
+[ext_resource type="Texture2D" uid="uid://b83g2slblxoik" path="res://assets/graphics/interactables/stations/fryer.png" id="1_i5vmp"]
+[ext_resource type="Script" path="res://stations/cooks/fryer.gd" id="1_p8mtp"]
+[ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="2_01lwn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eilw7"]
+size = Vector2(38, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4f8q"]
+size = Vector2(98, 80)
+
+[node name="fryer" type="StaticBody2D"]
+script = ExtResource("1_p8mtp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_i5vmp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1, -5)
+shape = SubResource("RectangleShape2D_eilw7")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_01lwn")]
+visible = false
+action_name = "fry"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_b4f8q")

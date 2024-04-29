@@ -12,7 +12,8 @@ func _get_strawberry():
 	
 	var newInstance = strawberry.instantiate()
 	add_child(newInstance)
-
+	newInstance.position.y += 16
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

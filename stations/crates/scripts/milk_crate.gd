@@ -13,10 +13,7 @@ func _get_milk():
 	
 	var newInstance = milk.instantiate()
 	add_child(newInstance)
-	#sprite.frame = 1 if sprite.frame == 0 else 0
-	
-	#for n in range(6):
-		#sprite.frame = n
+	newInstance.position.y += 16
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

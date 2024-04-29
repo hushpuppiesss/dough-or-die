@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://mh3s83by7o7"]
+[gd_scene load_steps=62 format=3 uid="uid://mh3s83by7o7"]
 
 [ext_resource type="Texture2D" uid="uid://b61ayhbc6crxq" path="res://assets/graphics/tiles/room builder.png" id="1_hhapp"]
 [ext_resource type="AudioStream" uid="uid://ca6owrxnco6ey" path="res://assets/audio/nobonoko - Strawberry Cake.mp3" id="1_s36n0"]
@@ -21,10 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://com3asfsl57dd" path="res://assets/graphics/interactables/animated/animated_fridge_grey_32x32.png" id="11_jv7gj"]
 [ext_resource type="PackedScene" uid="uid://dhok8gydv7v81" path="res://player/player.tscn" id="12_xkw7g"]
 [ext_resource type="PackedScene" uid="uid://chg1ifq1uh4in" path="res://waitress/waitress.tscn" id="18_xsido"]
-[ext_resource type="PackedScene" uid="uid://0gcxn1sptt2l" path="res://stations/egg_crate.tscn" id="21_n2nha"]
+[ext_resource type="PackedScene" uid="uid://0gcxn1sptt2l" path="res://stations/crates/egg_crate.tscn" id="21_n2nha"]
 [ext_resource type="Script" path="res://ingredients/ingredient.gd" id="22_6iyvr"]
 [ext_resource type="PackedScene" uid="uid://dbunw05a21m8h" path="res://animals/chicken.tscn" id="22_ctlxf"]
-[ext_resource type="PackedScene" uid="uid://bdmdwk0on7jhu" path="res://stations/milk_crate.tscn" id="22_vqow3"]
+[ext_resource type="PackedScene" uid="uid://bdmdwk0on7jhu" path="res://stations/crates/milk_crate.tscn" id="22_vqow3"]
 [ext_resource type="PackedScene" uid="uid://dgedqkm4mbm3n" path="res://enemy/spawners/spawner2.tscn" id="23_furus"]
 [ext_resource type="Texture2D" uid="uid://b34es1eqw5cuw" path="res://assets/graphics/food/egg.png" id="23_ru3vs"]
 [ext_resource type="PackedScene" uid="uid://y62qc023ort8" path="res://animals/cow.tscn" id="23_vakai"]
@@ -32,11 +32,12 @@
 [ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="24_jdw6d"]
 [ext_resource type="PackedScene" uid="uid://tak8gnrbkj53" path="res://enemy/spawners/spawner4.tscn" id="25_ye0v3"]
 [ext_resource type="PackedScene" uid="uid://eo6l0chcbfu0" path="res://enemy/spawners/spawner1.tscn" id="26_8qdgx"]
-[ext_resource type="PackedScene" uid="uid://rp01ebwcirk1" path="res://stations/flour_crate.tscn" id="26_skrbn"]
-[ext_resource type="PackedScene" uid="uid://j4dti1km88xl" path="res://stations/banana_crate.tscn" id="27_ptolr"]
-[ext_resource type="PackedScene" uid="uid://cfp3ojqyxdab7" path="res://stations/choccy_crate.tscn" id="28_pd2ts"]
-[ext_resource type="PackedScene" uid="uid://bsgdw3djj27ow" path="res://stations/matcha_crate.tscn" id="29_5cdna"]
-[ext_resource type="PackedScene" uid="uid://cv7t20fobfbc6" path="res://stations/strawberry_crate.tscn" id="30_pyk7n"]
+[ext_resource type="PackedScene" uid="uid://rp01ebwcirk1" path="res://stations/crates/flour_crate.tscn" id="26_skrbn"]
+[ext_resource type="PackedScene" uid="uid://j4dti1km88xl" path="res://stations/crates/banana_crate.tscn" id="27_ptolr"]
+[ext_resource type="PackedScene" uid="uid://cfp3ojqyxdab7" path="res://stations/crates/choccy_crate.tscn" id="28_pd2ts"]
+[ext_resource type="PackedScene" uid="uid://bsgdw3djj27ow" path="res://stations/crates/matcha_crate.tscn" id="29_5cdna"]
+[ext_resource type="PackedScene" uid="uid://cv7t20fobfbc6" path="res://stations/crates/strawberry_crate.tscn" id="30_pyk7n"]
+[ext_resource type="PackedScene" uid="uid://c3efa4g7urj0h" path="res://stations/cooks/mixer.tscn" id="32_xun2s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x8oou"]
 texture = ExtResource("1_hhapp")
@@ -25241,8 +25242,6 @@ texture_region_size = Vector2i(32, 32)
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/animation_frame_0/duration = 0.1
 0:0/animation_frame_1/duration = 0.1
-0:0/animation_frame_2/duration = 0.1
-0:0/animation_frame_3/duration = 0.1
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(-16, 16)
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -25291,7 +25290,7 @@ radius = 7.07107
 [sub_resource type="CircleShape2D" id="CircleShape2D_6l5go"]
 radius = 39.0
 
-[sub_resource type="PackedScene" id="PackedScene_opmmy"]
+[sub_resource type="PackedScene" id="PackedScene_1t5w1"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -25338,7 +25337,7 @@ layer_4/tile_data = PackedInt32Array(-65538, 262148, 61, -2, 262148, 62, -65537,
 layer_5/name = "FURNITURE1.5"
 layer_5/tile_data = PackedInt32Array(524290, 262147, 22, 589826, 262147, 23, 524291, 262147, 22, 589827, 262147, 23, 524292, 262147, 22, 589828, 262147, 23, 131092, 262147, 22, 196628, 262147, 23, 131094, 262147, 22, 196630, 262147, 23, 851993, 262147, 22, 917529, 262147, 23, 851994, 262147, 22, 917530, 262147, 23, 851995, 262147, 22, 917531, 262147, 23)
 layer_6/name = "FURNITURE2"
-layer_6/tile_data = PackedInt32Array(-65538, 524292, 60, -65537, 524292, 60, -196609, 524292, 60, -262144, 524292, 60, 327683, 393220, 60, 327684, 327684, 60, 262149, 393220, 60, 262150, 327684, 60, 851993, 851971, 44, 851994, 917507, 44, 851995, 983043, 44, 65556, 983043, 23, 131092, 983043, 24, 65558, 983043, 23, 131094, 983043, 24, 524290, 655363, 36, 524291, 720899, 36, 524292, 786435, 36)
+layer_6/tile_data = PackedInt32Array(-65538, 524292, 60, -65537, 524292, 60, -196609, 524292, 60, -262144, 524292, 60, 327683, 393220, 60, 327684, 327684, 60, 262149, 393220, 60, 262150, 327684, 60, 851993, 851971, 44, 851994, 917507, 44, 851995, 983043, 44, 524290, 655363, 36, 524291, 720899, 36, 524292, 786435, 36)
 
 [node name="waitress" parent="." instance=ExtResource("18_xsido")]
 position = Vector2(822, 1040)
@@ -25355,7 +25354,7 @@ position = Vector2(1036, -94)
 [node name="eggCrate" parent="crates" instance=ExtResource("21_n2nha")]
 z_index = -1
 position = Vector2(329, -117)
-egg = SubResource("PackedScene_opmmy")
+egg = SubResource("PackedScene_1t5w1")
 
 [node name="flourCrate" parent="crates" instance=ExtResource("26_skrbn")]
 position = Vector2(732, 94)
@@ -25371,6 +25370,21 @@ position = Vector2(668, 530)
 
 [node name="strawberryCrate" parent="crates" instance=ExtResource("30_pyk7n")]
 position = Vector2(-5, 98)
+
+[node name="flour_crate" parent="crates" instance=ExtResource("26_skrbn")]
+position = Vector2(701, 646)
+
+[node name="eggCrate2" parent="crates" instance=ExtResource("21_n2nha")]
+position = Vector2(758, 663)
+
+[node name="milk_crate" parent="crates" instance=ExtResource("22_vqow3")]
+position = Vector2(819, 669)
+
+[node name="stations" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="mixer" parent="stations" instance=ExtResource("32_xun2s")]
+position = Vector2(762, 527)
 
 [node name="chickens" type="Node2D" parent="."]
 y_sort_enabled = true

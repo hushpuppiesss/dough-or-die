@@ -4,7 +4,7 @@ var player
 var world
 @onready var label = $Label
 
-const base_text = ""
+const base_text = "[E]"
 
 var active_areas = []
 var can_interact = true
