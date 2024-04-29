@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj134ww2g631o"]
+
+[ext_resource type="Script" path="res://ingredients/ingredient.gd" id="1_uaxkp"]
+[ext_resource type="Texture2D" uid="uid://dqjap5osnvhxp" path="res://assets/graphics/carries/raw donut.png" id="2_p64ad"]
+[ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="3_jmc3c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j84xh"]
+radius = 7.07107
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6l5go"]
+radius = 39.0
+
+[node name="doughnut raw" type="CharacterBody2D" groups=["doughnut raw"]]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_uaxkp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_p64ad")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_j84xh")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_jmc3c")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_6l5go")

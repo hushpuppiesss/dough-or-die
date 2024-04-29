@@ -5,7 +5,7 @@ extends StaticBody2D
 @onready var progress_bar = $"progress bar"
 
 # spits out dough
-@export var dough_cooked : PackedScene
+@export var doughnut_raw : PackedScene
 
 # icons
 @onready var raw_dough_icon = $"raw dough icon"
@@ -33,7 +33,7 @@ func _fry():
 	if loaded == false:
 		# check if player has an ingredient to put in
 		if CookingManager.carrying:
-			if CookingManager.item_in_hand.is_in_group("doughnut raw") && !ingredients_in.has("doughnut raw"):
+			if CookingManager.item_in_hand.is_in_group("dough raw") && !ingredients_in.has("dough raw"):
 				# adds ingredient to array
 				ingredients_in.append(CookingManager.item_in_hand.name)
 				CookingManager._put_down()
@@ -46,7 +46,7 @@ func _fry():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# checking ingredients
-	if ingredients_in.has("doughnut raw"):
+	if ingredients_in.has("dough raw"):
 		loaded = true
 		progress_bar.show()
 		$Timer.start()
@@ -61,7 +61,7 @@ func _on_timer_timeout():
 	raw_dough_icon.visible = true
 	progress_bar.hide()
 	
-	var newInstance = dough_cooked.instantiate()
+	var newInstance = doughnut_raw.instantiate()
 	add_child(newInstance)
-	newInstance.position.x += 64
-	newInstance.position.y += 12
+	newInstance.position.x += 32
+	newInstance.position.y += 8

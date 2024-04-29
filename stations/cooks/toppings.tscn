@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d3d6704rjtq5" path="res://assets/graphics/interactables/stations/toppings.png" id="2_gy0g7"]
 [ext_resource type="PackedScene" uid="uid://bn1ps0ojbtht0" path="res://ingredients/dough/boston kreme.tscn" id="2_v8nn5"]
 [ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="3_je2f1"]
-[ext_resource type="Texture2D" uid="uid://dqjap5osnvhxp" path="res://assets/graphics/carries/raw donut.png" id="4_eofxu"]
+[ext_resource type="Texture2D" uid="uid://mucu37hxy4jb" path="res://assets/ui/bubble_cooked_dough.png" id="5_5y58s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_istmi"]
 
@@ -97,7 +97,7 @@ shape = SubResource("RectangleShape2D_ojtk0")
 
 [node name="raw dough icon" type="Sprite2D" parent="."]
 position = Vector2(1, -25)
-texture = ExtResource("4_eofxu")
+texture = ExtResource("5_5y58s")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="raw dough icon"]
 libraries = {

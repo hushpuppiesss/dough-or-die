@@ -68,5 +68,5 @@ func _on_timer_timeout():
 	
 	var newInstance = doughnut.instantiate()
 	add_child(newInstance)
-	newInstance.position.x += 48
-	newInstance.position.y += 0
+	newInstance.position.x += 112
+	newInstance.position.y += 8
