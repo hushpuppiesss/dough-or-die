@@ -87,7 +87,7 @@ position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_istmi")
 
 [node name="InteractionArea" parent="." instance=ExtResource("4_pl642")]
-action_name = "mix"
+action_name = "Roll Out"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 visible = false

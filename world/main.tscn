@@ -25247,7 +25247,7 @@ sources/17 = SubResource("TileSetAtlasSource_00h5s")
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
-position = Vector2(-529, -455)
+position = Vector2(-518, 39)
 script = ExtResource("1_v6bfc")
 
 [node name="bg music" type="AudioStreamPlayer" parent="."]
@@ -25284,7 +25284,7 @@ layer_6/tile_data = PackedInt32Array(-65538, 524292, 60, -65537, 524292, 60, -19
 position = Vector2(837, 1027)
 
 [node name="player" parent="." instance=ExtResource("12_xkw7g")]
-position = Vector2(848, 635)
+position = Vector2(840, 142)
 
 [node name="crates" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -25307,15 +25307,6 @@ position = Vector2(668, 530)
 [node name="strawberryCrate" parent="crates" instance=ExtResource("30_pyk7n")]
 position = Vector2(-5, 98)
 
-[node name="flour_crate" parent="crates" instance=ExtResource("26_skrbn")]
-position = Vector2(714, 729)
-
-[node name="eggCrate2" parent="crates" instance=ExtResource("21_n2nha")]
-position = Vector2(785, 728)
-
-[node name="milk_crate" parent="crates" instance=ExtResource("22_vqow3")]
-position = Vector2(645, 727)
-
 [node name="eggCrate" parent="crates" instance=ExtResource("21_n2nha")]
 position = Vector2(329, -122)
 
@@ -25325,17 +25316,11 @@ y_sort_enabled = true
 [node name="mixer" parent="stations" instance=ExtResource("32_xun2s")]
 position = Vector2(669, 157)
 
-[node name="mixer2" parent="stations" instance=ExtResource("32_xun2s")]
-position = Vector2(1082, 652)
-
 [node name="fryer" parent="stations" instance=ExtResource("33_6ephn")]
 position = Vector2(1004, 38)
 
 [node name="fryer2" parent="stations" instance=ExtResource("33_6ephn")]
 position = Vector2(1130, 100)
-
-[node name="fryer3" parent="stations" instance=ExtResource("33_6ephn")]
-position = Vector2(1080, 562)
 
 [node name="toppings" parent="stations" instance=ExtResource("34_vsi2d")]
 position = Vector2(857, 516)

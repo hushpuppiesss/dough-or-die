@@ -32,21 +32,24 @@ func _ready():
 	
 # --- GAME LOOP that updates the state of the game
 func _physics_process(delta):
-	
-	# get the input
-	handleInput()
-	
-	# updating the animations
-	updateAnimation()
-	
-	# if player gets hurt
-	hurt()
-	
-	# updating player health
-	update_health()
-	
-	# move
-	move_and_slide()
+	if alive:
+		# get the input
+		handleInput()
+		
+		# updating the animations
+		updateAnimation()
+		
+		# if player gets hurt
+		hurt()
+		
+		# updating player health
+		update_health()
+		
+		# move
+		move_and_slide()
+		
+	# dead
+	die()
 	
 	
 # --- input handler
@@ -109,7 +112,9 @@ func update_health():
 	
 # -- dying
 func die():
-	print("dead")
+	if health <= 0:
+		alive = false
+		self.queue_free()
 
 # enemy close enough to hurt you
 func _on_hurtbox_body_entered(body):
