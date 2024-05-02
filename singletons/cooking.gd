@@ -3,6 +3,7 @@ extends Node
 @onready var can_pick_up = true
 @onready var carrying : bool
 @onready var item_in_hand : CharacterBody2D
+@onready var ingredient_spawned : bool = false
 
 func _physics_process(delta):
 	#print(item_in_hand)

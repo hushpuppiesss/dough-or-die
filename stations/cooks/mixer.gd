@@ -43,6 +43,7 @@ func _mix():
 				ingredients_in.append(CookingManager.item_in_hand.name)
 				CookingManager._put_down()
 				CookingManager.item_in_hand.queue_free()
+				CookingManager.ingredient_spawned = false
 				wheat_icon.visible = false
 				
 				#print(ingredients_in)
@@ -51,6 +52,7 @@ func _mix():
 				ingredients_in.append(CookingManager.item_in_hand.name)
 				CookingManager._put_down()
 				CookingManager.item_in_hand.queue_free()
+				CookingManager.ingredient_spawned = false
 				egg_icon.visible = false
 				
 				#print(ingredients_in)
@@ -59,6 +61,7 @@ func _mix():
 				ingredients_in.append(CookingManager.item_in_hand.name)
 				CookingManager._put_down()
 				CookingManager.item_in_hand.queue_free()
+				CookingManager.ingredient_spawned = false
 				milk_icon.visible = false
 				
 				#print(ingredients_in)
@@ -88,5 +91,6 @@ func _on_timer_timeout():
 	
 	var newInstance = raw_dough.instantiate()
 	add_child(newInstance)
+	CookingManager.ingredient_spawned = true
 	newInstance.position.x += 32
 	newInstance.position.y += 16

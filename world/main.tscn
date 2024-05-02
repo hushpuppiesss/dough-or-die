@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://mh3s83by7o7"]
+[gd_scene load_steps=61 format=3 uid="uid://mh3s83by7o7"]
 
 [ext_resource type="Texture2D" uid="uid://b61ayhbc6crxq" path="res://assets/graphics/tiles/room builder.png" id="1_hhapp"]
 [ext_resource type="AudioStream" uid="uid://ca6owrxnco6ey" path="res://assets/audio/nobonoko - Strawberry Cake.mp3" id="1_s36n0"]
@@ -23,8 +23,12 @@
 [ext_resource type="PackedScene" uid="uid://chg1ifq1uh4in" path="res://waitress/waitress.tscn" id="18_xsido"]
 [ext_resource type="PackedScene" uid="uid://0gcxn1sptt2l" path="res://stations/crates/egg_crate.tscn" id="21_n2nha"]
 [ext_resource type="PackedScene" uid="uid://dbunw05a21m8h" path="res://animals/chicken.tscn" id="22_ctlxf"]
+[ext_resource type="PackedScene" uid="uid://eo6l0chcbfu0" path="res://enemy/spawners/spawner1.tscn" id="22_kxu24"]
 [ext_resource type="PackedScene" uid="uid://bdmdwk0on7jhu" path="res://stations/crates/milk_crate.tscn" id="22_vqow3"]
+[ext_resource type="PackedScene" uid="uid://dgedqkm4mbm3n" path="res://enemy/spawners/spawner2.tscn" id="23_n8qg0"]
 [ext_resource type="PackedScene" uid="uid://y62qc023ort8" path="res://animals/cow.tscn" id="23_vakai"]
+[ext_resource type="PackedScene" uid="uid://dwsobgttswefl" path="res://enemy/spawners/spawner3.tscn" id="24_2b6eq"]
+[ext_resource type="PackedScene" uid="uid://tak8gnrbkj53" path="res://enemy/spawners/spawner4.tscn" id="25_arnbn"]
 [ext_resource type="PackedScene" uid="uid://rp01ebwcirk1" path="res://stations/crates/flour_crate.tscn" id="26_skrbn"]
 [ext_resource type="PackedScene" uid="uid://j4dti1km88xl" path="res://stations/crates/banana_crate.tscn" id="27_ptolr"]
 [ext_resource type="PackedScene" uid="uid://cfp3ojqyxdab7" path="res://stations/crates/choccy_crate.tscn" id="28_pd2ts"]
@@ -34,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://b3hmu4o00s0bh" path="res://stations/cooks/fryer.tscn" id="33_6ephn"]
 [ext_resource type="PackedScene" uid="uid://gfdgg3r85mj6" path="res://stations/cooks/toppings.tscn" id="34_vsi2d"]
 [ext_resource type="PackedScene" uid="uid://cuyn8ohnapakd" path="res://stations/cooks/roller.tscn" id="35_cf0ok"]
+[ext_resource type="PackedScene" uid="uid://dcrjdf87fcak" path="res://scoring/score.tscn" id="36_47ws0"]
 [ext_resource type="PackedScene" uid="uid://c2cpyrfyt3ryn" path="res://menus/pause_menu.tscn" id="41_jf4cf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x8oou"]
@@ -25291,6 +25296,21 @@ position = Vector2(1018, 541)
 [node name="player" parent="." instance=ExtResource("12_xkw7g")]
 position = Vector2(840, 142)
 
+[node name="spawns" type="Node2D" parent="."]
+position = Vector2(636, 264)
+
+[node name="Spawn" parent="spawns" instance=ExtResource("22_kxu24")]
+position = Vector2(-658, -128)
+
+[node name="Spawn2" parent="spawns" instance=ExtResource("23_n8qg0")]
+position = Vector2(23, -379)
+
+[node name="Spawn3" parent="spawns" instance=ExtResource("24_2b6eq")]
+position = Vector2(-251, -368)
+
+[node name="Spawn4" parent="spawns" instance=ExtResource("25_arnbn")]
+position = Vector2(-592, 340)
+
 [node name="crates" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -25381,6 +25401,9 @@ position = Vector2(947, -44)
 [node name="cow7" parent="cows" instance=ExtResource("23_vakai")]
 position = Vector2(793, -35)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="pause menu" type="CanvasLayer" parent="."]
 
-[node name="pause menu" parent="CanvasLayer" instance=ExtResource("41_jf4cf")]
+[node name="pause menu" parent="pause menu" instance=ExtResource("41_jf4cf")]
+
+[node name="CanvasLayer2" parent="." instance=ExtResource("36_47ws0")]
+visible = false

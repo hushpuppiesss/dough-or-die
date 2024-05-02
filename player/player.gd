@@ -10,6 +10,7 @@ class_name player
 @onready var animations = $AnimatedSprite2D
 @onready var previousDirection: String = "Down"
 @onready var hitflash = $hitflash
+@onready var direction : String
 
 # sfx
 @onready var sfx_hurt = $hurt

@@ -37,6 +37,7 @@ func _fry():
 				# adds ingredient to array
 				ingredients_in.append(CookingManager.item_in_hand.name)
 				CookingManager._put_down()
+				CookingManager.ingredient_spawned = false
 				CookingManager.item_in_hand.queue_free()
 				raw_dough_icon.visible = false
 				
@@ -63,5 +64,6 @@ func _on_timer_timeout():
 	
 	var newInstance = dough_cooked.instantiate()
 	add_child(newInstance)
+	CookingManager.ingredient_spawned = true
 	newInstance.position.x += 48
 	newInstance.position.y += 8

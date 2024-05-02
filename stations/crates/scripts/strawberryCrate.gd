@@ -10,9 +10,11 @@ func _ready():
 
 func _get_strawberry():
 	
-	var newInstance = strawberry.instantiate()
-	add_child(newInstance)
-	newInstance.position.y += 16
+	if CookingManager.ingredient_spawned == false:
+		var newInstance = strawberry.instantiate()
+		add_child(newInstance)
+		newInstance.position.y += 16
+		CookingManager.ingredient_spawned = true
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

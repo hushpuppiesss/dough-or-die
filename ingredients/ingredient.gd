@@ -13,6 +13,9 @@ func _pick_up():
 		CookingManager.item_in_hand = self
 		CookingManager._picked_up()
 		reparent(player)
+		# perfect coordinates
+		#self.position.x = 0
+		#self.position.y = 3
 		
 # if dropped
 func _input(event):
@@ -25,4 +28,21 @@ func _input(event):
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	pass
+	# checking if player is carrying something
+	if CookingManager.carrying:
+		# cehcking the direction
+		if player.velocity.y < 0: # down
+			self.visible = true
+			self.position.x = 0
+			self.position.y = 3
+		if player.velocity.x < 0: # left 
+			self.visible = true
+			self.position.x = -16
+			self.position.y = -3
+		if player.velocity.x > 0: # right
+			self.visible = true
+			self.position.x = 16
+			self.position.y = -3
+		if player.velocity.y < 0: # up
+			self.visible = false
+	
