@@ -30,19 +30,19 @@ func _input(event):
 func _physics_process(delta):
 	# checking if player is carrying something
 	if CookingManager.carrying:
-		# cehcking the direction
-		if player.velocity.y < 0: # down
+		# cehcking the direction the palyer is facing
+		if CookingManager.carrying_direction == "Down": # down
 			self.visible = true
 			self.position.x = 0
 			self.position.y = 3
-		if player.velocity.x < 0: # left 
+		if CookingManager.carrying_direction == "Left": # left 
 			self.visible = true
 			self.position.x = -16
 			self.position.y = -3
-		if player.velocity.x > 0: # right
+		if CookingManager.carrying_direction == "Right": # right
 			self.visible = true
 			self.position.x = 16
 			self.position.y = -3
-		if player.velocity.y < 0: # up
+		if CookingManager.carrying_direction == "Up": # up
 			self.visible = false
 	

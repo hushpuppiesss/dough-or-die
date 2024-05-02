@@ -4,6 +4,7 @@ extends Node
 @onready var carrying : bool
 @onready var item_in_hand : CharacterBody2D
 @onready var ingredient_spawned : bool = false
+@onready var carrying_direction : String
 
 func _physics_process(delta):
 	#print(item_in_hand)

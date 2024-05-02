@@ -67,24 +67,23 @@ func updateAnimation():
 	elif velocity.x > 0: direction = "Right"
 	elif velocity.y < 0: direction = "Up"
 	
-
-	# if hurt
-	if  hurt_range and hurt_cooldown:
-		animations.play("hurt" + previousDirection)
 	# idle animations
-	elif velocity.length() == 0:
+	if velocity.length() == 0:
 		if CookingManager.carrying == true:
 			animations.play("carryIdle" + previousDirection)
+			CookingManager.carrying_direction = previousDirection
 		else:
 			animations.play("idle" + previousDirection)
 	# walk animations
 	else:
 		if CookingManager.carrying == true:
 			animations.play("carryWalk" + direction)
+			CookingManager.carrying_direction = direction
 		else:
 			animations.play("walk" + direction)
 		
 		previousDirection = direction
+
 	
 
 		
@@ -115,7 +114,6 @@ func update_health():
 func die():
 	if health <= 0:
 		alive = false
-		self.queue_free()
 
 # enemy close enough to hurt you
 func _on_hurtbox_body_entered(body):

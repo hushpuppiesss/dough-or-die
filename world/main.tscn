@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://mh3s83by7o7"]
+[gd_scene load_steps=62 format=3 uid="uid://mh3s83by7o7"]
 
 [ext_resource type="Texture2D" uid="uid://b61ayhbc6crxq" path="res://assets/graphics/tiles/room builder.png" id="1_hhapp"]
 [ext_resource type="AudioStream" uid="uid://ca6owrxnco6ey" path="res://assets/audio/nobonoko - Strawberry Cake.mp3" id="1_s36n0"]
@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://gfdgg3r85mj6" path="res://stations/cooks/toppings.tscn" id="34_vsi2d"]
 [ext_resource type="PackedScene" uid="uid://cuyn8ohnapakd" path="res://stations/cooks/roller.tscn" id="35_cf0ok"]
 [ext_resource type="PackedScene" uid="uid://dcrjdf87fcak" path="res://scoring/score.tscn" id="36_47ws0"]
+[ext_resource type="PackedScene" uid="uid://dr5nqpaquk1jn" path="res://menus/death_screen.tscn" id="37_bx4w1"]
 [ext_resource type="PackedScene" uid="uid://c2cpyrfyt3ryn" path="res://menus/pause_menu.tscn" id="41_jf4cf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x8oou"]
@@ -25296,21 +25297,6 @@ position = Vector2(1018, 541)
 [node name="player" parent="." instance=ExtResource("12_xkw7g")]
 position = Vector2(840, 142)
 
-[node name="spawns" type="Node2D" parent="."]
-position = Vector2(636, 264)
-
-[node name="Spawn" parent="spawns" instance=ExtResource("22_kxu24")]
-position = Vector2(-658, -128)
-
-[node name="Spawn2" parent="spawns" instance=ExtResource("23_n8qg0")]
-position = Vector2(23, -379)
-
-[node name="Spawn3" parent="spawns" instance=ExtResource("24_2b6eq")]
-position = Vector2(-251, -368)
-
-[node name="Spawn4" parent="spawns" instance=ExtResource("25_arnbn")]
-position = Vector2(-592, 340)
-
 [node name="crates" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -25405,5 +25391,20 @@ position = Vector2(793, -35)
 
 [node name="pause menu" parent="pause menu" instance=ExtResource("41_jf4cf")]
 
-[node name="CanvasLayer2" parent="." instance=ExtResource("36_47ws0")]
-visible = false
+[node name="sccoring label" parent="." instance=ExtResource("36_47ws0")]
+
+[node name="death screen" type="CanvasLayer" parent="."]
+
+[node name="death screen" parent="death screen" instance=ExtResource("37_bx4w1")]
+
+[node name="Spawn" parent="." instance=ExtResource("22_kxu24")]
+position = Vector2(1139, 235)
+
+[node name="Spawn2" parent="." instance=ExtResource("23_n8qg0")]
+position = Vector2(-45, 151)
+
+[node name="Spawn3" parent="." instance=ExtResource("24_2b6eq")]
+position = Vector2(611, -123)
+
+[node name="Spawn4" parent="." instance=ExtResource("25_arnbn")]
+position = Vector2(88, 659)

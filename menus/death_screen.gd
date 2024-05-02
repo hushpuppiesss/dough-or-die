@@ -2,12 +2,12 @@ extends Control
 @onready var button_resume = $PanelContainer/MarginContainer/VBoxContainer/resume
 @onready var button_quit = $PanelContainer/MarginContainer/VBoxContainer/quit
 @onready var button_restart = $PanelContainer/MarginContainer/VBoxContainer/restart
+@onready var player = InteractionManager.player
 
 func _ready():
 	$AnimationPlayer.play("RESET")
 	button_quit.disabled = true
 	button_restart.disabled = true
-	
 
 func resume():
 	get_tree().paused = false
@@ -20,19 +20,18 @@ func pause():
 	$AnimationPlayer.play("blur")
 	button_quit.disabled = false
 	button_restart.disabled = false
-	
-func testEsc():
-	if Input.is_action_just_pressed("escape") and !get_tree().paused:
-		pause()
-	elif Input.is_action_just_pressed("escape") and get_tree().paused:
-		resume()
 
 func _on_restart_pressed():
 	resume()
 	get_tree().reload_current_scene()
+	
+	CookingManager.can_pick_up = true
+	CookingManager.carrying = false
+	CookingManager.ingredient_spawned = false
 
 func _on_quit_pressed():
 	get_tree().quit()
 
 func _process(delta):
-	testEsc()
+	if player.alive == false:
+		pause()

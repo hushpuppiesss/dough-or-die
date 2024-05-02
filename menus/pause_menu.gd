@@ -37,6 +37,10 @@ func _on_resume_pressed():
 func _on_restart_pressed():
 	resume()
 	get_tree().reload_current_scene()
+	
+	CookingManager.can_pick_up = true
+	CookingManager.carrying = false
+	CookingManager.ingredient_spawned = false
 
 
 func _on_quit_pressed():
