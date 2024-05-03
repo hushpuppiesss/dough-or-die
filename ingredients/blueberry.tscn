@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b013nj1wujtpp"]
+
+[ext_resource type="Script" path="res://ingredients/ingredient.gd" id="1_ibmna"]
+[ext_resource type="Texture2D" uid="uid://baeulos2e2d3i" path="res://assets/graphics/food/banana.png" id="2_0qay0"]
+[ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="3_ruh54"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6l5go"]
+radius = 39.0
+
+[node name="blueberry" type="CharacterBody2D" groups=["blueberry", "topping"]]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_ibmna")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0qay0")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_ruh54")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_6l5go")

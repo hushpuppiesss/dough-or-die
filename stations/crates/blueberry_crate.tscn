@@ -1,22 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsgdw3djj27ow"]
+[gd_scene load_steps=7 format=3 uid="uid://j4dti1km88xl"]
 
-[ext_resource type="Script" path="res://stations/crates/scripts/matchaCrate.gd" id="1_m5rtu"]
-[ext_resource type="Texture2D" uid="uid://b5hqxqs0iarm" path="res://assets/graphics/interactables/crates/matcha_crate.png" id="2_q13w6"]
-[ext_resource type="PackedScene" uid="uid://s2lntaqteb13" path="res://ingredients/matcha.tscn" id="2_tsvd4"]
-[ext_resource type="Script" path="res://interaction/interaction area/interaction_area.gd" id="3_loqox"]
+[ext_resource type="Script" path="res://stations/crates/scripts/bananaCrate.gd" id="1_cm1c4"]
+[ext_resource type="Texture2D" uid="uid://rorfv7ejf120" path="res://assets/graphics/interactables/crates/banana_crate.png" id="2_8je8j"]
+[ext_resource type="PackedScene" uid="uid://b013nj1wujtpp" path="res://ingredients/blueberry.tscn" id="2_ddlrf"]
+[ext_resource type="Script" path="res://interaction/interaction area/interaction_area.gd" id="3_dkv7s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gllcl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2hpd"]
 size = Vector2(56, 52)
 
-[node name="matchaCrate" type="StaticBody2D"]
-script = ExtResource("1_m5rtu")
-matcha = ExtResource("2_tsvd4")
+[node name="blueberryCrate" type="StaticBody2D"]
+script = ExtResource("1_cm1c4")
+blueberry = ExtResource("2_ddlrf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4)
-texture = ExtResource("2_q13w6")
+texture = ExtResource("2_8je8j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -26,8 +26,8 @@ shape = SubResource("RectangleShape2D_gllcl")
 [node name="InteractionArea" type="Area2D" parent="."]
 visible = false
 collision_mask = 2
-script = ExtResource("3_loqox")
-action_name = "get matcha"
+script = ExtResource("3_dkv7s")
+action_name = "Blueberry"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("RectangleShape2D_h2hpd")

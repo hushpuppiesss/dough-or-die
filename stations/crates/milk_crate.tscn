@@ -24,7 +24,7 @@ position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_t4wds")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_qimlv")]
-action_name = "get milk"
+action_name = "Milk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(0, 4)

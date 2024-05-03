@@ -200,7 +200,7 @@ libraries = {
 }
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 5.0
 one_shot = true
 
 [node name="progress bar" type="ProgressBar" parent="."]
@@ -210,7 +210,7 @@ offset_right = 26.0
 offset_bottom = -10.0
 theme_override_styles/background = SubResource("StyleBoxFlat_ph4av")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ikfr7")
-max_value = 3.0
+max_value = 5.0
 show_percentage = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

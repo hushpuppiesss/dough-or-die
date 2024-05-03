@@ -1,5 +1,7 @@
 extends Camera2D
 
+# dynamic camera script
+
 const MAX_DISTANCE = 64
 
 var target_distance : int = 0

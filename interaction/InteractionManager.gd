@@ -2,9 +2,10 @@ extends Node2D
 
 var player
 var world
+var revived : bool
 @onready var label = $Label
 
-const base_text = "[E]"
+const base_text = "[E] "
 
 var active_areas = []
 var can_interact = true

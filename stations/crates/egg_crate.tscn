@@ -27,7 +27,7 @@ shape = SubResource("RectangleShape2D_gllcl")
 visible = false
 collision_mask = 2
 script = ExtResource("3_gmt58")
-action_name = "get egg"
+action_name = "Egg"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("RectangleShape2D_h2hpd")

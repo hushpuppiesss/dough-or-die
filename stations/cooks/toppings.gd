@@ -5,7 +5,11 @@ extends StaticBody2D
 @onready var progress_bar = $"progress bar"
 
 # spits out dough
-@export var doughnut: PackedScene
+@export_category("Doughnuts")
+@export var boston_kreme: PackedScene
+@export var strawberry_sprinkle: PackedScene
+@export var glazed: PackedScene
+@export var blueberry_filled: PackedScene
 
 # icons
 @onready var raw_dough_icon = $"raw dough icon"
@@ -68,7 +72,7 @@ func _on_timer_timeout():
 	raw_dough_icon.visible = true
 	progress_bar.hide()
 	
-	var newInstance = doughnut.instantiate()
+	var newInstance = boston_kreme.instantiate()
 	add_child(newInstance)
 	CookingManager.ingredient_spawned = true
 	newInstance.position.x += 96

@@ -9,7 +9,6 @@ func _ready():
 	button_quit.disabled = true
 	button_restart.disabled = true
 	
-
 func resume():
 	get_tree().paused = false
 	$AnimationPlayer.play_backwards("blur")

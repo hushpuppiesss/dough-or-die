@@ -23,7 +23,7 @@ shape = SubResource("RectangleShape2D_6ycpj")
 
 [node name="InteractionArea" parent="." instance=ExtResource("1_8s07w")]
 visible = false
-action_name = "get flour"
+action_name = "Flour"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(0, 8)

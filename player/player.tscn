@@ -1,4 +1,4 @@
-[gd_scene load_steps=152 format=3 uid="uid://dhok8gydv7v81"]
+[gd_scene load_steps=154 format=3 uid="uid://dhok8gydv7v81"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_4jbyi"]
 [ext_resource type="Texture2D" uid="uid://iv7kktgugxqy" path="res://assets/graphics/shadow.png" id="2_2r5sj"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bygywqf4y5q1b" path="res://bullet/bullet.tscn" id="6_oqal7"]
 [ext_resource type="AudioStream" uid="uid://by8ibw814q0cx" path="res://assets/audio/sfx/bubble.mp3.mp3" id="7_v7moy"]
 [ext_resource type="AudioStream" uid="uid://prs51owc0cfa" path="res://assets/audio/sfx/hurt.mp3" id="9_3vdpm"]
+[ext_resource type="AudioStream" uid="uid://63kgoapl7wd3" path="res://assets/audio/sfx/fail.mp3" id="11_pnc8g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iuf1t"]
 shader = ExtResource("3_1hi6b")
@@ -303,6 +304,10 @@ region = Rect2(320, 512, 32, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_0dp10"]
 atlas = ExtResource("2_5kpjn")
 region = Rect2(352, 512, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mod6"]
+atlas = ExtResource("2_5kpjn")
+region = Rect2(320, 1216, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_plolm"]
 atlas = ExtResource("2_5kpjn")
@@ -824,6 +829,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_2mod6")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_plolm")
 }, {
 "duration": 1.0,
@@ -1191,11 +1204,16 @@ script = ExtResource("3_abtnu")
 
 [node name="hurt cooldown" type="Timer" parent="."]
 
+[node name="death timer" type="Timer" parent="."]
+
 [node name="bubble" type="AudioStreamPlayer" parent="." groups=["Player"]]
 stream = ExtResource("7_v7moy")
 
 [node name="hurt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_3vdpm")
+
+[node name="fail" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_pnc8g")
 
 [connection signal="timeout" from="regen timer" to="." method="_on_regen_timer_timeout"]
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

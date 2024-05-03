@@ -5,9 +5,7 @@ extends Control
 @onready var player = InteractionManager.player
 
 func _ready():
-	$AnimationPlayer.play("RESET")
-	button_quit.disabled = true
-	button_restart.disabled = true
+	pause()
 
 func resume():
 	get_tree().paused = false
@@ -23,15 +21,19 @@ func pause():
 
 func _on_restart_pressed():
 	resume()
-	get_tree().reload_current_scene()
 	
 	CookingManager.can_pick_up = true
 	CookingManager.carrying = false
 	CookingManager.ingredient_spawned = false
+	
+	Transition.animation.play("fadeout")
+	await get_tree().create_timer(1.5).timeout
+	InteractionManager.revived = true
+	get_tree().change_scene_to_file("res://world/main.tscn")
+
 
 func _on_quit_pressed():
 	get_tree().quit()
 
 func _process(delta):
-	if player.alive == false:
-		pause()
+	pass

@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://n14d0ka00etv" path="res://ingredients/dough/dough cooked.tscn" id="2_8l0ch"]
 [ext_resource type="Texture2D" uid="uid://c47kq1gh65vvr" path="res://assets/ui/bubble_raw_doughnut.png" id="5_f25of"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_istmi"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_po6lj"]
+size = Vector2(42, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojtk0"]
 size = Vector2(58, 64)
@@ -84,8 +85,8 @@ texture = ExtResource("1_i5vmp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(0, 11)
-shape = SubResource("CircleShape2D_istmi")
+position = Vector2(1, 18.5)
+shape = SubResource("RectangleShape2D_po6lj")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_01lwn")]
 action_name = "Fry"
@@ -105,7 +106,7 @@ libraries = {
 }
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 10.0
 one_shot = true
 
 [node name="progress bar" type="ProgressBar" parent="."]
@@ -115,7 +116,7 @@ offset_right = 26.0
 offset_bottom = -10.0
 theme_override_styles/background = SubResource("StyleBoxFlat_ph4av")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ikfr7")
-max_value = 3.0
+max_value = 10.0
 show_percentage = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

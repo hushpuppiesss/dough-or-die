@@ -1,22 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://j4dti1km88xl"]
+[gd_scene load_steps=6 format=3 uid="uid://bsgdw3djj27ow"]
 
-[ext_resource type="Script" path="res://stations/crates/scripts/bananaCrate.gd" id="1_cm1c4"]
-[ext_resource type="Texture2D" uid="uid://rorfv7ejf120" path="res://assets/graphics/interactables/crates/banana_crate.png" id="2_8je8j"]
-[ext_resource type="PackedScene" uid="uid://b013nj1wujtpp" path="res://ingredients/banana.tscn" id="2_15a1s"]
-[ext_resource type="Script" path="res://interaction/interaction area/interaction_area.gd" id="3_dkv7s"]
+[ext_resource type="Script" path="res://stations/crates/scripts/matchaCrate.gd" id="1_m5rtu"]
+[ext_resource type="Texture2D" uid="uid://b5hqxqs0iarm" path="res://assets/graphics/interactables/crates/matcha_crate.png" id="2_q13w6"]
+[ext_resource type="Script" path="res://interaction/interaction area/interaction_area.gd" id="3_loqox"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gllcl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2hpd"]
 size = Vector2(56, 52)
 
-[node name="bananaCrate" type="StaticBody2D"]
-script = ExtResource("1_cm1c4")
-banana = ExtResource("2_15a1s")
+[node name="sugarCrate" type="StaticBody2D"]
+script = ExtResource("1_m5rtu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4)
-texture = ExtResource("2_8je8j")
+texture = ExtResource("2_q13w6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -26,8 +24,8 @@ shape = SubResource("RectangleShape2D_gllcl")
 [node name="InteractionArea" type="Area2D" parent="."]
 visible = false
 collision_mask = 2
-script = ExtResource("3_dkv7s")
-action_name = "get banana"
+script = ExtResource("3_loqox")
+action_name = "Sugar"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("RectangleShape2D_h2hpd")

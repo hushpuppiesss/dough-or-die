@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cho7irldewwd"
+path="res://.godot/imported/space boyfriend's tape.mp3-a8e7a7f371676da75da1fb585b9d9486.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/space boyfriend's tape.mp3"
+dest_files=["res://.godot/imported/space boyfriend's tape.mp3-a8e7a7f371676da75da1fb585b9d9486.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

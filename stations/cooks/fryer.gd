@@ -65,5 +65,5 @@ func _on_timer_timeout():
 	var newInstance = dough_cooked.instantiate()
 	add_child(newInstance)
 	CookingManager.ingredient_spawned = true
-	newInstance.position.x += 48
+	newInstance.position.x += 56
 	newInstance.position.y += 8

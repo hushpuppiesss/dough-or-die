@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://s2lntaqteb13"]
+
+[ext_resource type="Script" path="res://ingredients/ingredient.gd" id="1_5xvos"]
+[ext_resource type="Texture2D" uid="uid://c8gnmiwetfbt8" path="res://assets/graphics/food/matcha.png" id="2_3f4cs"]
+[ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="3_r4pup"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6l5go"]
+radius = 39.0
+
+[node name="sugar" type="CharacterBody2D" groups=["sugar", "topping"]]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_5xvos")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3f4cs")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_r4pup")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_6l5go")
