@@ -22,6 +22,7 @@ Transition="*res://singletons/transition.tscn"
 SignalBus="*res://singletons/SignalBus.gd"
 InteractionManager="*res://interaction/InteractionManager.tscn"
 CookingManager="*res://singletons/cooking.gd"
+ScoreManager="*res://scoring/score.tscn"
 
 [display]
 

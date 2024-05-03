@@ -5,6 +5,7 @@ extends Control
 @onready var player = InteractionManager.player
 
 func _ready():
+	ScoreManager.visible = true
 	pause()
 
 func resume():

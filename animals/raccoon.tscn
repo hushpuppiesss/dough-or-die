@@ -1,16 +1,22 @@
-[gd_scene load_steps=37 format=3 uid="uid://b5h1axxd3fu8b"]
+[gd_scene load_steps=46 format=3 uid="uid://b5h1axxd3fu8b"]
 
 [ext_resource type="Texture2D" uid="uid://bo557jcajs8oh" path="res://assets/graphics/big_shadow.png" id="1_233ec"]
 [ext_resource type="Script" path="res://animals/raccoon.gd" id="1_pkxho"]
+[ext_resource type="PackedScene" uid="uid://bn1ps0ojbtht0" path="res://ingredients/doughnuts/boston kreme.tscn" id="2_fqjq1"]
 [ext_resource type="Texture2D" uid="uid://wwvfbhd4s2i5" path="res://assets/graphics/animals/raccoon/1 hearts.png" id="3_2fgx5"]
+[ext_resource type="PackedScene" uid="uid://ywu4ar8u0a5f" path="res://ingredients/doughnuts/strawberry sprinkle.tscn" id="3_7kw50"]
+[ext_resource type="PackedScene" uid="uid://dy75ce5b7b4qo" path="res://ingredients/doughnuts/glazed.tscn" id="4_fp1sw"]
 [ext_resource type="Texture2D" uid="uid://bylg4vv5rb7uv" path="res://assets/graphics/animals/raccoon/3 hearts.png" id="4_ru0e1"]
 [ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="4_s5tw7"]
+[ext_resource type="PackedScene" uid="uid://bviimm51pp1xx" path="res://ingredients/doughnuts/blueberry_filled.tscn" id="5_6jigp"]
 [ext_resource type="Texture2D" uid="uid://d3e8mrsu2t3rl" path="res://assets/graphics/animals/raccoon/2 hearts.png" id="5_cv4rb"]
 [ext_resource type="Texture2D" uid="uid://dr1cm77uim7dt" path="res://assets/graphics/animals/raccoon/raccoon_default.png" id="6_3j1ur"]
 [ext_resource type="AudioStream" uid="uid://e2yddqw8anbh" path="res://assets/audio/sfx/happy raccoon.mp3" id="7_34226"]
 [ext_resource type="Texture2D" uid="uid://dp7cxvuq6gdha" path="res://assets/graphics/animals/raccoon/raccoon_happy.png" id="7_yr8gp"]
 [ext_resource type="AudioStream" uid="uid://io6hu51eo6j3" path="res://assets/audio/sfx/sad raccoon.mp3" id="8_7g7w6"]
 [ext_resource type="Texture2D" uid="uid://tyr32r7m8ygi" path="res://assets/graphics/animals/raccoon/raccoon_cry.png" id="8_chk0n"]
+[ext_resource type="Texture2D" uid="uid://b5mrcsb4dbge7" path="res://assets/ui/thought_bubble.png" id="16_y7ooc"]
+[ext_resource type="Texture2D" uid="uid://c7tfw2jnl466v" path="res://assets/graphics/carries/donut_collection.png" id="17_al7es"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vb6vb"]
 atlas = ExtResource("3_2fgx5")
@@ -206,8 +212,52 @@ size = Vector2(136, 67)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24m56"]
 size = Vector2(305, 259.5)
 
-[node name="raccoon" type="CharacterBody2D"]
+[sub_resource type="Animation" id="Animation_p77rl"]
+resource_name = "float"
+length = 1.1
+loop_mode = 1
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("thought_bubble:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(128, -193), Vector2(128, -197), Vector2(128, -193), Vector2(128, -189)]
+}
+
+[sub_resource type="Animation" id="Animation_6ij5w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("thought_bubble:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(128, -191)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_phjpe"]
+_data = {
+"RESET": SubResource("Animation_6ij5w"),
+"float": SubResource("Animation_p77rl")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(225, 297)
 script = ExtResource("1_pkxho")
+boston_kreme = ExtResource("2_fqjq1")
+strawberry_sprinkle = ExtResource("3_7kw50")
+glazed = ExtResource("4_fp1sw")
+blueberry_filled = ExtResource("5_6jigp")
 
 [node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(28, -46)
@@ -222,7 +272,7 @@ animation = &"zero"
 position = Vector2(28, -51)
 sprite_frames = SubResource("SpriteFrames_codaw")
 animation = &"fed"
-frame_progress = 0.889209
+frame_progress = 0.742899
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -238,8 +288,30 @@ visible = false
 position = Vector2(-19, 31)
 shape = SubResource("RectangleShape2D_24m56")
 
+[node name="fed" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
 [node name="happy" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_34226")
 
 [node name="sad" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_7g7w6")
+
+[node name="thought_bubble" type="Sprite2D" parent="."]
+position = Vector2(128, -191)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("16_y7ooc")
+
+[node name="doughnuts" type="Sprite2D" parent="thought_bubble"]
+position = Vector2(-2.5034e-06, -9.68528)
+scale = Vector2(1.66667, 1.66667)
+texture = ExtResource("17_al7es")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_phjpe")
+}
+
+[connection signal="timeout" from="fed" to="." method="_on_fed_timeout"]

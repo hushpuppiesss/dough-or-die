@@ -4,7 +4,7 @@ extends StaticBody2D
 @onready var sprite = $Sprite2D
 @onready var progress_bar = $"progress bar"
 
-# spits out dough
+# possible donuts
 @export_category("Doughnuts")
 @export var boston_kreme: PackedScene
 @export var strawberry_sprinkle: PackedScene

@@ -8,29 +8,22 @@ extends StaticBody2D
 @export var doughnut_raw : PackedScene
 
 # icons
-@onready var raw_dough_icon = $"raw dough icon"
-@onready var raw_dough_anim = $"raw dough icon/AnimationPlayer"
+@onready var recipe_book_icon = $"recipe book icon"
+@onready var recipe_book_anim = $"recipe book icon/AnimationPlayer"
 
 
 # keeps track of the ingredients inside
 @onready var ingredients_in = []
 
-# if its full or empty
-@onready var loaded = false
-
-# if its done mixing
-@onready var mixed = false
 
 @onready var player = InteractionManager.player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	interaction_area.interact = Callable(self, "_fry")
-	raw_dough_anim.play("float")
-	progress_bar.hide()
+	interaction_area.interact = Callable(self, "_read")
+	recipe_book_anim.play("float")
 	
-func _fry():
-	if loaded == false:
+func _read():
 		# check if player has an ingredient to put in
 		if CookingManager.carrying:
 			if CookingManager.item_in_hand.is_in_group("dough raw") && !ingredients_in.has("dough raw"):
@@ -39,31 +32,10 @@ func _fry():
 				CookingManager._put_down()
 				CookingManager.item_in_hand.queue_free()
 				CookingManager.ingredient_spawned = false
-				raw_dough_icon.visible = false
 				
 				#print(ingredients_in)
 				
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	# checking ingredients
-	if ingredients_in.has("dough raw"):
-		loaded = true
-		progress_bar.show()
-		$Timer.start()
-		ingredients_in.clear()
-		
-	progress_bar.value = $Timer.time_left
-	
-func _on_timer_timeout():
-	mixed = true
-	loaded = false
-	
-	raw_dough_icon.visible = true
-	progress_bar.hide()
-	
-	var newInstance = doughnut_raw.instantiate()
-	add_child(newInstance)
-	CookingManager.ingredient_spawned = true
-	newInstance.position.x += 29
-	newInstance.position.y += 8
+	pass

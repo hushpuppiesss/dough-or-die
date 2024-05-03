@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcrjdf87fcak"]
+[gd_scene load_steps=5 format=3 uid="uid://dcrjdf87fcak"]
 
 [ext_resource type="Script" path="res://scoring/scoringLabel.gd" id="1_nvt5h"]
 [ext_resource type="FontFile" uid="uid://p2pafja7rn0b" path="res://assets/ui/pixelmix.ttf" id="1_qewe8"]
+[ext_resource type="Script" path="res://scoring/score.gd" id="1_rka7k"]
+[ext_resource type="Texture2D" uid="uid://mecv4ulgjwx0" path="res://assets/ui/star.png" id="4_7qoef"]
 
 [node name="scoring label" type="CanvasLayer"]
+script = ExtResource("1_rka7k")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -15,24 +18,38 @@ offset_right = 40.0
 grow_vertical = 0
 script = ExtResource("1_nvt5h")
 
+[node name="ColorRect" type="ColorRect" parent="Control"]
+modulate = Color(0.278431, 0.176471, 0.235294, 0.537255)
+layout_mode = 0
+offset_left = 5.0
+offset_top = -14.0
+offset_right = 144.0
+offset_bottom = 37.0
+
+[node name="Star" type="Sprite2D" parent="Control"]
+position = Vector2(31, 11)
+scale = Vector2(2.93569, 2.93569)
+texture = ExtResource("4_7qoef")
+
 [node name="score" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = -50.0
+offset_left = 58.0
+offset_top = -51.0
 offset_right = 128.0
-offset_bottom = -30.0
+offset_bottom = -13.0
 grow_vertical = 0
-scale = Vector2(1.25, 1.25)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0.956863, 0.494118, 0.105882, 1)
-theme_override_colors/font_outline_color = Color(0.956863, 0.705882, 0.105882, 1)
+scale = Vector2(1.04903, 1.04903)
+theme_override_colors/font_color = Color(0.956863, 0.705882, 0.105882, 1)
+theme_override_colors/font_shadow_color = Color(0.278431, 0.176471, 0.235294, 1)
+theme_override_colors/font_outline_color = Color(0.956863, 0.494118, 0.105882, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 4
-theme_override_constants/shadow_outline_size = 4
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 8
 theme_override_fonts/font = ExtResource("1_qewe8")
-theme_override_font_sizes/font_size = 20
-text = "Score: 0"
+theme_override_font_sizes/font_size = 38
+text = "0
+"

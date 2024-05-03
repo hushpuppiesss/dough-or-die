@@ -350,7 +350,7 @@ theme_override_constants/outline_size = 10
 theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/font = ExtResource("4_sbyxf")
 theme_override_font_sizes/font_size = 75
-text = "COOKED!"
+text = "COOKED."
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_i8xrh")

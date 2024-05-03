@@ -1185,7 +1185,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_o5jdo")
 show_percentage = false
 
 [node name="regen timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 10.0
 autostart = true
 
 [node name="hurtbox" type="Area2D" parent="."]

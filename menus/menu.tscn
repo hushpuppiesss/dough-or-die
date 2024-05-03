@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://cj1blsrtyacqf"]
+[gd_scene load_steps=14 format=3 uid="uid://cj1blsrtyacqf"]
 
 [ext_resource type="Script" path="res://menus/menu.gd" id="1_buw6m"]
 [ext_resource type="FontFile" uid="uid://cuqko2cx8d1h3" path="res://assets/ui/Chalkboard-Regular.ttf" id="2_pbdlg"]
 [ext_resource type="Texture2D" uid="uid://g581u61uhj7x" path="res://assets/graphics/dough or die.png" id="3_b6rti"]
+[ext_resource type="FontFile" uid="uid://p2pafja7rn0b" path="res://assets/ui/pixelmix.ttf" id="3_r111f"]
 [ext_resource type="AudioStream" uid="uid://cobeba2t1rocf" path="res://assets/audio/sfx/paper1.mp3" id="4_xqg06"]
 [ext_resource type="AudioStream" uid="uid://blm27mss88i2h" path="res://assets/audio/Catalogue Orders - Miitopia OST.mp3" id="5_u4say"]
 
@@ -54,7 +55,7 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0.101961, 0.101961, 0.101961, 0)
+bg_color = Color(0.105882, 0.0784314, 0.188235, 0.654902)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
@@ -91,8 +92,8 @@ Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
 Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
-Button/font_sizes/font_size = 30
-Button/fonts/font = ExtResource("2_pbdlg")
+Button/font_sizes/font_size = 23
+Button/fonts/font = ExtResource("3_r111f")
 Button/styles/disabled = SubResource("StyleBoxFlat_1glec")
 Button/styles/focus = SubResource("StyleBoxFlat_d0xsv")
 Button/styles/hover = SubResource("StyleBoxFlat_wap3h")
@@ -119,10 +120,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 9.0
-offset_top = -115.0
-offset_right = 116.0
-offset_bottom = -39.0
+offset_left = 15.0
+offset_top = -114.0
+offset_right = 115.0
+offset_bottom = -38.0
 grow_vertical = 0
 pivot_offset = Vector2(67, 9)
 theme = SubResource("Theme_b8kcb")
