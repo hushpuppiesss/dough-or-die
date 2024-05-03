@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bviimm51pp1xx"]
+
+[ext_resource type="Script" path="res://ingredients/ingredient.gd" id="1_d2epk"]
+[ext_resource type="Texture2D" uid="uid://c501oyjmfjg0j" path="res://assets/graphics/carries/blueberry_filled.png" id="2_umvkf"]
+[ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="3_sjh1l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6l5go"]
+radius = 39.0
+
+[node name="blueberry filled" type="CharacterBody2D" groups=["blueberry filled"]]
+z_index = 1
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_d2epk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_umvkf")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_sjh1l")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_6l5go")

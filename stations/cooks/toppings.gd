@@ -10,11 +10,13 @@ extends StaticBody2D
 @export var strawberry_sprinkle: PackedScene
 @export var glazed: PackedScene
 @export var blueberry_filled: PackedScene
+@onready var doughnut : PackedScene
 
 # icons
-@onready var raw_dough_icon = $"raw dough icon"
-@onready var raw_dough_anim = $"raw dough icon/AnimationPlayer"
-
+@onready var cooked_dough_icon = $"cooked dough icon"
+@onready var cooked_dough_anim = $"cooked dough icon/AnimationPlayer"
+@onready var topping_selection = $"topping selection"
+@onready var topping_selection_anim = $"topping selection/AnimationPlayer"
 
 # keeps track of the ingredients inside
 @onready var ingredients_in = []
@@ -30,7 +32,8 @@ extends StaticBody2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	interaction_area.interact = Callable(self, "_fry")
-	raw_dough_anim.play("float")
+	cooked_dough_anim.play("float")
+	topping_selection_anim.play("float")
 	progress_bar.hide()
 	
 func _fry():
@@ -43,37 +46,83 @@ func _fry():
 				CookingManager._put_down()
 				CookingManager.item_in_hand.queue_free()
 				CookingManager.ingredient_spawned = false
-				raw_dough_icon.visible = false
+				cooked_dough_icon.visible = false
 				
 				#print(ingredients_in)
-			if CookingManager.item_in_hand.is_in_group("chocolate") && !ingredients_in.has("chocolate"):
+			if CookingManager.item_in_hand.is_in_group("sugar") && !ingredients_in.has("chocolate") && !ingredients_in.has("strawberry") && !ingredients_in.has("blueberry"):
 				# adds ingredient to array
 				ingredients_in.append(CookingManager.item_in_hand.name)
 				CookingManager._put_down()
 				CookingManager.item_in_hand.queue_free()
 				CookingManager.ingredient_spawned = false
+				topping_selection.visible = false
+			
+			if CookingManager.item_in_hand.is_in_group("chocolate") && !ingredients_in.has("sugar") && !ingredients_in.has("strawberry") && !ingredients_in.has("blueberry"):
+				# adds ingredient to array
+				ingredients_in.append(CookingManager.item_in_hand.name)
+				CookingManager._put_down()
+				CookingManager.item_in_hand.queue_free()
+				CookingManager.ingredient_spawned = false
+				topping_selection.visible = false
+			
+			if CookingManager.item_in_hand.is_in_group("strawberry") && !ingredients_in.has("chocolate") && !ingredients_in.has("sugar") && !ingredients_in.has("blueberry"):
+				# adds ingredient to array
+				ingredients_in.append(CookingManager.item_in_hand.name)
+				CookingManager._put_down()
+				CookingManager.item_in_hand.queue_free()
+				CookingManager.ingredient_spawned = false
+				topping_selection.visible = false
+			
+			if CookingManager.item_in_hand.is_in_group("blueberry") && !ingredients_in.has("chocolate") && !ingredients_in.has("strawberry") && !ingredients_in.has("sugar"):
+				# adds ingredient to array
+				ingredients_in.append(CookingManager.item_in_hand.name)
+				CookingManager._put_down()
+				CookingManager.item_in_hand.queue_free()
+				CookingManager.ingredient_spawned = false
+				topping_selection.visible = false
 				
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# checking ingredients
-	if ingredients_in.has("dough cooked") && ingredients_in.has("chocolate"):
-		loaded = true
-		progress_bar.show()
-		$Timer.start()
-		ingredients_in.clear()
-		
+	if ingredients_in.has("dough cooked"):
+		if ingredients_in.has("chocolate"):
+			doughnut = boston_kreme
+			loaded = true
+			progress_bar.show()
+			$Timer.start()
+			ingredients_in.clear()
+		if ingredients_in.has("strawberry"):
+			doughnut = strawberry_sprinkle
+			loaded = true
+			progress_bar.show()
+			$Timer.start()
+			ingredients_in.clear()
+		if ingredients_in.has("sugar"):
+			doughnut = glazed
+			loaded = true
+			progress_bar.show()
+			$Timer.start()
+			ingredients_in.clear()
+		if ingredients_in.has("blueberry"):
+			doughnut = blueberry_filled
+			loaded = true
+			progress_bar.show()
+			$Timer.start()
+			ingredients_in.clear()
+			
 	progress_bar.value = $Timer.time_left
 	
 func _on_timer_timeout():
 	mixed = true
 	loaded = false
 	
-	raw_dough_icon.visible = true
+	cooked_dough_icon.visible = true
+	topping_selection.visible = true
 	progress_bar.hide()
 	
-	var newInstance = boston_kreme.instantiate()
+	var newInstance = doughnut.instantiate()
 	add_child(newInstance)
 	CookingManager.ingredient_spawned = true
-	newInstance.position.x += 96
+	newInstance.position.x += 100
 	newInstance.position.y += 8

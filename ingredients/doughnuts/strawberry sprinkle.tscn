@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ywu4ar8u0a5f"]
+
+[ext_resource type="Script" path="res://ingredients/ingredient.gd" id="1_66nr6"]
+[ext_resource type="Texture2D" uid="uid://boanjdo5g1ml3" path="res://assets/graphics/carries/strawberry_sprinkle.png" id="2_i5hu2"]
+[ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="3_pw8dx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6l5go"]
+radius = 39.0
+
+[node name="strawberry sprinkle" type="CharacterBody2D" groups=["strawberry sprinkle"]]
+z_index = 1
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_66nr6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_i5hu2")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_pw8dx")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_6l5go")

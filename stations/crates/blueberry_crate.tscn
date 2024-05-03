@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://j4dti1km88xl"]
 
-[ext_resource type="Script" path="res://stations/crates/scripts/bananaCrate.gd" id="1_cm1c4"]
+[ext_resource type="Script" path="res://stations/crates/scripts/blueberryCrate.gd" id="1_sfqlt"]
 [ext_resource type="Texture2D" uid="uid://rorfv7ejf120" path="res://assets/graphics/interactables/crates/banana_crate.png" id="2_8je8j"]
 [ext_resource type="PackedScene" uid="uid://b013nj1wujtpp" path="res://ingredients/blueberry.tscn" id="2_ddlrf"]
 [ext_resource type="Script" path="res://interaction/interaction area/interaction_area.gd" id="3_dkv7s"]
@@ -11,7 +11,7 @@
 size = Vector2(56, 52)
 
 [node name="blueberryCrate" type="StaticBody2D"]
-script = ExtResource("1_cm1c4")
+script = ExtResource("1_sfqlt")
 blueberry = ExtResource("2_ddlrf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

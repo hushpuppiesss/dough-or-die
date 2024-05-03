@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsgdw3djj27ow"]
+[gd_scene load_steps=7 format=3 uid="uid://bsgdw3djj27ow"]
 
-[ext_resource type="Script" path="res://stations/crates/scripts/matchaCrate.gd" id="1_m5rtu"]
+[ext_resource type="Script" path="res://stations/crates/scripts/sugarCrate.gd" id="1_vax7u"]
 [ext_resource type="Texture2D" uid="uid://b5hqxqs0iarm" path="res://assets/graphics/interactables/crates/matcha_crate.png" id="2_q13w6"]
+[ext_resource type="PackedScene" uid="uid://s2lntaqteb13" path="res://ingredients/sugar.tscn" id="2_uefbu"]
 [ext_resource type="Script" path="res://interaction/interaction area/interaction_area.gd" id="3_loqox"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gllcl"]
@@ -10,7 +11,8 @@
 size = Vector2(56, 52)
 
 [node name="sugarCrate" type="StaticBody2D"]
-script = ExtResource("1_m5rtu")
+script = ExtResource("1_vax7u")
+sugar = ExtResource("2_uefbu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4)

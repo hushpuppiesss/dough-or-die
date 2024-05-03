@@ -16,6 +16,7 @@ script = ExtResource("1_evk7l")
 texture = ExtResource("2_3juqv")
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_cv6vp")]
+visible = false
 action_name = ""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]

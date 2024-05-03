@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dy75ce5b7b4qo"]
+
+[ext_resource type="Script" path="res://ingredients/ingredient.gd" id="1_uvh4e"]
+[ext_resource type="Texture2D" uid="uid://rng8vl1k7mpj" path="res://assets/graphics/carries/glazed.png" id="2_26ern"]
+[ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="3_42yfr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6l5go"]
+radius = 39.0
+
+[node name="glazed" type="CharacterBody2D" groups=["glazed"]]
+z_index = 1
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_uvh4e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_26ern")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_42yfr")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_6l5go")

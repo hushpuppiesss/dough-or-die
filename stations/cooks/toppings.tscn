@@ -1,19 +1,22 @@
-[gd_scene load_steps=12 format=3 uid="uid://gfdgg3r85mj6"]
+[gd_scene load_steps=17 format=3 uid="uid://gfdgg3r85mj6"]
 
 [ext_resource type="Script" path="res://stations/cooks/toppings.gd" id="1_p2dv4"]
 [ext_resource type="Texture2D" uid="uid://d3d6704rjtq5" path="res://assets/graphics/interactables/stations/toppings.png" id="2_gy0g7"]
+[ext_resource type="PackedScene" uid="uid://bn1ps0ojbtht0" path="res://ingredients/doughnuts/boston kreme.tscn" id="2_xdxf5"]
+[ext_resource type="PackedScene" uid="uid://ywu4ar8u0a5f" path="res://ingredients/doughnuts/strawberry sprinkle.tscn" id="3_hmio3"]
 [ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="3_je2f1"]
+[ext_resource type="PackedScene" uid="uid://dy75ce5b7b4qo" path="res://ingredients/doughnuts/glazed.tscn" id="4_ikl2u"]
+[ext_resource type="PackedScene" uid="uid://bviimm51pp1xx" path="res://ingredients/doughnuts/blueberry_filled.tscn" id="5_2vul3"]
 [ext_resource type="Texture2D" uid="uid://mucu37hxy4jb" path="res://assets/ui/bubble_cooked_dough.png" id="5_5y58s"]
+[ext_resource type="Texture2D" uid="uid://be28xen5iinaw" path="res://assets/ui/topping_selection.png" id="5_50cyh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_istmi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojtk0"]
 size = Vector2(58, 64)
 
-[sub_resource type="Animation" id="Animation_a1y6x"]
-length = 1.1
-loop_mode = 1
-step = 0.3
+[sub_resource type="Animation" id="Animation_t3ubr"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -21,13 +24,37 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, -25), Vector2(1, -27), Vector2(1, -25), Vector2(1, -23)]
+"values": [Vector2(-18, -23)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../topping selection:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(16, -23)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../topping selection:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_ac8iy"]
+[sub_resource type="Animation" id="Animation_uhi1f"]
 resource_name = "float"
 length = 1.1
 loop_mode = 1
@@ -42,13 +69,37 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1, -23), Vector2(1, -25), Vector2(1, -23), Vector2(1, -21)]
+"values": [Vector2(-18, -23), Vector2(-18, -25), Vector2(-18, -23), Vector2(-18, -21)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../topping selection:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(16, -23), Vector2(16, -25), Vector2(16, -23), Vector2(16, -21)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../topping selection:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v3vpt"]
 _data = {
-"RESET": SubResource("Animation_a1y6x"),
-"float": SubResource("Animation_ac8iy")
+"RESET": SubResource("Animation_t3ubr"),
+"float": SubResource("Animation_uhi1f")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ph4av"]
@@ -75,6 +126,10 @@ corner_radius_bottom_left = 5
 
 [node name="toppings" type="StaticBody2D"]
 script = ExtResource("1_p2dv4")
+boston_kreme = ExtResource("2_xdxf5")
+strawberry_sprinkle = ExtResource("3_hmio3")
+glazed = ExtResource("4_ikl2u")
+blueberry_filled = ExtResource("5_2vul3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2, 9)
@@ -93,11 +148,21 @@ visible = false
 position = Vector2(0, 15)
 shape = SubResource("RectangleShape2D_ojtk0")
 
-[node name="raw dough icon" type="Sprite2D" parent="."]
-position = Vector2(1, -25)
+[node name="cooked dough icon" type="Sprite2D" parent="."]
+position = Vector2(-18, -23)
 texture = ExtResource("5_5y58s")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="raw dough icon"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cooked dough icon"]
+libraries = {
+"": SubResource("AnimationLibrary_v3vpt")
+}
+
+[node name="topping selection" type="Sprite2D" parent="."]
+position = Vector2(16, -23)
+texture = ExtResource("5_50cyh")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="topping selection"]
 libraries = {
 "": SubResource("AnimationLibrary_v3vpt")
 }
