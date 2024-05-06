@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://mh3s83by7o7"]
+[gd_scene load_steps=61 format=3 uid="uid://mh3s83by7o7"]
 
 [ext_resource type="Texture2D" uid="uid://b61ayhbc6crxq" path="res://assets/graphics/tiles/room builder.png" id="1_hhapp"]
 [ext_resource type="AudioStream" uid="uid://ca6owrxnco6ey" path="res://assets/audio/nobonoko - Strawberry Cake.mp3" id="1_s36n0"]
@@ -39,8 +39,6 @@
 [ext_resource type="PackedScene" uid="uid://dk0t5orfqhq47" path="res://stations/cooks/trash basket.tscn" id="33_e7e6r"]
 [ext_resource type="PackedScene" uid="uid://gfdgg3r85mj6" path="res://stations/cooks/toppings.tscn" id="34_vsi2d"]
 [ext_resource type="PackedScene" uid="uid://cuyn8ohnapakd" path="res://stations/cooks/roller.tscn" id="35_cf0ok"]
-[ext_resource type="PackedScene" uid="uid://dcrjdf87fcak" path="res://scoring/score.tscn" id="36_47ws0"]
-[ext_resource type="PackedScene" uid="uid://n14d0ka00etv" path="res://ingredients/dough/dough cooked.tscn" id="41_6twum"]
 [ext_resource type="PackedScene" uid="uid://c2cpyrfyt3ryn" path="res://menus/pause_menu.tscn" id="41_jf4cf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x8oou"]
@@ -25430,8 +25428,6 @@ position = Vector2(793, -35)
 
 [node name="pause menu" parent="pause menu" instance=ExtResource("41_jf4cf")]
 
-[node name="sccoring label" parent="." instance=ExtResource("36_47ws0")]
-
 [node name="Spawn" parent="." instance=ExtResource("22_kxu24")]
 z_index = -1
 y_sort_enabled = true
@@ -25448,6 +25444,3 @@ position = Vector2(611, -123)
 [node name="Spawn4" parent="." instance=ExtResource("25_arnbn")]
 z_index = -1
 position = Vector2(88, 659)
-
-[node name="dough cooked" parent="." instance=ExtResource("41_6twum")]
-position = Vector2(114, 515)
