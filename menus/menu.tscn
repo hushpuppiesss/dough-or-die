@@ -92,7 +92,7 @@ Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
 Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
-Button/font_sizes/font_size = 23
+Button/font_sizes/font_size = 12
 Button/fonts/font = ExtResource("3_r111f")
 Button/styles/disabled = SubResource("StyleBoxFlat_1glec")
 Button/styles/focus = SubResource("StyleBoxFlat_d0xsv")
@@ -121,19 +121,26 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 15.0
-offset_top = -114.0
+offset_top = -126.0
 offset_right = 115.0
-offset_bottom = -38.0
+offset_bottom = -30.0
 grow_vertical = 0
 pivot_offset = Vector2(67, 9)
 theme = SubResource("Theme_b8kcb")
 
 [node name="start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "start"
+
+[node name="tutorial" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "tutorial"
 
 [node name="quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "quit"
 
 [node name="paper1" type="AudioStreamPlayer" parent="."]
@@ -145,4 +152,5 @@ volume_db = -3.0
 autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

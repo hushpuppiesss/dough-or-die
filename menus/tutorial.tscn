@@ -1,0 +1,145 @@
+[gd_scene load_steps=9 format=3 uid="uid://cs1k8sfl4aju1"]
+
+[ext_resource type="Script" path="res://menus/tutorial.gd" id="1_fxknu"]
+[ext_resource type="Texture2D" uid="uid://g581u61uhj7x" path="res://assets/graphics/dough or die.png" id="2_elhdr"]
+[ext_resource type="Texture2D" uid="uid://beod82tc1sr0t" path="res://assets/ui/tutorial.png" id="3_mdl7t"]
+[ext_resource type="FontFile" uid="uid://p2pafja7rn0b" path="res://assets/ui/pixelmix.ttf" id="4_epas8"]
+[ext_resource type="AudioStream" uid="uid://cobeba2t1rocf" path="res://assets/audio/sfx/paper1.mp3" id="5_xonwk"]
+[ext_resource type="AudioStream" uid="uid://dyxc5wywp5dnn" path="res://assets/audio/Seashells.mp3" id="6_o5x12"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mg7de"]
+
+[sub_resource type="Theme" id="Theme_7tpwy"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 13
+Label/fonts/font = ExtResource("4_epas8")
+Label/styles/normal = SubResource("StyleBoxEmpty_mg7de")
+
+[node name="tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fxknu")
+
+[node name="DoughOrDie" type="Sprite2D" parent="."]
+modulate = Color(0.588235, 0.458824, 0.407843, 1)
+position = Vector2(324.667, 179)
+scale = Vector2(0.344444, 0.344444)
+texture = ExtResource("2_elhdr")
+
+[node name="Tutorial" type="Sprite2D" parent="."]
+position = Vector2(322, 181)
+texture = ExtResource("3_mdl7t")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.081
+anchor_top = 0.778
+anchor_right = 0.081
+anchor_bottom = 0.778
+offset_left = -5.84
+offset_top = -0.0800171
+offset_right = 91.16
+offset_bottom = 32.92
+theme_override_fonts/font = ExtResource("4_epas8")
+theme_override_font_sizes/font_size = 23
+text = "back"
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_7tpwy")
+
+[node name="Label" type="Label" parent="Control"]
+offset_left = 94.0
+offset_top = 48.0
+offset_right = 190.0
+offset_bottom = 71.0
+text = "gather ingredients from crates found around the map"
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 106.0
+offset_right = 165.0
+offset_bottom = 157.0
+theme_override_font_sizes/font_size = 12
+text = "combine 
+ingredients
+to make dough"
+
+[node name="Label3" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 76.0
+offset_right = 345.0
+offset_bottom = 99.0
+text = "roll out to a donut shape!"
+
+[node name="Label4" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 161.0
+offset_right = 263.0
+offset_bottom = 190.0
+text = "fry the
+donut!"
+
+[node name="Label5" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 101.0
+offset_right = 449.0
+offset_bottom = 130.0
+text = "flavor it to pipo's
+preference!"
+
+[node name="Label6" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 219.0
+offset_right = 540.0
+offset_bottom = 232.0
+text = "feed pipo!"
+
+[node name="Label8" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 230.0
+offset_right = 347.0
+offset_bottom = 291.0
+text = "don't feed
+pipo the
+wrong donut.
+will be very sad."
+
+[node name="Label7" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 235.0
+offset_right = 192.0
+offset_bottom = 272.0
+theme_override_font_sizes/font_size = 17
+text = "HOW TO PLAY:
+DOUGH OR DIE"
+
+[node name="paper1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_xonwk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_o5x12")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

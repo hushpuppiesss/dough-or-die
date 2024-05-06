@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://stations/cooks/trash basket.gd" id="1_4o1rw"]
 [ext_resource type="Texture2D" uid="uid://cyq07t1eudll" path="res://assets/graphics/interactables/stations/trash_basket.png" id="2_f3v37"]
-[ext_resource type="Texture2D" uid="uid://bhqj7lrkup34v" path="res://assets/ui/bubble_trash.png" id="4_chkk3"]
+[ext_resource type="Texture2D" uid="uid://bhqj7lrkup34v" path="res://assets/ui/bubbles/bubble_trash.png" id="4_chkk3"]
 [ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="4_jbrxl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_istmi"]

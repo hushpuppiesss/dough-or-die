@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dq6rj8wt5wln1" path="res://assets/graphics/interactables/stations/roller.png" id="2_njk5a"]
 [ext_resource type="PackedScene" uid="uid://cj134ww2g631o" path="res://ingredients/dough/doughnut raw.tscn" id="2_x3h35"]
 [ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="4_pl642"]
-[ext_resource type="Texture2D" uid="uid://dyl8f4jucfwwt" path="res://assets/ui/bubble_raw_dough.png" id="5_y0ula"]
+[ext_resource type="Texture2D" uid="uid://dyl8f4jucfwwt" path="res://assets/ui/bubbles/bubble_raw_dough.png" id="5_y0ula"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_istmi"]
 

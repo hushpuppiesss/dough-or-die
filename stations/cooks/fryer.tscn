@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://stations/cooks/fryer.gd" id="1_p8mtp"]
 [ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="2_01lwn"]
 [ext_resource type="PackedScene" uid="uid://n14d0ka00etv" path="res://ingredients/dough/dough cooked.tscn" id="2_8l0ch"]
-[ext_resource type="Texture2D" uid="uid://c47kq1gh65vvr" path="res://assets/ui/bubble_raw_doughnut.png" id="5_f25of"]
+[ext_resource type="Texture2D" uid="uid://c47kq1gh65vvr" path="res://assets/ui/bubbles/bubble_raw_doughnut.png" id="5_f25of"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_po6lj"]
 size = Vector2(42, 35)

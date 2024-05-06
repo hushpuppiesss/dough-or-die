@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="3_je2f1"]
 [ext_resource type="PackedScene" uid="uid://dy75ce5b7b4qo" path="res://ingredients/doughnuts/glazed.tscn" id="4_ikl2u"]
 [ext_resource type="PackedScene" uid="uid://bviimm51pp1xx" path="res://ingredients/doughnuts/blueberry_filled.tscn" id="5_2vul3"]
-[ext_resource type="Texture2D" uid="uid://mucu37hxy4jb" path="res://assets/ui/bubble_cooked_dough.png" id="5_5y58s"]
+[ext_resource type="Texture2D" uid="uid://mucu37hxy4jb" path="res://assets/ui/bubbles/bubble_cooked_dough.png" id="5_5y58s"]
 [ext_resource type="Texture2D" uid="uid://be28xen5iinaw" path="res://assets/ui/topping_selection.png" id="5_50cyh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_istmi"]

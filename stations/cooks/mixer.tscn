@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://dwplkbodqarlp" path="res://assets/graphics/interactables/stations/animated_kitchen_kneader_32x32.png" id="2_dqfie"]
 [ext_resource type="PackedScene" uid="uid://c23164i2746u1" path="res://ingredients/dough/dough raw.tscn" id="2_udg7t"]
 [ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="3_icafh"]
-[ext_resource type="Texture2D" uid="uid://bjhwl8d1bjrdy" path="res://assets/ui/bubble_flour.png" id="4_evybq"]
-[ext_resource type="Texture2D" uid="uid://ok3oipd8v65c" path="res://assets/ui/bubble_milk.png" id="5_8nrrw"]
-[ext_resource type="Texture2D" uid="uid://ehn7dtp3m2jn" path="res://assets/ui/bubble_egg.png" id="6_6bmbs"]
+[ext_resource type="Texture2D" uid="uid://bjhwl8d1bjrdy" path="res://assets/ui/bubbles/bubble_flour.png" id="4_evybq"]
+[ext_resource type="Texture2D" uid="uid://ok3oipd8v65c" path="res://assets/ui/bubbles/bubble_milk.png" id="5_8nrrw"]
+[ext_resource type="Texture2D" uid="uid://ehn7dtp3m2jn" path="res://assets/ui/bubbles/bubble_egg.png" id="6_6bmbs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_istmi"]
 

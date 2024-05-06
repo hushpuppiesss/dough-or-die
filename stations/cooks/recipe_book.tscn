@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://stations/cooks/recipe_book.gd" id="1_5o044"]
 [ext_resource type="Texture2D" uid="uid://chvce70qv5kni" path="res://assets/graphics/interactables/stations/recipe book.png" id="2_yue32"]
-[ext_resource type="Texture2D" uid="uid://vidpyns6brn5" path="res://assets/ui/bubble_recipe.png" id="4_tmk0o"]
+[ext_resource type="Texture2D" uid="uid://vidpyns6brn5" path="res://assets/ui/bubbles/bubble_recipe.png" id="4_tmk0o"]
 [ext_resource type="PackedScene" uid="uid://dafa0xa077kv2" path="res://interaction/interaction area/interaction_area.tscn" id="4_uqe2e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_istmi"]

@@ -14,3 +14,8 @@ func _on_start_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+
+func _on_tutorial_pressed():
+	sfx_paper1.play()
+	SceneSwitcher.goto_scene("res://menus/tutorial.tscn")
