@@ -19,4 +19,16 @@ Dough or Die is a fast-paced 2D top-down game where players cook donuts while de
 - Players use a bubble gun to fend off rats
 - Collect ingredients from around the map and cooking stations to make dough, fry donuts, and add toppings
 
-# Installation
+## Installation
+
+1. Download the `dough.or.die.exe` file from the [releases page](https://github.com/hushpuppiesss/dough-or-die/releases).
+2. Run the executable to play!
+
+### Release Tag
+
+**Release Version:** `v0.1`  
+This release includes the basic mechanics of the game, including combat, cooking, and rat AI. The game is a prototype and is not fully developed.
+
+## Future Plans
+
+Currently, there are no planned updates as this project was created as part of an independent study. The game is in its prototype phase, and no additional development is planned.
